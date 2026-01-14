@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tables</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .nav div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="images.html">Images</a></div>
+        <div><a href="structure.html">Structure</a></div>
+        <div><a href="tables.html">Tables</a></div>
+        <div><a href="links.html">Links</a></div>
+        <div><a href="media.html">Media</a></div>
+        <div><a href="typography.html">Typography</a></div>
+        <div><a href="forms_basic.html">Basic Forms</a></div>
+        <div><a href="forms_advanced.html">Advanced Forms</a></div>
+        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
+        <div><a href="focus_order.html">Focus Order</a></div>
+        <div><a href="interactive.html">Interactive</a></div>
+        <div><a href="contrast.html">Contrast</a></div>
+        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
+        <div><a href="flashing.html">Flashing</a></div>
+        <div><a href="orientation.html">Orientation</a></div>
+        <div><a href="aria_bad.html">Bad ARIA</a></div>
+        <div><a href="parsing.html">Parsing</a></div>
+        <div><a href="language.html">Language</a></div>
+        <div><a href="iframes.html">Iframes</a></div>
+    </div>
+
+    <h1>Table Issues</h1>
+
+    <h2>Layout Table</h2>
+    <!-- Table related elements used for layout purposes -->
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+            <td>
+                <h2>Sidebar</h2>
+                <ul>
+                    <li>Menu 1</li>
+                </ul>
+            </td>
+            <td>
+                <h2>Main Content</h2>
+                <p>This content is laid out using a table.</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Data Table Missing Headers</h2>
+    <!-- No TH, just bold TD -->
+    <table border="1">
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Age</b></td>
+            <td><b>City</b></td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>30</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>25</td>
+            <td>London</td>
+        </tr>
+    </table>
+
+    <h2>Complex Table Missing Scope</h2>
+    <!-- TH elements present but missing scope attribute for ambiguous relationships -->
+    <table border="1">
+        <tr>
+            <th></th>
+            <th colspan="2">2020</th>
+            <th colspan="2">2021</th>
+        </tr>
+        <tr>
+            <th>City</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q1</th>
+            <th>Q2</th>
+        </tr>
+        <tr>
+            <td>London</td>
+            <td>10</td>
+            <td>20</td>
+            <td>15</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

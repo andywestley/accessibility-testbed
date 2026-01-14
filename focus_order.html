@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Focus Order</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .nav div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .order-1 {
+            order: 3;
+        }
+
+        .order-2 {
+            order: 1;
+        }
+
+        .order-3 {
+            order: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="images.html">Images</a></div>
+        <div><a href="structure.html">Structure</a></div>
+        <div><a href="tables.html">Tables</a></div>
+        <div><a href="links.html">Links</a></div>
+        <div><a href="media.html">Media</a></div>
+        <div><a href="typography.html">Typography</a></div>
+        <div><a href="forms_basic.html">Basic Forms</a></div>
+        <div><a href="forms_advanced.html">Advanced Forms</a></div>
+        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
+        <div><a href="focus_order.html">Focus Order</a></div>
+        <div><a href="interactive.html">Interactive</a></div>
+        <div><a href="contrast.html">Contrast</a></div>
+        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
+        <div><a href="flashing.html">Flashing</a></div>
+        <div><a href="orientation.html">Orientation</a></div>
+        <div><a href="aria_bad.html">Bad ARIA</a></div>
+        <div><a href="parsing.html">Parsing</a></div>
+        <div><a href="language.html">Language</a></div>
+        <div><a href="iframes.html">Iframes</a></div>
+    </div>
+
+    <h1>Focus Order Issues</h1>
+
+    <h2>Positive Tabindex</h2>
+    <!-- Tabindex > 0 disrupts natural flow -->
+    <a href="#" tabindex="4">Link 4 (Last)</a><br>
+    <a href="#" tabindex="1">Link 1 (First)</a><br>
+    <a href="#" tabindex="3">Link 3 (Third)</a><br>
+    <a href="#" tabindex="2">Link 2 (Second)</a><br>
+    <a href="#" tabindex="0">Link 0 (Normal flow, but comes after positives usually)</a>
+
+    <h2>Visual Order vs DOM Order (Flexbox)</h2>
+    <div class="flex-container">
+        <!-- Visual order: Item 2, Item 3, Item 1 -->
+        <!-- DOM Focus order: Item 1, Item 2, Item 3 -->
+        <button class="order-1">Item 1 (DOM first, Visual last)</button>
+        <button class="order-2">Item 2 (DOM second, Visual first)</button>
+        <button class="order-3">Item 3 (DOM third, Visual second)</button>
+    </div>
+
+    <h2>No Focus Indicator</h2>
+    <style>
+        .no-focus:focus {
+            outline: none;
+        }
+    </style>
+    <button class="no-focus">Button with outline: none</button>
+
+</body>
+
+</html>

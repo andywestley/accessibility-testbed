@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Typography</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .nav div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .tiny-text {
+            font-size: 10px;
+        }
+
+        .fixed-units {
+            font-size: 14px;
+            line-height: 14px;
+            width: 500px;
+        }
+
+        .justified {
+            text-align: justify;
+        }
+
+        .all-caps {
+            text-transform: uppercase;
+        }
+
+        .line-height-bad {
+            line-height: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="images.html">Images</a></div>
+        <div><a href="structure.html">Structure</a></div>
+        <div><a href="tables.html">Tables</a></div>
+        <div><a href="links.html">Links</a></div>
+        <div><a href="media.html">Media</a></div>
+        <div><a href="typography.html">Typography</a></div>
+        <div><a href="forms_basic.html">Basic Forms</a></div>
+        <div><a href="forms_advanced.html">Advanced Forms</a></div>
+        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
+        <div><a href="focus_order.html">Focus Order</a></div>
+        <div><a href="interactive.html">Interactive</a></div>
+        <div><a href="contrast.html">Contrast</a></div>
+        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
+        <div><a href="flashing.html">Flashing</a></div>
+        <div><a href="orientation.html">Orientation</a></div>
+        <div><a href="aria_bad.html">Bad ARIA</a></div>
+        <div><a href="parsing.html">Parsing</a></div>
+        <div><a href="language.html">Language</a></div>
+        <div><a href="iframes.html">Iframes</a></div>
+    </div>
+
+    <h1>Typography Issues</h1>
+
+    <h2>Tiny Text</h2>
+    <p class="tiny-text">This text is 10px, which is too small for many users to read comfortably.</p>
+
+    <h2>Justified Text</h2>
+    <p class="justified" style="width: 300px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <h2>Bad Line Height</h2>
+    <p class="line-height-bad">
+        This text has a line-height of 0.8. The lines will crush into each other and become unreadable.
+        Ascenders and descenders will overlap significantly.
+    </p>
+
+    <h2>All Caps</h2>
+    <p class="all-caps">This text is in all caps, which can be harder to read for people with dyslexia.</p>
+
+    <h2>Text As Image</h2>
+    <img src="https://placehold.co/300x50?text=This+is+text+in+image" alt="This is text in image" />
+
+</body>
+
+</html>

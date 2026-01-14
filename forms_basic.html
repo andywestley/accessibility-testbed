@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Basic Forms</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .nav div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="images.html">Images</a></div>
+        <div><a href="structure.html">Structure</a></div>
+        <div><a href="tables.html">Tables</a></div>
+        <div><a href="links.html">Links</a></div>
+        <div><a href="media.html">Media</a></div>
+        <div><a href="typography.html">Typography</a></div>
+        <div><a href="forms_basic.html">Basic Forms</a></div>
+        <div><a href="forms_advanced.html">Advanced Forms</a></div>
+        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
+        <div><a href="focus_order.html">Focus Order</a></div>
+        <div><a href="interactive.html">Interactive</a></div>
+        <div><a href="contrast.html">Contrast</a></div>
+        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
+        <div><a href="flashing.html">Flashing</a></div>
+        <div><a href="orientation.html">Orientation</a></div>
+        <div><a href="aria_bad.html">Bad ARIA</a></div>
+        <div><a href="parsing.html">Parsing</a></div>
+        <div><a href="language.html">Language</a></div>
+        <div><a href="iframes.html">Iframes</a></div>
+    </div>
+
+    <h1>Basic Form Issues</h1>
+
+    <form>
+        <h2>Missing Labels</h2>
+        <!-- No label, just text node next to input -->
+        First Name: <input type="text" name="firstname" />
+        <br><br>
+
+        <h2>Placeholder as Label</h2>
+        <!-- Only placeholder, no visual label or aria-label -->
+        <input type="text" placeholder="Last Name" name="lastname" />
+        <br><br>
+
+        <h2>Implicit Label Not Wrapped</h2>
+        <!-- Label tag exists but doesn't wrap input and no 'for' attribute -->
+        <label>Email Address</label>
+        <input type="email" name="email" />
+        <br><br>
+
+        <h2>Duplicate IDs</h2>
+        <!-- Multiple elements with same ID -->
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" />
+        <br>
+        <label for="phone">Cell:</label>
+        <input type="text" id="phone" />
+
+    </form>
+
+</body>
+
+</html>

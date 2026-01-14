@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Links</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .nav div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
+        <div><a href="index.html">Home</a></div>
+        <div><a href="images.html">Images</a></div>
+        <div><a href="structure.html">Structure</a></div>
+        <div><a href="tables.html">Tables</a></div>
+        <div><a href="links.html">Links</a></div>
+        <div><a href="media.html">Media</a></div>
+        <div><a href="typography.html">Typography</a></div>
+        <div><a href="forms_basic.html">Basic Forms</a></div>
+        <div><a href="forms_advanced.html">Advanced Forms</a></div>
+        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
+        <div><a href="focus_order.html">Focus Order</a></div>
+        <div><a href="interactive.html">Interactive</a></div>
+        <div><a href="contrast.html">Contrast</a></div>
+        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
+        <div><a href="flashing.html">Flashing</a></div>
+        <div><a href="orientation.html">Orientation</a></div>
+        <div><a href="aria_bad.html">Bad ARIA</a></div>
+        <div><a href="parsing.html">Parsing</a></div>
+        <div><a href="language.html">Language</a></div>
+        <div><a href="iframes.html">Iframes</a></div>
+    </div>
+
+    <h1>Link Issues</h1>
+
+    <h2>Ambiguous Link Text</h2>
+    <p>To learn more about our services, <a href="services.html">click here</a>.</p>
+    <p>To read our blog, <a href="blog.html">click here</a>.</p>
+
+    <h2>Uninformative URL as Text</h2>
+    <p>Visit our partner site: <a href="https://example.com/partner">https://example.com/partner</a></p>
+
+    <h2>Opening in New Window</h2>
+    <p><a href="https://google.com" target="_blank">External Link</a> (Should warn user)</p>
+
+    <h2>Empty Links</h2>
+    <p>There is a link here: <a href="page.html"></a> end.</p>
+
+    <h2>Same Text, Different Destination</h2>
+    <p><a href="report2020.pdf">Read Report</a></p>
+    <p><a href="report2021.pdf">Read Report</a></p>
+
+    <h2>Broken/No Href</h2>
+    <a>This is an anchor without an href</a>
+
+</body>
+
+</html>
