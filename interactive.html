@@ -71,6 +71,23 @@
         [ ] Check me
     </div>
 
+    <h2>More Div Buttons</h2>
+    <div class="fake-btn" onclick="console.log('click')">Div Button 1</div>
+    <div class="fake-btn" onclick="console.log('click')">Div Button 2</div>
+    <div class="fake-btn" onclick="console.log('click')">Div Button 3</div>
+
+    <h2>More Span Actions</h2>
+    <span onclick="alert('span')">[Span Action 1]</span> |
+    <span onclick="alert('span')">[Span Action 2]</span> |
+    <span onclick="alert('span')">[Span Action 3]</span>
+
+    <h2>Mouseover Only Info</h2>
+    <div onmouseover="document.getElementById('info').style.display='block'"
+        onmouseout="document.getElementById('info').style.display='none'">
+        Hover me (Keyboard users can't see info)
+    </div>
+    <div id="info" style="display:none; color: green;">Secret Info</div>
+
 </body>
 
 </html>

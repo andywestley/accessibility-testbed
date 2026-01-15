@@ -65,6 +65,18 @@
 
     <h2>Tiny Text</h2>
     <p class="tiny-text">This text is 10px, which is too small for many users to read comfortably.</p>
+    <p class="tiny-text">Another tiny paragraph. Hard to read.</p>
+    <p style="font-size: 8px;">Even smaller text (8px). Very bad.</p>
+    <p style="font-size: 9px; color: #666;">Tiny gray text. Contrast and size fail.</p>
+
+    <h2>Fixed Units Container</h2>
+    <div class="fixed-units" style="border: 1px solid red;">
+        This container has a fixed width of 500px and font size in px. It won't adapt to user settings.
+        If the user sets a larger default font, this might break.
+    </div>
+    <div class="fixed-units" style="width: 800px; border: 1px solid blue; margin-top: 10px;">
+        Another wide fixed container (800px).
+    </div>
 
     <h2>Justified Text</h2>
     <p class="justified" style="width: 300px;">

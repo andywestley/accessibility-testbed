@@ -66,6 +66,23 @@
 
     <h2>Redundant ARIA</h2>
     <button role="button">I am a button with role=button</button>
+    <div role="heading" aria-level="2">I am a div with role heading</div>
+
+    <h2>More ARIA Hidden Focusables</h2>
+    <a href="#" aria-hidden="true">Hidden Link 1</a><br>
+    <a href="#" aria-hidden="true">Hidden Link 2</a><br>
+    <input type="text" aria-hidden="true" value="Hidden Input" />
+    <button aria-hidden="true" onclick="alert('hidden')">Hidden Button</button>
+
+    <h2>More Invalid Roles</h2>
+    <div role="note">Role note is valid but often misused</div>
+    <div role="container">Invalid role 'container'</div>
+    <div role="text">Role 'text' is not standard</div>
+    <div role="imag">Misspelled role 'image' (imag)</div>
+
+    <h2>More Conflicting Attributes</h2>
+    <button aria-disabled="true">Active Button labeled disabled</button>
+    <div role="radio" aria-checked="mixed">Radio can't be mixed</div>
 
 </body>
 

@@ -82,6 +82,44 @@
         3. Item three
     </p>
 
+    <h2>More Skipped Headings</h2>
+    <h5>Skipping H3 and H4</h5>
+    <p>Content under H5.</p>
+    <h6>Skipping even more</h6>
+    <p>Content under H6.</p>
+
+    <!-- Deep nesting -->
+    <div id="wrapper">
+        <div class="container">
+            <div class="content-area">
+                <div class="main-body">
+                    <div class="article-wrapper">
+                        <div class="text-block">
+                            Deeply nested content without landmarks.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Misused List Elements</h2>
+    <!-- LI outside UL/OL -->
+    <li>Orphan item 1</li>
+    <li>Orphan item 2</li>
+
+    <div>
+        <li>Item in div</li>
+        <li>Item in div</li>
+    </div>
+
+    <!-- P acting as header -->
+    <p style="font-weight: bold; font-size: 1.5em; margin-bottom: 0;">Bad Heading 1</p>
+    <p>Content for bad heading.</p>
+    <p style="font-weight: bold; font-size: 1.5em; margin-bottom: 0;">Bad Heading 2</p>
+    <p>Content for bad heading.</p>
+
+
 </body>
 
 </html>

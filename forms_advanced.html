@@ -73,10 +73,25 @@
         <input type="text" id="city" />
         <br><br>
 
-        <h2>CAPTCHA without Alternative</h2>
-        <!-- Image CAPTCHA with no audio alternative -->
         <img src="https://placehold.co/150x50?text=CAPTCHA" alt="Type the characters in the image" />
         <input type="text" aria-label="Captcha response" />
+
+        <h2>More Color Only Required</h2>
+        <label for="f1">Field 1 <span class="required">*</span></label>
+        <input type="text" id="f1" /><br>
+        <label for="f2">Field 2 <span class="required">*</span></label>
+        <input type="text" id="f2" /><br>
+        <label for="f3">Field 3 <span class="required">*</span></label>
+        <input type="text" id="f3" /><br>
+
+        <h2>More Disconnected Errors</h2>
+        <label for="email2">Email</label>
+        <input type="email" id="email2" aria-invalid="true" />
+        <div class="error" style="display:block;">Invalid email format.</div>
+        <br>
+        <label for="zip2">Zip Code</label>
+        <input type="text" id="zip2" aria-invalid="true" />
+        <div class="error" style="display:block;">Zip code must be 5 digits.</div>
 
     </form>
 

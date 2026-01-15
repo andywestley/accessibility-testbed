@@ -76,6 +76,17 @@
     <p>(Note: Pure CSS lock is tricky, but often this violation is checking for the instruction "Please rotate" or apps
         that are locked).</p>
 
+    <div class="landscape-only">
+        This content is only visible in landscape mode.
+    </div>
+    <style>
+        @media (orientation: portrait) {
+            .landscape-only {
+                display: none;
+            }
+        }
+    </style>
+
 </body>
 
 </html>
