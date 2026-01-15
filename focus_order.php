@@ -68,4 +68,16 @@ include 'includes/header.php';
     </style>
     <button class="no-focus">Button with outline: none</button>
 
+    <h2>Focus Obscured (2.4.11)</h2>
+    <p>Scroll down. The sticky banner below will cover focused elements at the bottom of the viewport.</p>
+    <a href="#">Link 1 (Might be covered)</a><br>
+    <a href="#">Link 2 (Might be covered)</a><br>
+    <a href="#">Link 3 (Might be covered)</a><br>
+    <br><br><br>
+
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; height: 100px; background: rgba(0,0,0,0.9); color: white; padding: 20px; z-index: 9999;">
+        <h3>Sticky Banner (Obscures Content)</h3>
+        <button>Close (Not working)</button>
+    </div>
+
 <?php include 'includes/footer.php'; ?>

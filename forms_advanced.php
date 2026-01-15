@@ -65,4 +65,28 @@ include 'includes/header.php';
 
     </form>
 
+    <h2>Error Prevention (3.3.4)</h2>
+    <form action="#" method="POST">
+        <p>Clicking this button submits immediately with no confirmation.</p>
+        <button type="submit" onclick="alert('Submitted! No confusion for you.')">Delete All Data</button>
+    </form>
+
+    <h2>Redundant Entry (3.3.7)</h2>
+    <form>
+        <h3>Shipping Address</h3>
+        <input type="text" placeholder="Street Address">
+        
+        <h3>Billing Address</h3>
+        <p>(No check box to say 'Same as shipping'. You must type it again.)</p>
+        <input type="text" placeholder="Street Address">
+    </form>
+
+    <h2>Accessible Authentication (3.3.8)</h2>
+    <form>
+        <label>Solve this to log in:</label>
+        <p>What is the square root of 144 plus 15?</p>
+        <input type="text" aria-label="Math problem">
+        <button>Login</button>
+    </form>
+
 <?php include 'includes/footer.php'; ?>

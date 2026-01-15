@@ -39,4 +39,19 @@ include 'includes/header.php';
         But this part in <span lang="de">English</span> is wrong. <!-- Wrong lang code for content -->
     </p>
 
+    <h2>AAA Violations (Reading Level & Definitions)</h2>
+    
+    <h3>3.1.3 Unusual Words (No Definition)</h3>
+    <p>The <strong>interregnum</strong> period was characterized by significant <strong>obfuscation</strong> of the <strong>zeitgeist</strong>.</p>
+
+    <h3>3.1.4 Abbreviations (No Expansion)</h3>
+    <p>We strictly follow <abbr>WCAG</abbr> and <abbr>ARIA</abbr> guidelines, but we never explain what they mean.</p>
+    <p>Please refer to the SOP for more details on the KPI requirements.</p>
+
+    <h3>3.1.5 Reading Level (Advanced)</h3>
+    <p>
+        The ontological status of the transcendental ego cannot be deduced from a purely empirical analysis of the phenomenological reduction, 
+        necessitating a dialectical approach to the synthesis of the apriori manifolds of space and time.
+    </p>
+
 <?php include 'includes/footer.php'; ?>

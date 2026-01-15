@@ -50,4 +50,11 @@ include 'includes/header.php';
     <button aria-disabled="true">Active Button labeled disabled</button>
     <div role="radio" aria-checked="mixed">Radio can't be mixed</div>
 
+    <h2>Status Messages (4.1.3)</h2>
+    <!-- Content updates dynamically but screen readers are not notified -->
+    <div style="border: 1px solid #ccc; padding: 10px;">
+        <button onclick="document.getElementById('results').innerHTML = 'Results found: 5 items.'">Search</button>
+        <div id="results" style="margin-top: 10px; font-weight: bold;"></div>
+    </div>
+
 <?php include 'includes/footer.php'; ?>

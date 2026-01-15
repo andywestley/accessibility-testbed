@@ -45,6 +45,13 @@ include 'includes/header.php';
                 }
             });
         }
+
+        // Single Character Key Shortcut Trap (2.1.4)
+        document.addEventListener('keydown', function(e) {
+            if (e.key.toLowerCase() === 's' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                alert('Violation: Single character key shortcut "S" triggered! You cannot remap or disable this.');
+            }
+        });
     </script>
 
     <h2>More Traps</h2>

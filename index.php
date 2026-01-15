@@ -317,13 +317,13 @@ include 'includes/header.php';
                 <td>2.1.4 Character Key Shortcuts</td>
                 <td>A</td>
                 <td>Mechanism to turn off, remap, or activate shortcuts.</td>
-                <td class="not-tested">-</td>
+                <td><a href="keyboard_traps.php">keyboard_traps.php</a> (Single-key shortcut 'S')</td>
             </tr>
             <tr class="level-a">
                 <td>2.2.1 Timing Adjustable</td>
                 <td>A</td>
                 <td>Mechanism to turn off, adjust, or extend time limits.</td>
-                <td class="not-tested">-</td>
+                <td><a href="flashing.php">flashing.php</a> (Meta Refresh)</td>
             </tr>
             <tr class="level-a">
                 <td>2.2.2 Pause, Stop, Hide</td>
@@ -371,7 +371,8 @@ include 'includes/header.php';
                 <td>2.3.3 Animation from Interactions</td>
                 <td>AAA</td>
                 <td>Motion animation triggered by interaction can be disabled.</td>
-                <td class="not-tested">-</td>
+                    <a href="flashing.php">flashing.php</a> (Parallax/Mouse Follower)
+                </td>
             </tr>
             <tr class="level-a">
                 <td>2.4.1 Bypass Blocks</td>
@@ -437,7 +438,7 @@ include 'includes/header.php';
                 <td>2.4.11 Focus Not Obscured (Minimum)</td>
                 <td>AA</td>
                 <td>Focus is not fully obscured by other content.</td>
-                <td class="not-tested">-</td>
+                <td><a href="focus_order.php">focus_order.php</a> (Sticky Banner)</td>
             </tr>
             <tr class="level-aaa">
                 <td>2.4.12 Focus Not Obscured (Enhanced)</td>
@@ -455,13 +456,13 @@ include 'includes/header.php';
                 <td>2.5.1 Pointer Gestures</td>
                 <td>A</td>
                 <td>All functionality operable with single pointer without path-based gestures.</td>
-                <td class="not-tested">-</td>
+                <td><a href="interactive.php">interactive.php</a> (Slide to unlock)</td>
             </tr>
             <tr class="level-a">
                 <td>2.5.2 Pointer Cancellation</td>
                 <td>A</td>
                 <td>Completion of function is on the up-event.</td>
-                <td class="not-tested">-</td>
+                <td><a href="interactive.php">interactive.php</a> (Down-event trigger)</td>
             </tr>
             <tr class="level-a">
                 <td>2.5.3 Label in Name</td>
@@ -517,19 +518,19 @@ include 'includes/header.php';
                 <td>3.1.3 Unusual Words</td>
                 <td>AAA</td>
                 <td>Mechanism for identifying specific definitions.</td>
-                <td class="not-tested">-</td>
+                <td><a href="language.php">language.php</a></td>
             </tr>
             <tr class="level-aaa">
                 <td>3.1.4 Abbreviations</td>
                 <td>AAA</td>
                 <td>Mechanism for identifying expanded form.</td>
-                <td class="not-tested">-</td>
+                <td><a href="language.php">language.php</a></td>
             </tr>
             <tr class="level-aaa">
                 <td>3.1.5 Reading Level</td>
                 <td>AAA</td>
                 <td>Version requiring lower reading ability available.</td>
-                <td class="not-tested">-</td>
+                <td><a href="language.php">language.php</a></td>
             </tr>
             <tr class="level-aaa">
                 <td>3.1.6 Pronunciation</td>
@@ -596,7 +597,7 @@ include 'includes/header.php';
                 <td>3.3.4 Error Prevention (Legal, Financial, Data)</td>
                 <td>AA</td>
                 <td>Reversible, checked, or confirmed.</td>
-                <td class="not-tested">-</td>
+                <td><a href="forms_advanced.php">forms_advanced.php</a> (Immediate Delete)</td>
             </tr>
             <tr class="level-aaa">
                 <td>3.3.5 Help</td>
@@ -614,13 +615,13 @@ include 'includes/header.php';
                 <td>3.3.7 Redundant Entry</td>
                 <td>A</td>
                 <td>Information previously entered is auto-populated or available.</td>
-                <td class="not-tested">-</td>
+                <td><a href="forms_advanced.php">forms_advanced.php</a> (Address repeat)</td>
             </tr>
             <tr class="level-aa">
                 <td>3.3.8 Accessible Authentication (Minimum)</td>
                 <td>AA</td>
                 <td>Cognitive function test not required or alternative available.</td>
-                <td class="not-tested">-</td>
+                <td><a href="forms_advanced.php">forms_advanced.php</a> (Math Logic)</td>
             </tr>
             <tr class="level-aaa">
                 <td>3.3.9 Accessible Authentication (Enhanced)</td>
@@ -646,7 +647,7 @@ include 'includes/header.php';
                 <td>4.1.3 Status Messages</td>
                 <td>AA</td>
                 <td>Status messages can be programmatically determined without focus.</td>
-                <td class="not-tested">-</td>
+                <td><a href="aria_bad.php">aria_bad.php</a> (No Live Region)</td>
             </tr>
         </tbody>
     </table>

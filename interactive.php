@@ -58,4 +58,24 @@ include 'includes/header.php';
     </div>
     <div id="info" style="display:none; color: green;">Secret Info</div>
 
+    <h2>Pointer Gestures (2.5.1)</h2>
+    <div style="border: 1px solid #ccc; padding: 20px; width: 300px;">
+        <p>Slide to Unlock (Path-based gesture with no alternative)</p>
+        <input type="range" min="0" max="100" value="0" id="slider" style="width: 100%;">
+        <p id="unlocked" style="display:none; color:green;">UNLOCKED!</p>
+        <script>
+            document.getElementById('slider').addEventListener('input', function(e) {
+                if (e.target.value == 100) {
+                    document.getElementById('unlocked').style.display = 'block';
+                }
+            });
+        </script>
+    </div>
+
+    <h2>Pointer Cancellation (2.5.2)</h2>
+    <!-- Triggers on mousedown, not click (up event) -->
+    <button onmousedown="alert('Violation: Triggered on Down-Event! Should be Up-Event.')">
+        Danger Button (Triggers on Mouse Down)
+    </button>
+
 <?php include 'includes/footer.php'; ?>

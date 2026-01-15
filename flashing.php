@@ -31,7 +31,31 @@ $extraStyles = '<style>
                 left: 100px;
             }
         }
+        
+        .parallax {
+            height: 200px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("https://placehold.co/800x400/orange/white?text=Parallax+Animation");
+            margin-top: 20px;
+        }
+
+        /* 2.3.3 Animation from Interactions - Motion that cannot be disabled */
+        .mouse-follower {
+            width: 50px;
+            height: 50px;
+            background: blue;
+            position: absolute;
+            transition: all 0.1s;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 9999;
+        }
     </style>';
+// Violation: 2.2.1 Timing Adjustable - Meta Refresh used (automatic reload)
+$extraStyles .= '<meta http-equiv="refresh" content="10">';
 include 'includes/header.php';
 ?>
 
@@ -59,5 +83,20 @@ include 'includes/header.php';
 
     <p>Since there are no controls to pause, stop, or hide the moving content above, it fails the Pause, Stop, Hide
         criterion.</p>
+
+    <h2>Motion Animation (2.3.3)</h2>
+    <div class="parallax">
+        PARALLAX SCROLLING (Cannot be disabled)
+    </div>
+
+    <!-- Mouse follower script -->
+    <div id="follower" class="mouse-follower"></div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const follower = document.getElementById('follower');
+            follower.style.left = e.pageX + 'px';
+            follower.style.top = e.pageY + 'px';
+        });
+    </script>
 
 <?php include 'includes/footer.php'; ?>
