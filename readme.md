@@ -2,6 +2,25 @@
 
 This microsite is designed to provide a comprehensive environment for testing accessibility tools and learning about WCAG violations. Each page focuses on specific categories of accessibility barriers.
 
+> [!NOTE]
+> This site is built using **PHP** and **Bootstrap 5**. While it looks modern, the accessibility violations are intentional and preserved.
+
+## Architecture & Setup
+
+### Requirements
+- A web server with PHP support (e.g., Apache, Nginx, XAMPP, or built-in PHP server).
+- Internet connection (for Bootstrap CDN).
+
+### Running Locally
+1. Clone the repository.
+2. Point your web server to the root directory.
+3. Access `index.php` (or just the root URL if `.htaccess` is supported).
+
+### Structure
+- `*.php`: The main content pages.
+- `includes/`: Contains shared `header.php` and `footer.php`.
+- `.htaccess`: Configures `index.php` as the default directory index.
+
 ## Site Structure & Page Purpose
 
 | Page | Description & Demonstrated Violations |

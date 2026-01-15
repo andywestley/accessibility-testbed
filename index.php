@@ -98,7 +98,7 @@ include 'includes/header.php';
     <p>This table lists all WCAG 2.2 criteria up to Level AAA and maps them to specific pages in this testbed that
         demonstrate violations. Items marked "-" are not explicitly tested in this microsite.</p>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Criterion</th>
