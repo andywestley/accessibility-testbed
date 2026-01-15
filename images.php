@@ -1,43 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$pageTitle = 'Images';
 
-<head>
-    <title>Images</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
+include 'includes/header.php';
+?>
 
-        .nav div {
-            display: inline-block;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
-        <div><a href="index.html">Home</a></div>
-        <div><a href="images.html">Images</a></div>
-        <div><a href="structure.html">Structure</a></div>
-        <div><a href="tables.html">Tables</a></div>
-        <div><a href="links.html">Links</a></div>
-        <div><a href="media.html">Media</a></div>
-        <div><a href="typography.html">Typography</a></div>
-        <div><a href="forms_basic.html">Basic Forms</a></div>
-        <div><a href="forms_advanced.html">Advanced Forms</a></div>
-        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
-        <div><a href="focus_order.html">Focus Order</a></div>
-        <div><a href="interactive.html">Interactive</a></div>
-        <div><a href="contrast.html">Contrast</a></div>
-        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
-        <div><a href="flashing.html">Flashing</a></div>
-        <div><a href="orientation.html">Orientation</a></div>
-        <div><a href="aria_bad.html">Bad ARIA</a></div>
-        <div><a href="parsing.html">Parsing</a></div>
-        <div><a href="language.html">Language</a></div>
-        <div><a href="iframes.html">Iframes</a></div>
-    </div>
 
     <h1>Image Accessibility Issues</h1>
 
@@ -78,6 +44,4 @@
         <area shape="rect" coords="0,0,100,100" href="#" /> <!-- Missing alt -->
     </map>
 
-</body>
-
-</html>
+<?php include 'includes/footer.php'; ?>

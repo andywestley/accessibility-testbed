@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$pageTitle = 'Typography';
+$extraStyles = '<style>
+        
 
-<head>
-    <title>Typography</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-
-        .nav div {
-            display: inline-block;
-            margin-right: 10px;
-        }
+        
 
         .tiny-text {
             font-size: 10px;
@@ -34,32 +26,10 @@
         .line-height-bad {
             line-height: 0.8;
         }
-    </style>
-</head>
+    </style>';
+include 'includes/header.php';
+?>
 
-<body>
-    <div class="nav" style="border: 1px solid black; padding: 10px; margin-bottom: 20px;">
-        <div><a href="index.html">Home</a></div>
-        <div><a href="images.html">Images</a></div>
-        <div><a href="structure.html">Structure</a></div>
-        <div><a href="tables.html">Tables</a></div>
-        <div><a href="links.html">Links</a></div>
-        <div><a href="media.html">Media</a></div>
-        <div><a href="typography.html">Typography</a></div>
-        <div><a href="forms_basic.html">Basic Forms</a></div>
-        <div><a href="forms_advanced.html">Advanced Forms</a></div>
-        <div><a href="keyboard_traps.html">Keyboard Traps</a></div>
-        <div><a href="focus_order.html">Focus Order</a></div>
-        <div><a href="interactive.html">Interactive</a></div>
-        <div><a href="contrast.html">Contrast</a></div>
-        <div><a href="zoom_responsive.html">Zoom/Responsive</a></div>
-        <div><a href="flashing.html">Flashing</a></div>
-        <div><a href="orientation.html">Orientation</a></div>
-        <div><a href="aria_bad.html">Bad ARIA</a></div>
-        <div><a href="parsing.html">Parsing</a></div>
-        <div><a href="language.html">Language</a></div>
-        <div><a href="iframes.html">Iframes</a></div>
-    </div>
 
     <h1>Typography Issues</h1>
 
@@ -97,6 +67,4 @@
     <h2>Text As Image</h2>
     <img src="https://placehold.co/300x50?text=This+is+text+in+image" alt="This is text in image" />
 
-</body>
-
-</html>
+<?php include 'includes/footer.php'; ?>
