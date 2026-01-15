@@ -22,7 +22,7 @@ $extraStyles = '<style>
         }
 
         .bg-image-text {
-            background-image: url('https://placehold.co/300x100/000000/ffffff?text=Busy');
+            background-image: url("https://placehold.co/300x100/000000/ffffff?text=Busy");
             color: white;
             padding: 20px;
         }
