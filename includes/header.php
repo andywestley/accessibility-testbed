@@ -14,10 +14,8 @@
     
     <!-- Non-semantic navigation maintained -->
     <div class="d-flex flex-wrap gap-2 p-3 mb-4 bg-light border-bottom shadow-sm align-items-center justify-content-center">
-        <div><a href="wcag_matrix.php" class="btn btn-primary" aria-current="page">WCAG Matrix</a></div>
-        <div><a href="best_practices.php" class="btn btn-outline-secondary btn-sm">Best Practices</a></div>
-        <div><a href="sitemap.xml" class="btn btn-outline-secondary btn-sm">Sitemap</a></div>
         <div><a href="index.php" class="btn btn-primary">Home</a></div>
+        <div><a href="best_practices.php" class="btn btn-outline-secondary btn-sm">Best Practices</a></div>
         <div><a href="images.php" class="btn btn-outline-secondary btn-sm">Images</a></div>
         <div><a href="structure.php" class="btn btn-outline-secondary btn-sm">Structure</a></div>
         <div><a href="tables.php" class="btn btn-outline-secondary btn-sm">Tables</a></div>

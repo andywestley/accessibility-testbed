@@ -18,32 +18,7 @@ $extraStyles = '
 include 'includes/header.php';
 ?>
 
-    <div style="font-size: 24px; font-weight: bold;">Welcome to the Inaccessible Site</div>
-    <br>
-    <div>
-        This site intentionally demonstrates various accessibility barriers for testing purposes.
-        <span class="red-text">Read the text in red for important info.</span>
-    </div>
-
-    <!-- Intro Content (Preserved Div Soup) -->
-    <div style="font-size: 20px; font-weight: bold; margin-top: 20px;">Common Issues Demo</div>
-    <div>
-        Content for section 2. Use of divs for everything.
-        <a href="#"></a> <!-- Empty link -->
-    </div>
-    <br>
-    <div style="font-size: 20px; font-weight: bold;">Broken Images</div>
-    <div>
-        <img src="https://placehold.co/100x100"> <!-- Missing alt -->
-    </div>
-    <br>
-    <div style="font-size: 20px; font-weight: bold;">Fake Interactive Elements</div>
-    <div>
-        <span onclick="alert('click')">Click me (div button)</span>
-    </div>
-    <br>
-
-    <hr style="margin: 40px 0;">
+    <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px;">Welcome to the Inaccessible Site</div>
 
     <h1>Accessibility Compliance Matrices</h1>
     <p>Select a tab below to view compliance against different standards and rule sets.</p>
