@@ -48,4 +48,10 @@ include 'includes/header.php';
     <h2>Orphaned Content</h2>
     <p>This content is outside of any landmarks (if we hadn't wrapped the whole body in main/header in the template).</p>
 
+    <h2>Consistent Help (3.2.6) (Level A)</h2>
+    <p>If you have help (like a contact link or chatbot) on multiple pages, it must be in the same location. On this page, we've put the "Help" link in a weird spot compared to the footer.</p>
+    <div style="position: absolute; top: 50px; left: 0; border: 1px solid red; padding: 5px;">
+        <a href="#">Help Center (Inconsistent Location)</a>
+    </div>
+
 <?php include 'includes/footer.php'; ?>
