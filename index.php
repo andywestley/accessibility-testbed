@@ -210,4 +210,52 @@ include 'includes/header.php';
 
     </div>
 
-<?php include 'includes/footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tables = document.querySelectorAll('.table');
+            
+            tables.forEach(table => {
+                const headers = table.querySelectorAll('th');
+                headers.forEach((header, index) => {
+                     // Make header clickable
+                    header.style.cursor = 'pointer';
+                    header.style.position = 'relative'; 
+                    header.title = 'Click to sort';
+
+                    header.addEventListener('click', () => {
+                        const tbody = table.querySelector('tbody');
+                        const rows = Array.from(tbody.querySelectorAll('tr'));
+                        const isAscending = header.getAttribute('data-order') === 'asc';
+                        
+                        // Reset other headers
+                        headers.forEach(h => {
+                            h.removeAttribute('data-order');
+                            // Remove any existing arrows if we were adding them as elements, but we'll specificy text content
+                            h.textContent = h.textContent.replace(' ▲', '').replace(' ▼', '');
+                        });
+
+                        // Sort rows
+                        rows.sort((a, b) => {
+                            const aText = a.cells[index].innerText.trim();
+                            const bText = b.cells[index].innerText.trim();
+
+                            return isAscending 
+                                ? aText.localeCompare(bText, undefined, {numeric: true, sensitivity: 'base'})
+                                : bText.localeCompare(aText, undefined, {numeric: true, sensitivity: 'base'});
+                        });
+
+                        // Re-append rows
+                        rows.forEach(row => tbody.appendChild(row));
+
+                        // toggle direction
+                        const newOrder = isAscending ? 'desc' : 'asc';
+                        header.setAttribute('data-order', newOrder);
+                        
+                        // Add visual indicator
+                        header.textContent += newOrder === 'asc' ? ' ▲' : ' ▼';
+                    });
+                });
+            });
+        });
+    </script>
