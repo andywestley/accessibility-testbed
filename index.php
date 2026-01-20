@@ -52,23 +52,32 @@ include 'includes/header.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Included simplified rows for brevity, focusing on linking pages -->
                     <!-- Principle 1: Perceivable -->
                     <tr class="level-a"><td>1.1.1 Non-text Content</td><td>A</td><td>Text alternatives.</td><td><a href="images.php">images.php</a></td></tr>
-                    <tr class="level-a"><td>1.2.1 Audio-only/Video-only</td><td>A</td><td>Alternatives.</td><td class="not-tested">-</td></tr>
+                    <tr class="level-a"><td>1.2.1 Audio-only/Video-only</td><td>A</td><td>Alternatives.</td><td><a href="media.php">media.php</a></td></tr>
                     <tr class="level-a"><td>1.2.2 Captions (Prerecorded)</td><td>A</td><td>Captions.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-a"><td>1.2.3 Audio Description or Media Alternative</td><td>A</td><td>Audio desc or text alternative.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-aa"><td>1.2.4 Captions (Live)</td><td>AA</td><td>Live captions.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-aa"><td>1.2.5 Audio Description</td><td>AA</td><td>Audio description.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.2.6 Sign Language (Prerecorded)</td><td>AAA</td><td>Sign language.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.2.7 Extended Audio Description</td><td>AAA</td><td>Extended AD.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.2.8 Media Alternative (Prerecorded)</td><td>AAA</td><td>Text alternative.</td><td><a href="media.php">media.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.2.9 Audio-only (Live)</td><td>AAA</td><td>Live audio alternative.</td><td><a href="media.php">media.php</a></td></tr>
                     <tr class="level-a"><td>1.3.1 Info and Relationships</td><td>A</td><td>Structure.</td><td><a href="structure.php">structure.php</a>, <a href="tables.php">tables.php</a></td></tr>
                     <tr class="level-a"><td>1.3.2 Meaningful Sequence</td><td>A</td><td>Reading sequence.</td><td><a href="focus_order.php">focus_order.php</a></td></tr>
                     <tr class="level-a"><td>1.3.3 Sensory Characteristics</td><td>A</td><td>Shape/Color.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
                     <tr class="level-aa"><td>1.3.4 Orientation</td><td>AA</td><td>Portrait/Landscape.</td><td><a href="orientation.php">orientation.php</a></td></tr>
                     <tr class="level-aa"><td>1.3.5 Identify Input Purpose</td><td>AA</td><td>Autocomplete.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.3.6 Identify Purpose</td><td>AAA</td><td>Icon/region purpose.</td><td><a href="structure.php">structure.php</a></td></tr>
                     <tr class="level-a"><td>1.4.1 Use of Color</td><td>A</td><td>Color only.</td><td><a href="contrast.php">contrast.php</a></td></tr>
                     <tr class="level-a"><td>1.4.2 Audio Control</td><td>A</td><td>Autoplay pause.</td><td><a href="media.php">media.php</a></td></tr>
                     <tr class="level-aa"><td>1.4.3 Contrast (Minimum)</td><td>AA</td><td>4.5:1 ratio.</td><td><a href="contrast.php">contrast.php</a></td></tr>
                     <tr class="level-aa"><td>1.4.4 Resize text</td><td>AA</td><td>200% zoom.</td><td><a href="zoom_responsive.php">zoom_responsive.php</a></td></tr>
                     <tr class="level-aa"><td>1.4.5 Images of Text</td><td>AA</td><td>No text images.</td><td><a href="typography.php">typography.php</a></td></tr>
                     <tr class="level-aaa"><td>1.4.6 Contrast (Enhanced)</td><td>AAA</td><td>7:1 ratio.</td><td><a href="contrast.php">contrast.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.4.7 Low or No Background Audio</td><td>AAA</td><td>Background noise.</td><td><a href="media.php">media.php</a></td></tr>
                     <tr class="level-aaa"><td>1.4.8 Visual Presentation</td><td>AAA</td><td>Spacing/Colors.</td><td><a href="typography.php">typography.php</a></td></tr>
+                    <tr class="level-aaa"><td>1.4.9 Images of Text (No Exception)</td><td>AAA</td><td>No images of text.</td><td><a href="typography.php">typography.php</a></td></tr>
                     <tr class="level-aa"><td>1.4.10 Reflow</td><td>AA</td><td>400% zoom.</td><td><a href="zoom_responsive.php">zoom_responsive.php</a></td></tr>
                     <tr class="level-aa"><td>1.4.11 Non-text Contrast</td><td>AA</td><td>3:1 UI components.</td><td><a href="contrast.php">contrast.php</a></td></tr>
                     <tr class="level-aa"><td>1.4.12 Text Spacing</td><td>AA</td><td>Line height/spacing.</td><td><a href="typography.php">typography.php</a></td></tr>
@@ -77,39 +86,61 @@ include 'includes/header.php';
                     <!-- Principle 2: Operable -->
                     <tr class="level-a"><td>2.1.1 Keyboard</td><td>A</td><td>Keyboard accessible.</td><td><a href="interactive.php">interactive.php</a></td></tr>
                     <tr class="level-a"><td>2.1.2 No Keyboard Trap</td><td>A</td><td>No traps.</td><td><a href="keyboard_traps.php">keyboard_traps.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.1.3 Keyboard (No Exception)</td><td>AAA</td><td>No keyboard exceptions.</td><td><a href="interactive.php">interactive.php</a></td></tr>
                     <tr class="level-a"><td>2.1.4 Character Key Shortcuts</td><td>A</td><td>Remap shortcuts.</td><td><a href="keyboard_traps.php">keyboard_traps.php</a></td></tr>
                     <tr class="level-a"><td>2.2.1 Timing Adjustable</td><td>A</td><td>Time limits.</td><td><a href="flashing.php">flashing.php</a></td></tr>
                     <tr class="level-a"><td>2.2.2 Pause, Stop, Hide</td><td>A</td><td>Moving content.</td><td><a href="flashing.php">flashing.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.2.3 No Timing</td><td>AAA</td><td>No time limits.</td><td><a href="flashing.php">flashing.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.2.4 Interruptions</td><td>AAA</td><td>Postpone interruptions.</td><td><a href="flashing.php">flashing.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.2.5 Re-authenticating</td><td>AAA</td><td>Save state.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.2.6 Timeouts</td><td>AAA</td><td>Warn timeout.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
                     <tr class="level-a"><td>2.3.1 Three Flashes</td><td>A</td><td>No seizure risk.</td><td><a href="flashing.php">flashing.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.3.2 Three Flashes (AAA)</td><td>AAA</td><td>No flashing.</td><td><a href="flashing.php">flashing.php</a></td></tr>
                     <tr class="level-aaa"><td>2.3.3 Animation from Interactions</td><td>AAA</td><td>Disable motion.</td><td><a href="flashing.php">flashing.php</a></td></tr>
                     <tr class="level-a"><td>2.4.1 Bypass Blocks</td><td>A</td><td>Skip link.</td><td><a href="index.php">index.php</a></td></tr>
                     <tr class="level-a"><td>2.4.2 Page Titled</td><td>A</td><td>Unique titles.</td><td><a href="index.php">index.php</a></td></tr>
                     <tr class="level-a"><td>2.4.3 Focus Order</td><td>A</td><td>Logical order.</td><td><a href="focus_order.php">focus_order.php</a></td></tr>
                     <tr class="level-a"><td>2.4.4 Link Purpose (In Context)</td><td>A</td><td>Link text.</td><td><a href="links.php">links.php</a></td></tr>
+                    <tr class="level-aa"><td>2.4.5 Multiple Ways</td><td>AA</td><td>Search/Sitemap.</td><td><a href="structure.php">structure.php</a></td></tr>
                     <tr class="level-aa"><td>2.4.6 Headings and Labels</td><td>AA</td><td>Descriptive labels.</td><td><a href="structure.php">structure.php</a></td></tr>
                     <tr class="level-aa"><td>2.4.7 Focus Visible</td><td>AA</td><td>Visible indicator.</td><td><a href="focus_order.php">focus_order.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.4.8 Location</td><td>AAA</td><td>Breadcrumbs/Location.</td><td><a href="structure.php">structure.php</a></td></tr>
                     <tr class="level-aaa"><td>2.4.9 Link Purpose (Link Only)</td><td>AAA</td><td>No context needed.</td><td><a href="links.php">links.php</a></td></tr>
                     <tr class="level-aaa"><td>2.4.10 Section Headings</td><td>AAA</td><td>Organized content.</td><td><a href="structure.php">structure.php</a></td></tr>
                     <tr class="level-aa"><td>2.4.11 Focus Not Obscured (Min)</td><td>AA</td><td>Focus visible.</td><td><a href="focus_order.php">focus_order.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.4.12 Focus Not Obscured (Enhanced)</td><td>AAA</td><td>Focus fully visible.</td><td><a href="focus_order.php">focus_order.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.4.13 Focus Appearance</td><td>AAA</td><td>Focus indication size/contrast.</td><td><a href="focus_order.php">focus_order.php</a></td></tr>
                     <tr class="level-a"><td>2.5.1 Pointer Gestures</td><td>A</td><td>No path gestures.</td><td><a href="interactive.php">interactive.php</a></td></tr>
                     <tr class="level-a"><td>2.5.2 Pointer Cancellation</td><td>A</td><td>Up-event trigger.</td><td><a href="interactive.php">interactive.php</a></td></tr>
                     <tr class="level-a"><td>2.5.3 Label in Name</td><td>A</td><td>Visible label matches accessible.</td><td><a href="interactive.php">interactive.php</a></td></tr>
                     <tr class="level-a"><td>2.5.4 Motion Actuation</td><td>A</td><td>No shaking needed.</td><td><a href="orientation.php">orientation.php</a></td></tr>
                     <tr class="level-aaa"><td>2.5.5 Target Size</td><td>AAA</td><td>44x44px.</td><td><a href="typography.php">typography.php</a></td></tr>
+                    <tr class="level-aaa"><td>2.5.6 Concurrent Input Mechanisms</td><td>AAA</td><td>Allow diverse inputs.</td><td><a href="interactive.php">interactive.php</a></td></tr>
+                    <tr class="level-aa"><td>2.5.7 Dragging Movements</td><td>AA</td><td>No dragging required.</td><td><a href="interactive.php">interactive.php</a></td></tr>
+                    <tr class="level-aa"><td>2.5.8 Target Size (Minimum)</td><td>AA</td><td>24x24px.</td><td><a href="target_size.php">target_size.php</a></td></tr>
 
                     <!-- Principle 3: Understandable -->
                     <tr class="level-a"><td>3.1.1 Language of Page</td><td>A</td><td>HTML Lang attribute.</td><td><a href="language.php">language.php</a></td></tr>
+                    <tr class="level-aa"><td>3.1.2 Language of Parts</td><td>AA</td><td>Lang for specific parts.</td><td><a href="language.php">language.php</a></td></tr>
                     <tr class="level-aaa"><td>3.1.3 Unusual Words</td><td>AAA</td><td>Definitions.</td><td><a href="language.php">language.php</a></td></tr>
                     <tr class="level-aaa"><td>3.1.4 Abbreviations</td><td>AAA</td><td>Expanded form.</td><td><a href="language.php">language.php</a></td></tr>
                     <tr class="level-aaa"><td>3.1.5 Reading Level</td><td>AAA</td><td>Lower reading level.</td><td><a href="language.php">language.php</a></td></tr>
+                    <tr class="level-aaa"><td>3.1.6 Pronunciation</td><td>AAA</td><td>Pronun. guide.</td><td><a href="language.php">language.php</a></td></tr>
                     <tr class="level-a"><td>3.2.1 On Focus</td><td>A</td><td>No context change.</td><td><a href="keyboard_traps.php">keyboard_traps.php</a></td></tr>
                     <tr class="level-a"><td>3.2.2 On Input</td><td>A</td><td>No automatic change.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aa"><td>3.2.3 Consistent Navigation</td><td>AA</td><td>Nav same order.</td><td><a href="structure.php">structure.php</a></td></tr>
+                    <tr class="level-aa"><td>3.2.4 Consistent Identification</td><td>AA</td><td>Icon consistency.</td><td><a href="structure.php">structure.php</a></td></tr>
+                    <tr class="level-aaa"><td>3.2.5 Change on Request</td><td>AAA</td><td>User initiated.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-a"><td>3.2.6 Consistent Help</td><td>A</td><td>Help location.</td><td><a href="best_practices.php">best_practices.php</a></td></tr>
                     <tr class="level-a"><td>3.3.1 Error Identification</td><td>A</td><td>Describe errors.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
                     <tr class="level-a"><td>3.3.2 Labels or Instructions</td><td>A</td><td>Form labels.</td><td><a href="forms_basic.php">forms_basic.php</a></td></tr>
                     <tr class="level-aa"><td>3.3.3 Error Suggestion</td><td>AA</td><td>Suggest fixes.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
-                    <tr class="level-aa"><td>3.3.4 Error Prevention</td><td>AA</td><td>Confirm/Reverse.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aa"><td>3.3.4 Error Prevention (Legal, Financial, Data)</td><td>AA</td><td>Confirm/Reverse.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aaa"><td>3.3.5 Help</td><td>AAA</td><td>Contextual help.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aaa"><td>3.3.6 Error Prevention (All)</td><td>AAA</td><td>Prevention for all.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
                     <tr class="level-a"><td>3.3.7 Redundant Entry</td><td>A</td><td>No re-entry.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
                     <tr class="level-aa"><td>3.3.8 Accessible Authentication</td><td>AA</td><td>No cognitive tests.</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
+                    <tr class="level-aaa"><td>3.3.9 Accessible Authentication (No Exception)</td><td>AAA</td><td>No cognitive tests (stricter).</td><td><a href="forms_advanced.php">forms_advanced.php</a></td></tr>
 
                     <!-- Principle 4: Robust -->
                     <tr class="level-a"><td>4.1.1 Parsing</td><td>A</td><td>Unique IDs.</td><td><a href="parsing.php">parsing.php</a></td></tr>

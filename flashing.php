@@ -98,5 +98,21 @@ include 'includes/header.php';
             follower.style.top = e.pageY + 'px';
         });
     </script>
+    
+    <hr>
+    <h2>Timing Issues (AAA)</h2>
+    <h3>2.2.3 No Timing & 2.2.4 Interruptions</h3>
+    <!-- Simulating a session timeout interrupt -->
+    <div style="border: 2px solid red; padding: 10px; background: #ffe6e6;">
+        <p><strong>SECURITY ALERT:</strong> Your session will expire in 10 seconds. We are interrupting your work to tell you this.</p>
+        <p>(Violation of 2.2.4: Interruptions can be postponed or suppressed, and 2.2.3: No timing is preferred)</p>
+    </div>
+
+    <h2>Flashing (AAA)</h2>
+    <h3>2.3.2 Three Flashes (AAA)</h3>
+    <p>The standard (A) allows 3 flashes in a second. AAA prohibits <em>any</em> flashing > 3 times per second, even if below the general flash/red flash thresholds. This element blinks rapidly, violating AAA.</p>
+    <div class="blink" style="animation-duration: 0.2s;">
+        RAPID BLINKING (AAA VIOLATION)
+    </div>
 
 <?php include 'includes/footer.php'; ?>

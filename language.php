@@ -54,4 +54,17 @@ include 'includes/header.php';
         necessitating a dialectical approach to the synthesis of the apriori manifolds of space and time.
     </p>
 
+    <h3>3.1.6 Pronunciation (AAA)</h3>
+    <p>Certain words are ambiguous without pronunciation context, but no guide is provided.</p>
+    <p>
+        "I will <strong>resume</strong> my work on the <strong>resume</strong>."
+        <br>
+        (No semantic indication of how to pronounce 'resume' differently in these two contexts).
+    </p>
+
+    <h2>Language of Parts (AA)</h2>
+    <h3>3.1.2 Language of Parts</h3>
+    <p>This paragraph contains multiple languages but lacks span tags to identify them.</p>
+    <p>He said "Bonjour" and then "Guten Tag" before saying "Hello". Screen readers will read this all with the default voice accent.</p>
+
 <?php include 'includes/footer.php'; ?>

@@ -66,5 +66,10 @@ include 'includes/header.php';
 
     <h2>Text As Image</h2>
     <img src="https://placehold.co/300x50?text=This+is+text+in+image" alt="This is text in image" />
+    
+    <h3>1.4.9 Images of Text (No Exception) (AAA)</h3>
+    <p>This criterion restricts the use of images of text even more than AA (which allows it if customizable). The image below contains text that could be CSS, used for a heading.</p>
+    <img src="https://placehold.co/400x60?text=ACCESSIBILITY+TESTBED" alt="Accessibility Testbed" style="max-width: 100%;">
+    <p class="small text-muted">Violation: Using an image for the main heading text instead of web fonts.</p>
 
 <?php include 'includes/footer.php'; ?>

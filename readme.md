@@ -43,5 +43,6 @@ This microsite is designed to provide a comprehensive environment for testing ac
 | `parsing.php` | **Parsing**: Invalid HTML syntax, duplicate IDs, and unclosed tags that issues for assistive technologies. |
 | `structure.php` | **Structure**: Improper use of headings (skipping levels), missing landmarks, and lack of semantic containers. |
 | `tables.php` | **Tables**: Data tables missing header cells (`<th>`), scope attributes, or using tables for layout purposes. |
+| `target_size.php` | **Target Size**: Demonstrates elements with insufficient target sizes (< 24x24px) and lack of spacing (WCAG 2.5.8). |
 | `typography.php` | **Typography**: Text styling issues such as fixed font sizes, justified text, or poor line height that affect readability. |
 | `zoom_responsive.php` | **Zoom & Responsive**: Content that overlaps, gets cut off, or becomes unusable when zoomed in (reflow issues) or viewed on small screens. |

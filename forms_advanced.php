@@ -89,4 +89,33 @@ include 'includes/header.php';
         <button>Login</button>
     </form>
 
+    <hr>
+    <h2>New WCAG 2.2 / AAA Form Issues</h2>
+
+    <h3>2.2.5 Re-authenticating (AAA)</h3>
+    <p>If your session expires while filling this form, all data is lost and you must start over. (No data preservation).</p>
+
+    <h3>2.2.6 Timeouts (AAA)</h3>
+    <p>This sensitive transaction form has a timeout but does not warn the user how long they have or allow extension.</p>
+
+    <h3>3.2.5 Change on Request (AAA)</h3>
+    <!-- Simulating unexpected context change -->
+    <label for="magic-switch">Magic Switch (Triggers Page Reload immediately)</label>
+    <input type="checkbox" id="magic-switch" onchange="alert('PAGE RELOADED! (Violation: Change of context on setting value)');">
+
+    <h3>3.3.5 Help (AAA)</h3>
+    <p>Complex form fields below have no context-sensitive help (no '?' icon or description text).</p>
+    <label>Actuarial Calculation Factor V:</label> <input type="text">
+
+    <h3>3.3.6 Error Prevention (All) (AAA)</h3>
+    <p>Deleting non-sensitive data (e.g. "Recently Viewed" list) happens immediately without confirmation. (AA only requires it for legal/financial/data data, AAA requires it for all).</p>
+    <button onclick="alert('History Cleared!')">Clear History (Immediate)</button>
+
+    <h3>3.3.9 Accessible Authentication (No Exception) (AAA)</h3>
+    <p>Unlike AA, AAA does not allow <em>any</em> cognitive function test (like recognizing objects) unless an alternative method exists. Even "select the cat" object recognition is a fail here.</p>
+    <div style="border:1px solid #ccc; padding:10px;">
+        <p>Security Check: Select the picture of the cat.</p>
+        <button>[Dog]</button> <button>[Cat]</button> <button>[Bird]</button>
+    </div>
+
 <?php include 'includes/footer.php'; ?>

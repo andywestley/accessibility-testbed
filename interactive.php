@@ -78,4 +78,40 @@ include 'includes/header.php';
         Danger Button (Triggers on Mouse Down)
     </button>
 
+    <hr>
+    <h2>New WCAG 2.2 / AAA Interactive Issues</h2>
+
+    <h3>2.1.3 Keyboard (No Exception) (AAA)</h3>
+    <p>This drawing canvas works only with a mouse. Even though "freehand drawing" might be considered an exception for 2.1.1, 2.1.3 removes that exception.</p>
+    <div style="width: 200px; height: 100px; border: 1px solid black; position: relative;" onmousemove="if(event.buttons===1) { this.innerHTML += '.'; }">
+        [ Draw Here (Mouse Only) ]
+    </div>
+
+    <h3>2.5.6 Concurrent Input Mechanisms (AAA)</h3>
+    <p>This field disables mouse interaction if it detects touch, or vice versa (simulated restriction).</p>
+    <button onclick="if(window.matchMedia('(pointer: coarse)').matches) { alert('Mouse blocked because you seem to be on a touch device'); } else { alert('Clicked'); }">
+        Restrictive Input Button
+    </button>
+
+    <h3>2.5.7 Dragging Movements (AA)</h3>
+    <p>A draggable item that <strong>requires</strong> dragging to move, with no single-pointer (tap/click) alternative.</p>
+    <div id="drag-container" style="padding: 10px; background: #eee;">
+        <div id="dragger" draggable="true" style="width: 50px; height: 50px; background: blue; color: white; cursor: move; display: flex; align-items: center; justify-content: center;">
+            Drag
+        </div>
+        <div id="dropzone" style="margin-top: 10px; width: 100px; height: 100px; border: 2px dashed #999;">
+            Drop Here
+        </div>
+    </div>
+    <script>
+        const dragger = document.getElementById('dragger');
+        const dropzone = document.getElementById('dropzone');
+        dragger.addEventListener('dragstart', e => e.dataTransfer.setData('text', 'dragged'));
+        dropzone.addEventListener('dragover', e => e.preventDefault());
+        dropzone.addEventListener('drop', e => {
+            e.preventDefault();
+            dropzone.appendChild(dragger);
+        });
+    </script>
+
 <?php include 'includes/footer.php'; ?>

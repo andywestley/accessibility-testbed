@@ -80,4 +80,22 @@ include 'includes/header.php';
         <button>Close (Not working)</button>
     </div>
 
+    <br><br><br><br>
+
+    <h2>Focus Appearance (AAA)</h2>
+
+    <h3>2.4.12 Focus Not Obscured (Enhanced) (AAA)</h3>
+    <p>While AA allows partial obscurement, AAA requires the focused item to be <strong>fully</strong> visible. The sticky banner above fails both if it covers the whole link, but even partial coverage is a fail here.</p>
+
+    <h3>2.4.13 Focus Appearance (AAA)</h3>
+    <p>The standard browser focus ring often passes AA. AAA requires a focus indicator of sufficient size and contrast (specifically at least 2px thick with 3:1 contrast against background AND the focused component).</p>
+    <style>
+        .bad-focus-aaa:focus {
+            outline: 1px dotted #888; /* Too thin, low contrast */
+            outline-offset: 1px;
+        }
+    </style>
+    <button class="bad-focus-aaa">Weak Focus Indicator (AAA Fail)</button>
+    <p>The button above has a 1px dotted gray outline. This fails AAA which usually requires a more solid, thicker area of contrast.</p>
+
 <?php include 'includes/footer.php'; ?>

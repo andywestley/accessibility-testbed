@@ -89,5 +89,42 @@ include 'includes/header.php';
     <p style="font-weight: bold; font-size: 1.5em; margin-bottom: 0;">Bad Heading 2</p>
     <p>Content for bad heading.</p>
 
+    <hr>
+    <h2>Identification & Navigation Issues (Level AA/AAA)</h2>
+
+    <h3>1.3.6 Identify Purpose (AAA)</h3>
+    <p>The following icons use ambiguous characters/layout without semantic identification (landmarks or specific ARIA roles), making it hard for tools to determine their purpose (e.g., personalization tools).</p>
+    <div style="border:1px solid #ccc; padding:10px;">
+        <span style="font-size:24px;">🏠</span> <!-- Home icon, no label/role -->
+        <span style="font-size:24px;">⚙️</span> <!-- Settings icon, no label/role -->
+        <span style="font-size:24px;">❓</span> <!-- Help icon, no label/role -->
+    </div>
+
+    <h3>2.4.5 Multiple Ways (AA) - Broken Search</h3>
+    <p>A search feature is a common "second way" to find content. This search bar is purely visual and provides no functionality.</p>
+    <div style="margin: 10px 0;">
+        <input type="text" placeholder="Search site..." disabled>
+        <button disabled>Search</button>
+    </div>
+
+    <h3>2.4.8 Location (AAA) - Bad Breadcrumbs</h3>
+    <p>Visual indication of location without semantic markup (nav element or ordered list).</p>
+    <div>
+        Home > Structure > Violations
+    </div>
+
+    <h3>3.2.3 Consistent Navigation (AA)</h3>
+    <p>This "Secondary Menu" appears in a different order and location compared to other pages (simulated inconsistency).</p>
+    <ul>
+        <li><a href="contrast.php">Contrast</a></li>
+        <li><a href="index.php">Home</a></li> <!-- Different order -->
+        <li><a href="media.php">Media</a></li>
+    </ul>
+
+    <h3>3.2.4 Consistent Identification (AA)</h3>
+    <p>Using different icons/labels for the same function across the site.</p>
+    <!-- On index.php, we might use "Search", here we uses "Find" or a different icon for the same theoretical feature -->
+    <button>Find Page</button> (VS "Search" elsewhere)
+
 
 <?php include 'includes/footer.php'; ?>
