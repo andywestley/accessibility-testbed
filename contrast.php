@@ -33,11 +33,11 @@ include 'includes/header.php';
 
     <h1>Contrast and Color Issues</h1>
 
-    <h2>Low Contrast Text</h2>
+    <h2>1.4.3 Contrast (Minimum) - Low Contrast Text</h2>
     <p class="low-contrast">This text has a contrast ratio of about 2.85:1, which fails WCAG AA.</p>
     <p class="very-low-contrast">This text is extremely hard to read (1.6:1).</p>
 
-    <h2>More Low Contrast Examples</h2>
+    <h2>1.4.3 Contrast (Minimum) - More Low Contrast Examples</h2>
     <p style="color: #bbb; background: white;">Gray on White (Too light)</p>
     <p style="color: #aaa; background: white;">Gray on White (Too light)</p>
     <p style="color: #888; background: #333;">Gray on Dark Gray (Fail)</p>
@@ -48,19 +48,19 @@ include 'includes/header.php';
     <p style="color: #ff00ff; background: #ffffff;">Magenta on White</p>
     <p style="color: #e0e0e0; background: #ffffff;">Very Light Gray on White</p>
 
-    <h2>Color as Information</h2>
+    <h2>1.4.1 Use of Color - Color as Information</h2>
     <p>To accept the agreement, press the <span style="color: green; font-weight: bold;">green</span> button.</p>
     <div>
         <button style="background: green; color: white;">Accept</button>
         <button style="background: red; color: white;">Decline</button>
     </div>
 
-    <h2>Text Over Busy Background</h2>
+    <h2>1.4.3 Contrast (Minimum) - Text Over Busy Background</h2>
     <div class="bg-image-text">
         Text over a background image that makes it hard to read.
     </div>
 
-    <h2>Link Color Only</h2>
+    <h2>1.4.1 Use of Color - Link Color Only</h2>
     <p>Links are distinguished only by color (no underline) and have low contrast with surrounding text.</p>
     <style>
         a.bad-link {

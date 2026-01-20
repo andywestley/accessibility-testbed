@@ -23,10 +23,10 @@ include 'includes/header.php';
 
     <h1>Zoom and Responsive Issues</h1>
 
-    <h2>Zoom Disabled</h2>
+    <h2>1.4.4 Resize Text / 1.4.10 - Zoom Disabled</h2>
     <p>This page has <code>user-scalable=no</code> in the viewport meta tag, preventing pinch-to-zoom on mobile.</p>
 
-    <h2>No Responsive Reflow (Horizontal Scroll)</h2>
+    <h2>1.4.10 Reflow - No Responsive Reflow (Horizontal Scroll)</h2>
     <div class="fixed-container">
         This container is fixed at 1200px width. On a small screen or when zoomed in, it will cause horizontal
         scrolling, violating Reflow criteria.
@@ -45,7 +45,7 @@ Fixed preformatted text that causes scroll
 because it is very long and does not wrap.
     </pre>
 
-    <h2>Content Overlap on Text Resize</h2>
+    <h2>1.4.4 Resize Text - Content Overlap on Text Resize</h2>
     <p>The container below has a fixed height. If you increase font size, text will be cut off or overlap.</p>
     <div class="overlap-container">
         This text is inside a fixed height container. If you enlarge the font size, it should break out or be cut off,

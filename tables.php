@@ -7,24 +7,24 @@ include 'includes/header.php';
 
     <h1>Table Issues</h1>
 
-    <h2>Layout Table</h2>
+    <h2>1.3.1 Info and Relationships - Layout Table</h2>
     <!-- Table related elements used for layout purposes -->
     <table border="0" cellpadding="0" cellspacing="0" role="presentation">
         <tr>
             <td>
-                <h2>Sidebar</h2>
+                <h2>1.3.1 Info and Relationships - Sidebar</h2>
                 <ul>
                     <li>Menu 1</li>
                 </ul>
             </td>
             <td>
-                <h2>Main Content</h2>
+                <h2>1.3.1 Info and Relationships - Main Content</h2>
                 <p>This content is laid out using a table.</p>
             </td>
         </tr>
     </table>
 
-    <h2>Data Table Missing Headers</h2>
+    <h2>1.3.1 Info and Relationships - Data Table Missing Headers</h2>
     <!-- No TH, just bold TD -->
     <table border="1">
         <tr>
@@ -44,7 +44,7 @@ include 'includes/header.php';
         </tr>
     </table>
 
-    <h2>Complex Table Missing Scope</h2>
+    <h2>1.3.1 Info and Relationships - Complex Table Missing Scope</h2>
     <!-- TH elements present but missing scope attribute for ambiguous relationships -->
     <table border="1">
         <tr>
@@ -68,7 +68,7 @@ include 'includes/header.php';
         </tr>
     </table>
 
-    <h2>More Layout Tables</h2>
+    <h2>1.3.1 Info and Relationships - More Layout Tables</h2>
     <table role="presentation">
         <tr>
             <td>Left Column Content</td>
@@ -76,7 +76,7 @@ include 'includes/header.php';
         </tr>
     </table>
 
-    <h2>More Data Tables without Headers</h2>
+    <h2>1.3.1 Info and Relationships - More Data Tables without Headers</h2>
     <table border="1">
         <tr>
             <td>Product A</td>
@@ -90,7 +90,7 @@ include 'includes/header.php';
         </tr>
     </table>
 
-    <h2>Nested Tables (Bad Layout)</h2>
+    <h2>1.3.1 Info and Relationships - Nested Tables (Bad Layout)</h2>
     <table>
         <tr>
             <td>

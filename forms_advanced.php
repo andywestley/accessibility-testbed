@@ -21,20 +21,20 @@ include 'includes/header.php';
     <h1>Advanced Form Issues</h1>
 
     <form>
-        <h2>Color Only Required</h2>
+        <h2>1.4.1 Use of Color / 1.3.1 - Color Only Required</h2>
         <!-- Required indicated only by red color asterisk -->
         <label for="username">Username <span class="required">*</span></label>
         <input type="text" id="username" />
         <br><br>
 
-        <h2>Error Message Not Connected</h2>
+        <h2>3.3.1 Error Identification / 1.3.1 - Error Message Not Connected</h2>
         <!-- Error message is visible but not programmatically associated -->
         <label for="password">Password</label>
         <input type="password" id="password" aria-invalid="true" />
         <div id="pw-error" class="error" style="display:block;">Password must be 8 chars.</div>
         <br><br>
 
-        <h2>Missing Autocomplete</h2>
+        <h2>1.3.5 Identify Input Purpose - Missing Autocomplete</h2>
         <!-- Standard fields without autocomplete attributes -->
         <label for="street">Street Address</label>
         <input type="text" id="street" />
@@ -46,7 +46,7 @@ include 'includes/header.php';
         <img src="https://placehold.co/150x50?text=CAPTCHA" alt="Type the characters in the image" />
         <input type="text" aria-label="Captcha response" />
 
-        <h2>More Color Only Required</h2>
+        <h2>1.4.1 Use of Color - More Color Only Required</h2>
         <label for="f1">Field 1 <span class="required">*</span></label>
         <input type="text" id="f1" /><br>
         <label for="f2">Field 2 <span class="required">*</span></label>
@@ -54,7 +54,7 @@ include 'includes/header.php';
         <label for="f3">Field 3 <span class="required">*</span></label>
         <input type="text" id="f3" /><br>
 
-        <h2>More Disconnected Errors</h2>
+        <h2>3.3.1 Error Identification - More Disconnected Errors</h2>
         <label for="email2">Email</label>
         <input type="email" id="email2" aria-invalid="true" />
         <div class="error" style="display:block;">Invalid email format.</div>
@@ -65,13 +65,13 @@ include 'includes/header.php';
 
     </form>
 
-    <h2>Error Prevention (3.3.4)</h2>
+    <h2>3.3.4 Error Prevention (Legal, Financial, Data) - Immediate Submit</h2>
     <form action="#" method="POST">
         <p>Clicking this button submits immediately with no confirmation.</p>
         <button type="submit" onclick="alert('Submitted! No confusion for you.')">Delete All Data</button>
     </form>
 
-    <h2>Redundant Entry (3.3.7)</h2>
+    <h2>3.3.7 Redundant Entry - No Copy Feature</h2>
     <form>
         <h3>Shipping Address</h3>
         <input type="text" placeholder="Street Address">
@@ -81,7 +81,7 @@ include 'includes/header.php';
         <input type="text" placeholder="Street Address">
     </form>
 
-    <h2>Accessible Authentication (3.3.8)</h2>
+    <h2>3.3.8 Accessible Authentication - Cognitive Test</h2>
     <form>
         <label>Solve this to log in:</label>
         <p>What is the square root of 144 plus 15?</p>

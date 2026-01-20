@@ -7,14 +7,14 @@ include 'includes/header.php';
 
     <h1>Media Issues</h1>
 
-    <h2>Video Missing Captions</h2>
+    <h2>1.2.2 Captions (Prerecorded) - Video Missing Captions</h2>
     <!-- Video element without track -->
     <video controls width="250">
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
         Sorry, your browser doesn't support embedded videos.
     </video>
 
-    <h2>Audio Autoplay</h2>
+    <h2>1.4.2 Audio Control - Audio Autoplay</h2>
     <!-- Autoplay enabled, no controls initially (mockup of bad practice) -->
     <!-- Commented out to not actually annoy the developer while testing, but code presence is enough for validatin tools -->
     <!-- <audio autoplay src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio> -->
@@ -30,11 +30,11 @@ include 'includes/header.php';
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
     </audio>
 
-    <h2>Image of Video</h2>
+    <h2>1.1.1 Non-text Content - Image of Video</h2>
     <!-- User can't play this -->
     <img src="https://placehold.co/300x200?text=Play+Video" alt="Video player" />
 
-    <h2>More Videos Missing Captions</h2>
+    <h2>1.2.2 Captions (Prerecorded) - More Videos Missing Captions</h2>
     <video controls width="250">
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
     </video>
@@ -42,7 +42,7 @@ include 'includes/header.php';
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
     </video>
 
-    <h2>More Audio</h2>
+    <h2>1.2.1 Audio-only/Video-only (Prerecorded) - More Audio</h2>
     <audio controls>
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
     </audio>

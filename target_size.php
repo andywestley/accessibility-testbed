@@ -20,7 +20,7 @@ include 'includes/header.php';
 
 <h2>Violations</h2>
 
-<h3>1. Undersized Buttons without Spacing</h3>
+<h3>2.5.8 Target Size (Minimum) - Undersized Buttons without Spacing</h3>
 <p>These icon buttons are smaller than 24x24px and are placed too close together. Users with tremors or imprecise pointing devices may accidentally activate the wrong one.</p>
 
 <div class="mb-4">
@@ -43,7 +43,7 @@ include 'includes/header.php';
     <p class="small text-muted mt-2">Sizes: 12px, 16px, 20px. Margin: 0.</p>
 </div>
 
-<h3>2. Crowded List Links</h3>
+<h3>2.5.8 Target Size (Minimum) - Crowded List Links</h3>
 <p>These links have a small line-height and font-size, making the vertical target size less than 24px, and they are packed tightly together.</p>
 
 <div class="mb-4">

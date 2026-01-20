@@ -37,6 +37,7 @@ include 'includes/header.php';
 
     <h1>Orientation Issues</h1>
 
+    <h2>1.3.4 Orientation - Portrait/Landscape Restriction</h2>
     <div class="warning">
         Please rotate your device to Landscape mode to view this site properly. We do not support Portrait.
     </div>
@@ -46,6 +47,7 @@ include 'includes/header.php';
     <p>(Note: Pure CSS lock is tricky, but often this violation is checking for the instruction "Please rotate" or apps
         that are locked).</p>
 
+    <h2>1.3.4 Orientation - Content Hidden by Orientation</h2>
     <div class="landscape-only">
         This content is only visible in landscape mode.
     </div>

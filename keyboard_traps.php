@@ -54,7 +54,7 @@ include 'includes/header.php';
         });
     </script>
 
-    <h2>More Traps</h2>
+    <h2>2.1.2 No Keyboard Trap - More Traps</h2>
     <div style="border: 2px solid blue; padding: 20px;">
         <label>Trap 2 (Blocks Tab & Esc): <input type="text" id="trap-2" /></label>
     </div>

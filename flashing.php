@@ -62,21 +62,21 @@ include 'includes/header.php';
 
     <h1>Flashing and Animation Issues</h1>
 
-    <h2>Blinking Content</h2>
+    <h2>2.2.2 Pause, Stop, Hide / 2.3.1 Three Flashes - Blinking Content</h2>
     <p class="blink">WARNING: This text is blinking properly fast!</p>
     <div class="blink" style="background: yellow; color: black; padding: 10px;">
         HUGE BLINKING BANNER
     </div>
     <span class="blink" style="border: 2px solid red;">Blinking Border</span>
 
-    <h2>More Marquees</h2>
+    <h2>2.2.2 Pause, Stop, Hide - More Marquees</h2>
     <marquee scrollamount="20">Fast scrolling marquee</marquee>
     <marquee direction="up">Vertical scrolling marquee</marquee>
 
-    <h2>Marquee (Deprecated but works)</h2>
+    <h2>2.2.2 Pause, Stop, Hide - Marquee (Deprecated)</h2>
     <marquee>This is a marquee tag. It scrolls automatically and cannot be paused.</marquee>
 
-    <h2>Moving Content (No Pause)</h2>
+    <h2>2.2.2 Pause, Stop, Hide - Moving Content (No Pause)</h2>
     <div class="moving-text">
         I am moving back and forth and you can't stop me.
     </div>
@@ -84,7 +84,7 @@ include 'includes/header.php';
     <p>Since there are no controls to pause, stop, or hide the moving content above, it fails the Pause, Stop, Hide
         criterion.</p>
 
-    <h2>Motion Animation (2.3.3)</h2>
+    <h2>2.3.3 Animation from Interactions (AAA) - Parallax</h2>
     <div class="parallax">
         PARALLAX SCROLLING (Cannot be disabled)
     </div>

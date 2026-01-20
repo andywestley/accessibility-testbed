@@ -28,7 +28,7 @@ include 'includes/header.php';
 
     <h1>Focus Order Issues</h1>
 
-    <h2>Positive Tabindex</h2>
+    <h2>2.4.3 Focus Order - Positive Tabindex</h2>
     <!-- Tabindex > 0 disrupts natural flow -->
     <a href="#" tabindex="4">Link 4 (Last)</a><br>
     <a href="#" tabindex="1">Link 1 (First)</a><br>
@@ -44,14 +44,14 @@ include 'includes/header.php';
     <button tabindex="8">Order 8</button>
     <button tabindex="7">Order 7</button>
 
-    <h2>More Flex Visual Order</h2>
+    <h2>1.3.2 Meaningful Sequence - More Flex Visual Order</h2>
     <div class="flex-container" style="flex-direction: row-reverse;">
         <button>Item A (Visual Last, DOM First)</button>
         <button>Item B (Visual Middle, DOM Second)</button>
         <button>Item C (Visual First, DOM Third)</button>
     </div>
 
-    <h2>Visual Order vs DOM Order (Flexbox)</h2>
+    <h2>1.3.2 Meaningful Sequence - Visual Order vs DOM Order (Flexbox)</h2>
     <div class="flex-container">
         <!-- Visual order: Item 2, Item 3, Item 1 -->
         <!-- DOM Focus order: Item 1, Item 2, Item 3 -->
@@ -60,7 +60,7 @@ include 'includes/header.php';
         <button class="order-3">Item 3 (DOM third, Visual second)</button>
     </div>
 
-    <h2>No Focus Indicator</h2>
+    <h2>2.4.7 Focus Visible - No Focus Indicator</h2>
     <style>
         .no-focus:focus {
             outline: none;
@@ -68,7 +68,7 @@ include 'includes/header.php';
     </style>
     <button class="no-focus">Button with outline: none</button>
 
-    <h2>Focus Obscured (2.4.11)</h2>
+    <h2>2.4.11 Focus Not Obscured (Minimum) - Sticky Banner</h2>
     <p>Scroll down. The sticky banner below will cover focused elements at the bottom of the viewport.</p>
     <a href="#">Link 1 (Might be covered)</a><br>
     <a href="#">Link 2 (Might be covered)</a><br>
