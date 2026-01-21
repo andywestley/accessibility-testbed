@@ -46,3 +46,8 @@ This microsite is designed to provide a comprehensive environment for testing ac
 | `target_size.php` | **Target Size**: Demonstrates elements with insufficient target sizes (< 24x24px) and lack of spacing (WCAG 2.5.8). |
 | `typography.php` | **Typography**: Text styling issues such as fixed font sizes, justified text, or poor line height that affect readability. |
 | `zoom_responsive.php` | **Zoom & Responsive**: Content that overlaps, gets cut off, or becomes unusable when zoomed in (reflow issues) or viewed on small screens. |
+
+### User Journeys
+A dedicated section `journeys/` contains multi-step flows to test interaction patterns:
+-   **Login Flow**: `journeys/login.php` -> `journeys/dashboard.php`. Simulates authentication with missing labels, low contrast, and poor error handling.
+-   **Multi-step Survey**: `journeys/survey_step1.php` -> `journeys/survey_step2.php` -> `journeys/survey_complete.php`. Simulates a wizard with fake buttons, inaccessible progress bars, and ungrouped controls.
