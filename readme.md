@@ -51,3 +51,4 @@ This microsite is designed to provide a comprehensive environment for testing ac
 A dedicated section `journeys/` contains multi-step flows to test interaction patterns:
 -   **Login Flow**: `journeys/login.php` -> `journeys/dashboard.php`. Simulates authentication with missing labels, low contrast, and poor error handling.
 -   **Multi-step Survey**: `journeys/survey_step1.php` -> `journeys/survey_step2.php` -> `journeys/survey_complete.php`. Simulates a wizard with fake buttons, inaccessible progress bars, and ungrouped controls.
+-   **Blocked Registration**: `journeys/blocked_form.php`. Features strict client-side validation that relies on color and lacks error association, effectively blocking submission for many users.
