@@ -60,3 +60,16 @@ Designed to test dynamic content, focus management, and heuristics:
 -   **State Mismatch**: `journeys/state_mismatch.php`. Demonstrates conflicting visual vs. programmatic state (e.g., `aria-expanded`).
 -   **Keyboard Trap**: `journeys/keyboard_trap.php`. A custom widget that captures focus and prevents exit.
 -   **Layout Shift (CLS)**: `journeys/layout_shift.php`. Content injection causing visual instability.
+
+## Future Roadmap: Journeys & Interactivity
+
+The following scenarios are planned for development to demonstrate complex common failures:
+
+*   **The "Ghost" Modal**: A dialog opens but focus remains on the background page, allowing users to interact with obscured content. (WCAG 2.4.3)
+*   **Unstoppable Carousel**: An auto-rotating slider with no pause control that distracts users and makes reading impossible. (WCAG 2.2.2)
+*   **The Vanishing Toast**: Status messages that disappear too quickly for low-vision users to read or interact with. (WCAG 2.2.1)
+*   **Mouse-Only Sortable List**: Drag-and-drop interfaces that cannot be operated via keyboard (e.g. absent arrow key support). (WCAG 2.1.1)
+*   **Timed Session Expiry**: A session warning that traps focus or cannot be extended, causing data loss. (WCAG 2.2.1)
+*   **Accordion "Yo-Yo"**: Opening one section automatically closes others, causing loss of context and reading position. (WCAG 3.2.2)
+*   **Complex Date Picker**: A visual grid calendar that is a keyboard trap or inaccessible to screen readers. (WCAG 4.1.2)
+*   **Visual-Only CAPTCHA**: Security challenges that rely solely on visual identification without accessible alternatives. (WCAG 1.1.1)
