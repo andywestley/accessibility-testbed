@@ -1,10 +1,10 @@
 <?php
-$pageTitle = 'User Journeys';
+$pageTitle = 'Journeys & Interactivity';
 $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<h1>User Journeys</h1>
+<h1>Journeys & Interactivity</h1>
 <p class="lead">Select a journey below to simulate common user flows. These flows contain intentional accessibility errors for testing purposes.</p>
 
 <div class="row mt-4">
@@ -70,7 +70,7 @@ include '../includes/header.php';
     </div>
 </div>
 
-<h2 class="mt-5">Phase 2: Interaction Dynamics</h2>
+<h2 class="mt-5">Interaction Dynamics</h2>
 <p>Test cases for dynamic content, state management, and focus logic.</p>
 
 <div class="row mt-4">
@@ -133,7 +133,7 @@ include '../includes/header.php';
     </div>
 </div>
 
-<h2 class="mt-5">Phase 3: Advanced Heuristics</h2>
+<h2 class="mt-5">Advanced Heuristics</h2>
 <p>Test cases for complex behavioral and layout issues.</p>
 
 <div class="row mt-4">

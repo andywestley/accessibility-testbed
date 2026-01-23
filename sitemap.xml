@@ -90,6 +90,22 @@
         <loc>https://inaccessible.andrewwestley.co.uk/journeys/blocked_form.php</loc>
     </url>
     <url>
+    <url>
         <loc>https://inaccessible.andrewwestley.co.uk/journeys/blocked_success.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/journeys/focus_failure.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/journeys/silent_update.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/journeys/state_mismatch.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/journeys/keyboard_trap.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/journeys/layout_shift.php</loc>
     </url>
 </urlset>

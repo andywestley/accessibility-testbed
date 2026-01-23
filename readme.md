@@ -47,8 +47,16 @@ This microsite is designed to provide a comprehensive environment for testing ac
 | `typography.php` | **Typography**: Text styling issues such as fixed font sizes, justified text, or poor line height that affect readability. |
 | `zoom_responsive.php` | **Zoom & Responsive**: Content that overlaps, gets cut off, or becomes unusable when zoomed in (reflow issues) or viewed on small screens. |
 
-### User Journeys
+### Journeys & Interactivity
 A dedicated section `journeys/` contains multi-step flows to test interaction patterns:
 -   **Login Flow**: `journeys/login.php` -> `journeys/dashboard.php`. Simulates authentication with missing labels, low contrast, and poor error handling.
 -   **Multi-step Survey**: `journeys/survey_step1.php` -> `journeys/survey_step2.php` -> `journeys/survey_complete.php`. Simulates a wizard with fake buttons, inaccessible progress bars, and ungrouped controls.
 -   **Blocked Registration**: `journeys/blocked_form.php`. Features strict client-side validation that relies on color and lacks error association, effectively blocking submission for many users.
+
+### Advanced Journeys
+Designed to test dynamic content, focus management, and heuristics:
+-   **Focus Management Failure**: `journeys/focus_failure.php`. Demonstrates focus loss during AJAX updates.
+-   **Silent Status Updates**: `journeys/silent_update.php`. Demonstrates dynamic content updates missing `aria-live`.
+-   **State Mismatch**: `journeys/state_mismatch.php`. Demonstrates conflicting visual vs. programmatic state (e.g., `aria-expanded`).
+-   **Keyboard Trap**: `journeys/keyboard_trap.php`. A custom widget that captures focus and prevents exit.
+-   **Layout Shift (CLS)**: `journeys/layout_shift.php`. Content injection causing visual instability.
