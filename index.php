@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Home & Matrices';
+$pageTitle = 'Inaccessible - an accessibility testbed';
 $extraStyles = '
     <style>
         .red-text { color: red; }
