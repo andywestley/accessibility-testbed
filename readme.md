@@ -21,6 +21,19 @@ This microsite is designed to provide a comprehensive environment for testing ac
 - `includes/`: Contains shared `header.php` and `footer.php`.
 - `.htaccess`: Configures `index.php` as the default directory index.
 
+### Analytics Setup
+This project uses Google Tag Manager (GTM). To enable it:
+1. Create a file named `includes/config.php`.
+2. Add your GTM Container ID as follows:
+   ```php
+   <?php
+   $gtmId = 'GTM-XXXXXXX';
+   ```
+3. This file is ignored by git to protect your configuration. If the file is missing or the ID is empty, GTM snippets will not be rendered, and the "Cookie Policy" link in the footer will be hidden.
+
+#### Silktide Consent Manager
+For cookie consent management, this testbed references Silktide artifacts via GTM. See [Silktide Consent Manager Installation](https://silktide.com/consent-manager/install/) for more details.
+
 ## Site Structure & Page Purpose
 
 | Page | Description & Demonstrated Violations |
