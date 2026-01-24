@@ -176,4 +176,90 @@ include '../includes/header.php';
     </div>
 </div>
 
+<h2 class="mt-5">User Hostile Patterns</h2>
+<p>Common dark patterns and complex widget failures.</p>
+
+<div class="row mt-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">The "Ghost" Modal</h5>
+                <p class="card-text">A dialog overlay that fails to trap focus or obscure background access.</p>
+                <hr>
+                <a href="ghost_modal.php" class="btn btn-dark mt-3">Open Modal</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Unstoppable Carousel</h5>
+                <p class="card-text">Auto-rotating content with no pause control.</p>
+                <hr>
+                <a href="carousel_autoplay.php" class="btn btn-dark mt-3">Watch It Spin</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">The Vanishing Toast</h5>
+                <p class="card-text">Status messages that disappear too quickly.</p>
+                <hr>
+                <a href="vanishing_toast.php" class="btn btn-dark mt-3">Trigger Toast</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Mouse-Only Sortable</h5>
+                <p class="card-text">Drag-and-drop list inaccessible to keyboard users.</p>
+                <hr>
+                <a href="sortable_list.php" class="btn btn-dark mt-3">Try Sorting</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Timed Session Expiry</h5>
+                <p class="card-text">A focus-trapping timeout warning.</p>
+                <hr>
+                <a href="session_expiry.php" class="btn btn-dark mt-3">Start Timer</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Accordion "Yo-Yo"</h5>
+                <p class="card-text">Content layout shifts that disrupt reading.</p>
+                <hr>
+                <a href="accordion_yoyo.php" class="btn btn-dark mt-3">Play Yo-Yo</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Complex Date Picker</h5>
+                <p class="card-text">A table-based calendar that traps focus.</p>
+                <hr>
+                <a href="datepicker_trap.php" class="btn btn-dark mt-3">Pick Date</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Visual-Only CAPTCHA</h5>
+                <p class="card-text">Security checks with no non-visual alternative.</p>
+                <hr>
+                <a href="captcha_visual.php" class="btn btn-dark mt-3">Verify Human</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php include '../includes/footer.php'; ?>

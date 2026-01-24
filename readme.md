@@ -74,9 +74,18 @@ Designed to test dynamic content, focus management, and heuristics:
 -   **Keyboard Trap**: `journeys/keyboard_trap.php`. A custom widget that captures focus and prevents exit.
 -   **Layout Shift (CLS)**: `journeys/layout_shift.php`. Content injection causing visual instability.
 
-## Future Roadmap: Journeys & Interactivity
+### User Hostile Patterns (Dark Patterns)
+These scenarios demonstrate complex widget failures and hostile design patterns:
+-   **The "Ghost" Modal**: `journeys/ghost_modal.php`. A dialog opens but focus remains on the background page. (WCAG 2.4.3)
+-   **Unstoppable Carousel**: `journeys/carousel_autoplay.php`. An auto-rotating slider with no pause control. (WCAG 2.2.2)
+-   **The Vanishing Toast**: `journeys/vanishing_toast.php`. Status messages that disappear too quickly. (WCAG 2.2.1)
+-   **Mouse-Only Sortable List**: `journeys/sortable_list.php`. Drag-and-drop interfaces that cannot be operated via keyboard. (WCAG 2.1.1)
+-   **Timed Session Expiry**: `journeys/session_expiry.php`. A session warning that traps focus or cannot be extended. (WCAG 2.2.1)
+-   **Accordion "Yo-Yo"**: `journeys/accordion_yoyo.php`. Opening one section automatically closes others, shifting layout. (WCAG 3.2.2)
+-   **Complex Date Picker**: `journeys/datepicker_trap.php`. A visual grid calendar that is a keyboard trap. (WCAG 4.1.2)
+-   **Visual-Only CAPTCHA**: `journeys/captcha_visual.php`. Security challenges that rely solely on visual identification. (WCAG 1.1.1)
 
-The following scenarios are planned for development to demonstrate complex common failures:
+
 
 *   **The "Ghost" Modal**: A dialog opens but focus remains on the background page, allowing users to interact with obscured content. (WCAG 2.4.3)
 *   **Unstoppable Carousel**: An auto-rotating slider with no pause control that distracts users and makes reading impossible. (WCAG 2.2.2)
