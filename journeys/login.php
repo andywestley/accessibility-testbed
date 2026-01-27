@@ -8,6 +8,19 @@ include '../includes/header.php';
     <div class="col-md-6">
         <h1>Login to your account</h1>
         <p>Please enter your credentials below.</p>
+
+        <div class="alert alert-info">
+            <small class="d-block">
+                <strong>Demonstrates:</strong> High-impact barriers to entry.<br>
+                <strong>Observation:</strong> Try to identify fields without using visual labels. Check tab order.<br>
+                <strong>Key Issues:</strong>
+                <ul class="pl-3 mb-0">
+                    <li>WCAG 1.4.3 (Contrast)</li>
+                    <li>WCAG 3.3.2 (Labels)</li>
+                    <li>WCAG 1.3.5 (Autocomplete)</li>
+                </ul>
+            </small>
+        </div>
         
         <form action="dashboard.php" method="POST">
             <!-- Issue: Label missing 'for' attribute, Input missing 'id' -->

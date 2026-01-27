@@ -8,6 +8,19 @@ include '../includes/header.php';
     <div class="col-md-6">
         <h1>Account Registration</h1>
         <p>Join our secure platform today.</p>
+
+        <div class="alert alert-info">
+            <small class="d-block">
+                <strong>Demonstrates:</strong> Error handling failures.<br>
+                <strong>Observation:</strong> Submit empty form. Note if focus moves to errors or if errors are read out.<br>
+                <strong>Key Issues:</strong>
+                <ul class="pl-3 mb-0">
+                    <li>WCAG 3.3.1 (Error Identification)</li>
+                    <li>WCAG 3.3.3 (Error Suggestion)</li>
+                    <li>WCAG 4.1.3 (Status Messages)</li>
+                </ul>
+            </small>
+        </div>
         
         <form id="regForm" onsubmit="return validateForm(event)">
             

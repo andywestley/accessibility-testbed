@@ -7,6 +7,17 @@ include '../includes/header.php';
 <h1>Keyboard Trap Journey</h1>
 <p class="lead">This page demonstrates a "Keyboard Trap", where focus enters a component but cannot leave via the keyboard.</p>
 
+<div class="alert alert-info">
+    <small class="d-block">
+        <strong>Demonstrates:</strong> "Black hole" for keyboard users.<br>
+        <strong>Observation:</strong> Tab into the scroll box. Attempt to Tab out to the next form field. Verify if stuck.<br>
+        <strong>Key Issues:</strong>
+        <ul class="pl-3 mb-0">
+            <li>WCAG 2.1.2 (No Keyboard Trap)</li>
+        </ul>
+    </small>
+</div>
+
 <div class="alert alert-danger">
     <strong>The Bug:</strong> Tab into the "Terms and Conditions" box below. Once inside, try to Tab out to the "I Agree" button. You will find you are stuck inside the text box, cycling through dummy links or just unable to exit.
     <br><br>

@@ -7,6 +7,18 @@ include '../includes/header.php';
 <h1>Layout Shift Journey (CLS)</h1>
 <p class="lead">This page demonstrates Cumulative Layout Shift triggered by user interaction.</p>
 
+<div class="alert alert-info">
+    <small class="d-block">
+        <strong>Demonstrates:</strong> Visual instability and reading disruption.<br>
+        <strong>Observation:</strong> Click to load image. Watch text jump. Verify no placeholder height on container.<br>
+        <strong>Key Issues:</strong>
+        <ul class="pl-3 mb-0">
+            <li>Core Web Vitals (CLS)</li>
+            <li>UX / Reading Continuity</li>
+        </ul>
+    </small>
+</div>
+
 <div class="alert alert-warning">
     <strong>The Bug:</strong> Click the "Show Article Image" button. Content will load asynchronously above the text without reserving space. This causes the text (and your reading position) to jump down abruptly.
 </div>

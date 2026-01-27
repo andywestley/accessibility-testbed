@@ -8,6 +8,18 @@ include '../includes/header.php';
 <p class="lead">This page demonstrates a synchronization issue between the visual state of a component and its ARIA attributes.</p>
 
 <div class="alert alert-info">
+    <small class="d-block">
+        <strong>Demonstrates:</strong> Broken semantics in custom widgets.<br>
+        <strong>Observation:</strong> Toggle accordion. Inspect button. Does `aria-expanded` toggle true/false?<br>
+        <strong>Key Issues:</strong>
+        <ul class="pl-3 mb-0">
+            <li>WCAG 4.1.2 (Name, Role, Value)</li>
+            <li>ARIA Best Practices</li>
+        </ul>
+    </small>
+</div>
+
+<div class="alert alert-info">
     <strong>The Bug:</strong> Toggle the accordion below. Visually, the content opens and closes. However, inspect the button's code. <code>aria-expanded</code> is hardcoded to "false" and never changes, lying to screen reader users about the state of the content.
 </div>
 

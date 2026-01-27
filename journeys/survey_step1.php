@@ -8,6 +8,19 @@ include '../includes/header.php';
     <div class="col-md-6">
         <h1>Detailed Survey - Step 1</h1>
         <p>Tell us about yourself.</p>
+
+        <div class="alert alert-info">
+            <small class="d-block">
+                <strong>Demonstrates:</strong> Cumulative frustration in long flows.<br>
+                <strong>Observation:</strong> Attempt to navigate using only keyboard. Note progress bar announcements.<br>
+                <strong>Key Issues:</strong>
+                <ul class="pl-3 mb-0">
+                    <li>WCAG 2.1.2 (Keyboard Trap)</li>
+                    <li>WCAG 4.1.2 (Name, Role, Value)</li>
+                    <li>WCAG 2.4.6 (Headings/Labels)</li>
+                </ul>
+            </small>
+        </div>
         
         <form> <!-- Missing action, will handle with JS/div button for max issues -->
             

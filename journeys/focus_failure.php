@@ -8,6 +8,18 @@ include '../includes/header.php';
 <p class="lead">This page demonstrates a common focus management issue in Single Page Applications (SPAs) or dynamic lists.</p>
 
 <div class="alert alert-info">
+    <small class="d-block">
+        <strong>Demonstrates:</strong> Disorienting focus resets.<br>
+        <strong>Observation:</strong> Click "Load More". Press Tab. Does focus resume at the new item or restart at the top?<br>
+        <strong>Key Issues:</strong>
+        <ul class="pl-3 mb-0">
+            <li>WCAG 2.4.3 (Focus Order)</li>
+            <li>Best Practice (Manage Focus)</li>
+        </ul>
+    </small>
+</div>
+
+<div class="alert alert-info">
     <strong>The Bug:</strong> When you click "Load More Results", new content is added, but your keyboard focus is reset to the top of the document (or lost completely to the body), forcing you to tab all the way back down.
 </div>
 
