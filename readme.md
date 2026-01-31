@@ -2,6 +2,9 @@
 
 This microsite is designed to provide a comprehensive environment for testing accessibility tools and learning about WCAG violations. Each page focuses on specific categories of accessibility barriers.
 
+## Live Demo
+You can view the live production site here: [https://inaccessible.andrewwestley.co.uk/index.php](https://inaccessible.andrewwestley.co.uk/index.php)
+
 > [!NOTE]
 > This site is built using **PHP** and **Bootstrap 5**. While it looks modern, the accessibility violations are intentional and preserved.
 
@@ -12,6 +15,11 @@ This project serves as a demonstration of **"Vibe-Coding"** with **Google Antigr
 To test the capabilities of modern Agentic AI, almost none of the code in this repository was written by hand. Instead, the entire site—from the PHP structure and Bootstrap styling to the deliberate accessibility violations—was generated through natural language prompts and iterative collaboration with the AI.
 
 This approach highlights what is achievable when using advanced AI agents to rapidly prototype and build complex, functional web environments.
+
+## Purpose: The Automated Analyzer
+While this site exists as a standalone demonstration of accessibility failures, its primary purpose is to serve as a **test harness** for an automated accessibility analyzer, which is being built using the same "vibe-coding" methodology.
+
+This testbed provides the known bad states required to verify the detection logic of that analyzer, ensuring it can correctly identify and report on a wide range of WCAG violations.
 
 ## Architecture & Setup
 
