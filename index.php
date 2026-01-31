@@ -20,7 +20,16 @@ include 'includes/header.php';
 
     <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px;">Welcome to the Inaccessible Site</div>
 
-    <h1>Accessibility Compliance Matrices</h1>
+    <h1>Inaccessible Web Testbed</h1>
+
+    <div class="alert alert-warning border-danger mt-3" role="alert">
+        <h4 class="alert-heading">⚠️ Intentionally Broken Website</h4>
+        <p>This microsite is designed to provide a comprehensive environment for testing accessibility tools and learning about WCAG violations.</p>
+        <p>While it looks modern, the <strong>accessibility violations are intentional</strong> and preserved for educational and testing purposes.</p>
+        <hr>
+        <p class="mb-0 small">This site serves as a test harness for automated accessibility analyzers.</p>
+    </div>
+
     <p>Select a tab below to view compliance against different standards and rule sets.</p>
 
     <!-- Bootstrap Tabs -->
