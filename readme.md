@@ -5,6 +5,14 @@ This microsite is designed to provide a comprehensive environment for testing ac
 > [!NOTE]
 > This site is built using **PHP** and **Bootstrap 5**. While it looks modern, the accessibility violations are intentional and preserved.
 
+## Development Methodology: "Vibe-Coding"
+
+This project serves as a demonstration of **"Vibe-Coding"** with **Google Antigravity**—a term the author *hates*, but which accurately describes the workflow.
+
+To test the capabilities of modern Agentic AI, almost none of the code in this repository was written by hand. Instead, the entire site—from the PHP structure and Bootstrap styling to the deliberate accessibility violations—was generated through natural language prompts and iterative collaboration with the AI.
+
+This approach highlights what is achievable when using advanced AI agents to rapidly prototype and build complex, functional web environments.
+
 ## Architecture & Setup
 
 ### Requirements
