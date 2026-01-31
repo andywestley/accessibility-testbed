@@ -8,7 +8,7 @@ As this is a testbed for accessibility violations, we do not maintain strict ver
 
 If you discover a security vulnerability within this project (e.g., XSS that is *not* part of a demonstration), please do NOT report it publicly.
 
-Please email [INSERT EMAIL] with:
+Please email andy@andrewwestley.co.uk with:
 * Description of the vulnerability.
 * Steps to reproduce.
 
