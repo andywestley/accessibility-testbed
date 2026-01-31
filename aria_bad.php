@@ -1,0 +1,60 @@
+<?php
+$pageTitle = 'Bad ARIA';
+
+include 'includes/header.php';
+?>
+
+
+    <h1>ARIA Misuse</h1>
+
+    <h2>4.1.2 Name, Role, Value - ARIA Hidden on Focusable Element</h2>
+    <p>The button below is hidden from screen readers but focusable by keyboard.</p>
+    <button aria-hidden="true">You can tab to me but I am silent</button>
+
+    <h2>1.3.1 Info and Relationships - Presentation Role on Semantic Container</h2>
+    <p>The list below has role presentation, removing list semantics.</p>
+    <ul role="presentation">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <h2>4.1.2 Name, Role, Value - Invalid Role</h2>
+    <div role="foo">This role does not exist.</div>
+
+    <h2>4.1.2 Name, Role, Value - Conflicting Attributes</h2>
+    <div role="checkbox" aria-checked="true" aria-disabled="true">
+        I am a disabled checkbox.
+    </div>
+    <!-- Progress bar with min > max -->
+    <div role="progressbar" aria-valuenow="50" aria-valuemin="100" aria-valuemax="0">
+        Broken progress bar
+    </div>
+
+    <h2>ARIA Best Practice - Redundant ARIA</h2>
+    <button role="button">I am a button with role=button</button>
+    <div role="heading" aria-level="2">I am a div with role heading</div>
+
+    <h2>4.1.2 Name, Role, Value - More ARIA Hidden Focusables</h2>
+    <a href="#" aria-hidden="true">Hidden Link 1</a><br>
+    <a href="#" aria-hidden="true">Hidden Link 2</a><br>
+    <input type="text" aria-hidden="true" value="Hidden Input" />
+    <button aria-hidden="true" onclick="alert('hidden')">Hidden Button</button>
+
+    <h2>4.1.2 Name, Role, Value - More Invalid Roles</h2>
+    <div role="note">Role note is valid but often misused</div>
+    <div role="container">Invalid role 'container'</div>
+    <div role="text">Role 'text' is not standard</div>
+    <div role="imag">Misspelled role 'image' (imag)</div>
+
+    <h2>4.1.2 Name, Role, Value - More Conflicting Attributes</h2>
+    <button aria-disabled="true">Active Button labeled disabled</button>
+    <div role="radio" aria-checked="mixed">Radio can't be mixed</div>
+
+    <h2>Status Messages (4.1.3)</h2>
+    <!-- Content updates dynamically but screen readers are not notified -->
+    <div style="border: 1px solid #ccc; padding: 10px;">
+        <button onclick="document.getElementById('results').innerHTML = 'Results found: 5 items.'">Search</button>
+        <div id="results" style="margin-top: 10px; font-weight: bold;"></div>
+    </div>
+
+<?php include 'includes/footer.php'; ?>
