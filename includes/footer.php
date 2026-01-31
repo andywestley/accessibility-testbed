@@ -6,6 +6,7 @@
             <?php if (!empty($gtmId)): ?>
             | <a class="text-dark" href="<?php echo isset($basePath) ? $basePath : ''; ?>cookie_policy.php">Cookie Policy</a>
             <?php endif; ?>
+            | <a class="text-dark" href="https://github.com/andywestley/accessibility-testbed">View on GitHub</a>
         </div>
     </footer>
 
