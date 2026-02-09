@@ -58,7 +58,8 @@
     <?php $bp = isset($basePath) ? $basePath : ''; ?>
     <div class="d-flex flex-wrap gap-2 p-3 mb-4 bg-light border-bottom shadow-sm align-items-center justify-content-center">
         <div><a href="<?php echo $bp; ?>index.php" class="btn btn-primary">Home</a></div>
-        <div><a href="<?php echo $bp; ?>journeys/index.php" class="btn btn-success">Journeys & Interactivity</a></div>
+        <div><a href="<?php echo $bp; ?>journeys/index.php" class="btn btn-success">Journeys</a></div>
+        <div><a href="<?php echo $bp; ?>heuristics/index.php" class="btn btn-warning">Heuristics</a></div>
         <div><a href="<?php echo $bp; ?>best_practices.php" class="btn btn-outline-secondary btn-sm">Best Practices</a></div>
         <div><a href="<?php echo $bp; ?>images.php" class="btn btn-outline-secondary btn-sm">Images</a></div>
         <div><a href="<?php echo $bp; ?>structure.php" class="btn btn-outline-secondary btn-sm">Structure</a></div>
