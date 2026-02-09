@@ -75,6 +75,9 @@
         <loc>https://inaccessible.andrewwestley.co.uk/journeys/index.php</loc>
     </url>
     <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/index.php</loc>
+    </url>
+    <url>
         <loc>https://inaccessible.andrewwestley.co.uk/journeys/login.php</loc>
     </url>
     <url>
@@ -96,42 +99,42 @@
         <loc>https://inaccessible.andrewwestley.co.uk/journeys/blocked_success.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/focus_failure.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/focus_failure.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/silent_update.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/silent_update.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/state_mismatch.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/state_mismatch.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/keyboard_trap.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/keyboard_trap.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/layout_shift.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/layout_shift.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/ghost_modal.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/ghost_modal.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/carousel_autoplay.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/carousel_autoplay.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/vanishing_toast.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/vanishing_toast.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/sortable_list.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/sortable_list.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/session_expiry.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/session_expiry.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/accordion_yoyo.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/accordion_yoyo.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/datepicker_trap.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/datepicker_trap.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/journeys/captcha_visual.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/captcha_visual.php</loc>
     </url>
 </urlset>
