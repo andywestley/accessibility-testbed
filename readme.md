@@ -108,18 +108,20 @@ These scenarios demonstrate complex widget failures and hostile design patterns:
 -   **Complex Date Picker**: `heuristics/datepicker_trap.php`. A visual grid calendar that is a keyboard trap. (WCAG 4.1.2)
 -   **Visual-Only CAPTCHA**: `heuristics/captcha_visual.php`. Security challenges that rely solely on visual identification. (WCAG 1.1.1)
 
-## Roadmap: Cognitive Accessibility (COGA)
+### Cognitive Accessibility (COGA)
+A dedicated section `cognitive/` tests logic for understanding, memory, and focus:
+-   **Timeouts without Warning**: `cognitive/timeout_no_warning.php`. Sudden session expiration with no extension. (WCAG 2.2.1)
+-   **Complex Language & Jargon**: `cognitive/complex_jargon.php`. Unnecessarily advanced vocabulary and industry acronyms. (WCAG 3.1.5)
+-   **Inconsistent Navigation**: `cognitive/inconsistent_nav.php`. Navigation elements moving across pages. (WCAG 3.2.3)
+-   **Overwhelming Visuals**: `cognitive/overwhelming_visuals.php`. Cluttered UI and distracting animations. (WCAG 2.2.2)
+-   **Memory Burden Wizard**: `cognitive/memory_burden.php`. Forms requiring recall of info from earlier steps.
+-   **Cryptic Error Messages**: `cognitive/cryptic_errors.php`. Tech jargon or vague codes instead of help. (WCAG 3.3.3)
 
-Cognitive accessibility focuses on making web content understandable and easy to use for people with various cognitive, learning, and neurological disabilities (ADHD, dyslexia, autism, memory loss, etc.).
+## Roadmap
 
-We plan to implement the following demonstrations to test COGA detection logic:
-
-1.  **Timeouts without Warning**: Sudden session expirations that don't allow users to extend their time. (WCAG 2.2.1)
-2.  **Complex Language & Jargon**: Content that uses unnecessarily advanced vocabulary where simpler terms would suffice. (WCAG 3.1.5)
-3.  **Inconsistent Navigation**: Interactive elements that change position or style across different pages, disrupting mental models. (WCAG 3.2.3)
-4.  **Overwhelming Visuals**: Cluttered layouts or excessive auto-playing animations that make it difficult to focus on primary tasks. (WCAG 2.2.2)
-5.  **Memory Burden Wizard**: Multi-step forms that require users to remember info from Step 1 in Step 3 without displaying a summary.
-6.  **Cryptic Error Messages**: Technical jargon or vague error codes that provide no path to resolution. (WCAG 3.3.3)
+Future categories and enhancements planned for the testbed:
+1. **Dynamic Content Refactoring**: Moving all interaction tests to use standard custom elements for easier detection testing.
+2. **Audio/Video Tracks**: Adding actual media files with broken/missing VTT tracks for advanced media testing.
 
 
 
