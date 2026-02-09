@@ -87,10 +87,15 @@ A dedicated section `heuristics/` contains test cases for dynamic content, focus
 
 #### Interaction Dynamics
 -   **Focus Management Failure**: `heuristics/focus_failure.php`. Demonstrates focus loss during AJAX updates.
+-   **Invisible Focus Indicator**: `heuristics/focus_hidden.php`. Hides focus rings on all interactive elements. (WCAG 2.4.7)
+-   **Meaning by Color Alone**: `heuristics/color_only.php`. Status indicated only by colored circles. (WCAG 1.4.1)
 -   **Silent Status Updates**: `heuristics/silent_update.php`. Demonstrates dynamic content updates missing `aria-live`.
 -   **State Mismatch**: `heuristics/state_mismatch.php`. Demonstrates conflicting visual vs. programmatic state (e.g., `aria-expanded`).
 -   **Keyboard Trap**: `heuristics/keyboard_trap.php`. A custom widget that captures focus and prevents exit.
 -   **Layout Shift (CLS)**: `heuristics/layout_shift.php`. Content injection causing visual instability.
+-   **The Sticky Tooltip**: `heuristics/sticky_tooltip.php`. Persistent tooltips that obscure content. (WCAG 1.4.13)
+-   **Motion Actuation Failure**: `heuristics/shake_fail.php`. Requires device motion with no button alternative. (WCAG 2.5.4)
+-   **Complex Pointer Gestures**: `heuristics/complex_gestures.php`. Requires path-based patterns for submission. (WCAG 2.5.1)
 
 #### User Hostile Patterns (Dark Patterns)
 These scenarios demonstrate complex widget failures and hostile design patterns:
@@ -102,6 +107,20 @@ These scenarios demonstrate complex widget failures and hostile design patterns:
 -   **Accordion "Yo-Yo"**: `heuristics/accordion_yoyo.php`. Opening one section automatically closes others, shifting layout. (WCAG 3.2.2)
 -   **Complex Date Picker**: `heuristics/datepicker_trap.php`. A visual grid calendar that is a keyboard trap. (WCAG 4.1.2)
 -   **Visual-Only CAPTCHA**: `heuristics/captcha_visual.php`. Security challenges that rely solely on visual identification. (WCAG 1.1.1)
+
+## Roadmap: Cognitive Accessibility (COGA)
+
+Cognitive accessibility focuses on making web content understandable and easy to use for people with various cognitive, learning, and neurological disabilities (ADHD, dyslexia, autism, memory loss, etc.).
+
+We plan to implement the following demonstrations to test COGA detection logic:
+
+1.  **Timeouts without Warning**: Sudden session expirations that don't allow users to extend their time. (WCAG 2.2.1)
+2.  **Complex Language & Jargon**: Content that uses unnecessarily advanced vocabulary where simpler terms would suffice. (WCAG 3.1.5)
+3.  **Inconsistent Navigation**: Interactive elements that change position or style across different pages, disrupting mental models. (WCAG 3.2.3)
+4.  **Overwhelming Visuals**: Cluttered layouts or excessive auto-playing animations that make it difficult to focus on primary tasks. (WCAG 2.2.2)
+5.  **Memory Burden Wizard**: Multi-step forms that require users to remember info from Step 1 in Step 3 without displaying a summary.
+6.  **Cryptic Error Messages**: Technical jargon or vague error codes that provide no path to resolution. (WCAG 3.3.3)
+
 
 
 

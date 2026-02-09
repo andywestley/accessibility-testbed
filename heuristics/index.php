@@ -12,19 +12,28 @@ include '../includes/header.php';
 
 <div class="row mt-4">
     <div class="col-md-4 mb-4">
+        <div class="card h-100 border-danger">
+            <div class="card-body">
+                <h5 class="card-title text-danger">Invisible Focus Indicator</h5>
+                <p class="card-text">Hides default browser focus rings on all interactive elements.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Tab through the page. Can you see where you are?<br>
+                    <strong>Key Issue:</strong> WCAG 2.4.7 (Focus Visible)
+                </small>
+                <a href="focus_hidden.php" class="btn btn-danger mt-3">Test Focus Visibility</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">Focus Management Failure</h5>
                 <p class="card-text">Simulates focus loss during AJAX updates (e.g. "Load More").</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
-                    <strong>Demonstrates:</strong> Disorienting focus resets.<br>
-                    <strong>Observation:</strong> Click "Load More". Press Tab. Does focus resume at the new item or restart at the top?<br>
-                    <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
-                        <li>WCAG 2.4.3 (Focus Order)</li>
-                        <li>Best Practice (Manage Focus)</li>
-                    </ul>
+                    <strong>Observation:</strong> Click "Load More". Does focus reset to the top?<br>
+                    <strong>Key Issue:</strong> WCAG 2.4.3 (Focus Order)
                 </small>
                 <a href="focus_failure.php" class="btn btn-warning mt-3">Test Focus Logic</a>
             </div>
@@ -37,13 +46,8 @@ include '../includes/header.php';
                 <p class="card-text">Dynamic content updates without ARIA properties.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
-                    <strong>Demonstrates:</strong> Missing non-visual feedback.<br>
-                    <strong>Observation:</strong> Click "Add". Verify visual change. Check code for `aria-live` regions.<br>
-                    <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
-                        <li>WCAG 4.1.3 (Status Messages)</li>
-                        <li>WCAG 3.3.1 (Error Identification)</li>
-                    </ul>
+                    <strong>Observation:</strong> Verify visual change. Check for `aria-live` announcements.<br>
+                    <strong>Key Issue:</strong> WCAG 4.1.3 (Status Messages)
                 </small>
                 <a href="silent_update.php" class="btn btn-warning mt-3">Test Live Regions</a>
             </div>
@@ -56,15 +60,24 @@ include '../includes/header.php';
                 <p class="card-text">Visual state does not match ARIA attributes.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
-                    <strong>Demonstrates:</strong> Broken semantics in custom widgets.<br>
-                    <strong>Observation:</strong> Toggle accordion. Inspect button. Does `aria-expanded` toggle true/false?<br>
-                    <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
-                        <li>WCAG 4.1.2 (Name, Role, Value)</li>
-                        <li>ARIA Best Practices</li>
-                    </ul>
+                    <strong>Observation:</strong> Does `aria-expanded` toggle correctly?<br>
+                    <strong>Key Issue:</strong> WCAG 4.1.2 (Name, Role, Value)
                 </small>
                 <a href="state_mismatch.php" class="btn btn-warning mt-3">Test ARIA State</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-warning">
+            <div class="card-body">
+                <h5 class="card-title text-warning">Meaning by Color Alone</h5>
+                <p class="card-text">A dashboard where status is indicated only by colored circles.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Distinguish states without color information.<br>
+                    <strong>Key Issue:</strong> WCAG 1.4.1 (Use of Color)
+                </small>
+                <a href="color_only.php" class="btn btn-warning mt-3">Test Color Dependency</a>
             </div>
         </div>
     </div>
@@ -74,40 +87,73 @@ include '../includes/header.php';
 <p>Test cases for complex behavioral and layout issues.</p>
 
 <div class="row mt-4">
-    <div class="col-md-6 mb-4">
+    <div class="col-md-4 mb-4">
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">Keyboard Trap</h5>
                 <p class="card-text">A custom scroll widget that captures tab focus.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
-                    <strong>Demonstrates:</strong> "Black hole" for keyboard users.<br>
-                    <strong>Observation:</strong> Tab into the scroll box. Attempt to Tab out to the next form field. Verify if stuck.<br>
-                    <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
-                        <li>WCAG 2.1.2 (No Keyboard Trap)</li>
-                    </ul>
+                    <strong>Observation:</strong> Attempt to Tab out of the scroll box.<br>
+                    <strong>Key Issue:</strong> WCAG 2.1.2 (No Keyboard Trap)
                 </small>
                 <a href="keyboard_trap.php" class="btn btn-danger mt-3">Enter Trap</a>
             </div>
         </div>
     </div>
-    <div class="col-md-6 mb-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-info">
+            <div class="card-body">
+                <h5 class="card-title text-info">The Sticky Tooltip</h5>
+                <p class="card-text">A tooltip that obscures content and is hard to dismiss.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Dismiss with keyboard or hover precisely.<br>
+                    <strong>Key Issue:</strong> WCAG 1.4.13 (Content on Hover/Focus)
+                </small>
+                <a href="sticky_tooltip.php" class="btn btn-info mt-3">Test Tooltip Persistence</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">Layout Shift (CLS)</h5>
                 <p class="card-text">Content loads asynchronously without reserved space.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
-                    <strong>Demonstrates:</strong> Visual instability and reading disruption.<br>
-                    <strong>Observation:</strong> Click to load image. Watch text jump. Verify no placeholder height on container.<br>
-                    <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
-                        <li>Core Web Vitals (CLS)</li>
-                        <li>UX / Reading Continuity</li>
-                    </ul>
+                    <strong>Observation:</strong> Watch text jump when image loads.<br>
+                    <strong>Key Issue:</strong> Core Web Vitals (CLS)
                 </small>
                 <a href="layout_shift.php" class="btn btn-info mt-3">Trigger Shift</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-danger">
+            <div class="card-body">
+                <h5 class="card-title text-danger">Motion Actuation Failure</h5>
+                <p class="card-text">Requires device "shaking" to reset form with no button.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Can you reset the form without physical motion?<br>
+                    <strong>Key Issue:</strong> WCAG 2.5.4 (Motion Actuation)
+                </small>
+                <a href="shake_fail.php" class="btn btn-danger mt-3">Test Motion Requirement</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-warning">
+            <div class="card-body">
+                <h5 class="card-title text-warning">Complex Pointer Gestures</h5>
+                <p class="card-text">Requires a path-based unlock pattern for submission.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Complete action using single clicks only.<br>
+                    <strong>Key Issue:</strong> WCAG 2.5.1 (Pointer Gestures)
+                </small>
+                <a href="complex_gestures.php" class="btn btn-warning mt-3">Test Gesture Complexity</a>
             </div>
         </div>
     </div>
@@ -121,7 +167,7 @@ include '../includes/header.php';
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">The "Ghost" Modal</h5>
-                <p class="card-text">A dialog overlay that fails to trap focus or obscure background access.</p>
+                <p class="card-text">A dialog overlay that fails to trap focus.</p>
                 <hr>
                 <a href="ghost_modal.php" class="btn btn-dark mt-3">Open Modal</a>
             </div>
@@ -191,7 +237,7 @@ include '../includes/header.php';
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">Visual-Only CAPTCHA</h5>
-                <p class="card-text">Security checks with no non-visual alternative.</p>
+                <p class="card-text">Security checks with no alternative.</p>
                 <hr>
                 <a href="captcha_visual.php" class="btn btn-dark mt-3">Verify Human</a>
             </div>
