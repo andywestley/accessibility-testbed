@@ -87,10 +87,15 @@ A dedicated section `heuristics/` contains test cases for dynamic content, focus
 
 #### Interaction Dynamics
 -   **Focus Management Failure**: `heuristics/focus_failure.php`. Demonstrates focus loss during AJAX updates.
+-   **Invisible Focus Indicator**: `heuristics/focus_hidden.php`. Hides focus rings on all interactive elements. (WCAG 2.4.7)
+-   **Meaning by Color Alone**: `heuristics/color_only.php`. Status indicated only by colored circles. (WCAG 1.4.1)
 -   **Silent Status Updates**: `heuristics/silent_update.php`. Demonstrates dynamic content updates missing `aria-live`.
 -   **State Mismatch**: `heuristics/state_mismatch.php`. Demonstrates conflicting visual vs. programmatic state (e.g., `aria-expanded`).
 -   **Keyboard Trap**: `heuristics/keyboard_trap.php`. A custom widget that captures focus and prevents exit.
 -   **Layout Shift (CLS)**: `heuristics/layout_shift.php`. Content injection causing visual instability.
+-   **The Sticky Tooltip**: `heuristics/sticky_tooltip.php`. Persistent tooltips that obscure content. (WCAG 1.4.13)
+-   **Motion Actuation Failure**: `heuristics/shake_fail.php`. Requires device motion with no button alternative. (WCAG 2.5.4)
+-   **Complex Pointer Gestures**: `heuristics/complex_gestures.php`. Requires path-based patterns for submission. (WCAG 2.5.1)
 
 #### User Hostile Patterns (Dark Patterns)
 These scenarios demonstrate complex widget failures and hostile design patterns:
@@ -102,6 +107,22 @@ These scenarios demonstrate complex widget failures and hostile design patterns:
 -   **Accordion "Yo-Yo"**: `heuristics/accordion_yoyo.php`. Opening one section automatically closes others, shifting layout. (WCAG 3.2.2)
 -   **Complex Date Picker**: `heuristics/datepicker_trap.php`. A visual grid calendar that is a keyboard trap. (WCAG 4.1.2)
 -   **Visual-Only CAPTCHA**: `heuristics/captcha_visual.php`. Security challenges that rely solely on visual identification. (WCAG 1.1.1)
+
+### Cognitive Accessibility (COGA)
+A dedicated section `cognitive/` tests logic for understanding, memory, and focus:
+-   **Timeouts without Warning**: `cognitive/timeout_no_warning.php`. Sudden session expiration with no extension. (WCAG 2.2.1)
+-   **Complex Language & Jargon**: `cognitive/complex_jargon.php`. Unnecessarily advanced vocabulary and industry acronyms. (WCAG 3.1.5)
+-   **Inconsistent Navigation**: `cognitive/inconsistent_nav.php`. Navigation elements moving across pages. (WCAG 3.2.3)
+-   **Overwhelming Visuals**: `cognitive/overwhelming_visuals.php`. Cluttered UI and distracting animations. (WCAG 2.2.2)
+-   **Memory Burden Wizard**: `cognitive/memory_burden.php`. Forms requiring recall of info from earlier steps.
+-   **Cryptic Error Messages**: `cognitive/cryptic_errors.php`. Tech jargon or vague codes instead of help. (WCAG 3.3.3)
+
+## Roadmap
+
+Future categories and enhancements planned for the testbed:
+1. **Dynamic Content Refactoring**: Moving all interaction tests to use standard custom elements for easier detection testing.
+2. **Audio/Video Tracks**: Adding actual media files with broken/missing VTT tracks for advanced media testing.
+
 
 
 

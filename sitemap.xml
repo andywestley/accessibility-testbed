@@ -75,6 +75,27 @@
         <loc>https://inaccessible.andrewwestley.co.uk/journeys/index.php</loc>
     </url>
     <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/index.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/timeout_no_warning.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/complex_jargon.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/inconsistent_nav.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/overwhelming_visuals.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/memory_burden.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/cognitive/cryptic_errors.php</loc>
+    </url>
+    <url>
         <loc>https://inaccessible.andrewwestley.co.uk/heuristics/index.php</loc>
     </url>
     <url>
@@ -135,6 +156,18 @@
         <loc>https://inaccessible.andrewwestley.co.uk/heuristics/datepicker_trap.php</loc>
     </url>
     <url>
-        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/captcha_visual.php</loc>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/focus_hidden.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/color_only.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/sticky_tooltip.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/shake_fail.php</loc>
+    </url>
+    <url>
+        <loc>https://inaccessible.andrewwestley.co.uk/heuristics/complex_gestures.php</loc>
     </url>
 </urlset>
