@@ -61,8 +61,8 @@ include '../includes/header.php';
     </div>
 </div>
 
-<h2 class="mt-5">Clear Communication</h2>
-<p>Barriers related to the complexity of language and the clarity of system feedback.</p>
+<h2 class="mt-5">Clear Communication & Readability</h2>
+<p>Barriers related to the complexity of language, unexpanded acronyms, and inline text translations.</p>
 
 <div class="row mt-4">
     <div class="col-md-4 mb-4">
@@ -90,6 +90,48 @@ include '../includes/header.php';
                     <strong>Key Issue:</strong> WCAG 3.3.3 (Error Suggestion)
                 </small>
                 <a href="cryptic_errors.php" class="btn btn-secondary mt-3">Test Error Clarity</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">The Academic Wall of Text</h5>
+                <p class="card-text">Extremely dense, high reading-level text with excessive jargon and passive voice.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Readability scores will skyrocket on this post-graduate content.<br>
+                    <strong>Key Issue:</strong> WCAG 3.1.5 (Reading Level) & 3.1.3 (Unusual Words)
+                </small>
+                <a href="academic_wall_of_text.php" class="btn btn-secondary mt-3">Test Reading Level</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">The Corporate Salad</h5>
+                <p class="card-text">Business memo overloaded with complex synonyms and unexpanded acronyms.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Scan the page for definitions of the excessive acronyms; you won't find them.<br>
+                    <strong>Key Issue:</strong> WCAG 3.1.4 (Abbreviations) & COGA Clear Language
+                </small>
+                <a href="corporate_salad.php" class="btn btn-secondary mt-3">Test Abbreviations</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">The Untagged Translation</h5>
+                <p class="card-text">Content that switches languages abruptly without proper lang attribute markings.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Screen readers will try to read Spanish/French text using an English dictionary.<br>
+                    <strong>Key Issue:</strong> WCAG 3.1.2 (Language of Parts)
+                </small>
+                <a href="untagged_translation.php" class="btn btn-secondary mt-3">Test Language Mapping</a>
             </div>
         </div>
     </div>
