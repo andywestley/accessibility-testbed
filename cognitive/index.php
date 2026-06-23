@@ -7,6 +7,10 @@ include '../includes/header.php';
 <h1>Cognitive & Neurodivergent Accessibility</h1>
 <p class="lead">Demonstrations of barriers encountered by people with cognitive, learning, and neurological disabilities, including targeted tests for scanning engine heuristics.</p>
 
+<div class="alert alert-info mb-4" role="note">
+    <strong>Visual Guide:</strong> Cards highlighted with <span class="text-danger fw-bold">red borders</span> and labeled with red badges (e.g., <span class="badge bg-danger">COG.BLOCKED_PASTE</span>) represent test cases specifically designed to trigger target checks in the automated heuristics scanner. Standard cards represent general WCAG barrier demonstrations.
+</div>
+
 <h2 class="mt-5">Time & Memory</h2>
 <p>Test cases for managing session limits and reducing the mental effort required to recall information.</p>
 
