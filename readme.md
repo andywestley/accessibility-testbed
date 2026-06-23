@@ -116,6 +116,14 @@ A dedicated section `cognitive/` tests logic for understanding, memory, and focu
 -   **Overwhelming Visuals**: `cognitive/overwhelming_visuals.php`. Cluttered UI and distracting animations. (WCAG 2.2.2)
 -   **Memory Burden Wizard**: `cognitive/memory_burden.php`. Forms requiring recall of info from earlier steps.
 -   **Cryptic Error Messages**: `cognitive/cryptic_errors.php`. Tech jargon or vague codes instead of help. (WCAG 3.3.3)
+-   **Blocked Copy-Paste**: `cognitive/blocked_paste.php`. Input fields that disable pasting. (COG.BLOCKED_PASTE)
+-   **Rapid Flashing Content**: `cognitive/rapid_flashing.php`. High-frequency animations (> 3Hz). (COG.RAPID_FLASHING / WCAG 2.3.1)
+-   **Justified Text Alignment**: `cognitive/justified_text.php`. Justified text blocking reading flow. (COG.JUSTIFIED_TEXT)
+-   **Absolute Font Size**: `cognitive/absolute_font_size.php`. Hardcoded font sizes in absolute units. (COG.ABS_FONT_SIZE / WCAG 1.4.4)
+-   **Wall of Text**: `cognitive/wall_of_text.php`. A paragraph of over 150 words with no visual breaks. (COG.WALL_OF_TEXT)
+-   **Complex Wording**: `cognitive/complex_wording.php`. Sentences averaging more than 30 words. (COG.COMPLEX_WORDING)
+-   **Viewport Zoom Restriction**: `cognitive/viewport_zoom.php`. Disabling scaling in the viewport. (COG.NO_ZOOM / WCAG 1.4.4)
+-   **Small Click Targets**: `cognitive/small_click_targets.php`. Interactive targets smaller than 24x24px. (COG.TARGET_SIZE / WCAG 2.5.8)
 
 ## Roadmap
 
