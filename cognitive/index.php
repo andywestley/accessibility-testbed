@@ -7,10 +7,6 @@ include '../includes/header.php';
 <h1>Cognitive & Neurodivergent Accessibility</h1>
 <p class="lead">Demonstrations of barriers encountered by people with cognitive, learning, and neurological disabilities, including targeted tests for automated accessibility checkers.</p>
 
-<div class="alert alert-info mb-4" role="note">
-    <strong>Visual Guide:</strong> Cards highlighted with <span class="text-danger fw-bold">red borders</span> and labeled with red badges (e.g., <span class="badge bg-danger">COG.BLOCKED_PASTE</span>) represent test cases designed to trigger specific checks in automated accessibility tools. Standard cards represent general WCAG barrier demonstrations.
-</div>
-
 <h2 class="mt-5">Time & Memory</h2>
 <p>Test cases for managing session limits and reducing the mental effort required to recall information.</p>
 
@@ -44,19 +40,16 @@ include '../includes/header.php';
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Blocked Copy-Paste</h5>
-                    <span class="badge bg-danger text-wrap">COG.BLOCKED_PASTE</span>
-                </div>
+                <h5 class="card-title">Blocked Copy-Paste</h5>
                 <p class="card-text">Text inputs that disable paste handlers, forcing users to type manually.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Try pasting an email address or password into the confirm field.<br>
                     <strong>Key Issue:</strong> Cognitive/Physical strain, memory issues
                 </small>
-                <a href="blocked_paste.php" class="btn btn-danger mt-3">Test Blocked Paste</a>
+                <a href="blocked_paste.php" class="btn btn-secondary mt-3">Test Blocked Paste</a>
             </div>
         </div>
     </div>
@@ -81,19 +74,16 @@ include '../includes/header.php';
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Rapid Flashing Content</h5>
-                    <span class="badge bg-danger text-wrap">COG.RAPID_FLASHING</span>
-                </div>
+                <h5 class="card-title">Rapid Flashing Content</h5>
                 <p class="card-text">Elements designed to flash at a rate greater than 3Hz, risking seizures.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Fast flashing banner causes visual strain and epilepsy risk.<br>
                     <strong>Key Issue:</strong> WCAG 2.3.1 (Three Flashes or Below Threshold)
                 </small>
-                <a href="rapid_flashing.php" class="btn btn-danger mt-3">Test Rapid Flashing</a>
+                <a href="rapid_flashing.php" class="btn btn-secondary mt-3">Test Rapid Flashing</a>
             </div>
         </div>
     </div>
@@ -174,70 +164,58 @@ include '../includes/header.php';
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Justified Text Alignment</h5>
-                    <span class="badge bg-danger text-wrap">COG.JUSTIFIED_TEXT</span>
-                </div>
+                <h5 class="card-title">Justified Text Alignment</h5>
                 <p class="card-text">Text alignment set to justified, creating uneven spacing or "rivers of white".</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Scan the text blocks for varying and uneven gaps between words.<br>
                     <strong>Key Issue:</strong> Dyslexic readability barriers
                 </small>
-                <a href="justified_text.php" class="btn btn-danger mt-3">Test Justified Text</a>
+                <a href="justified_text.php" class="btn btn-secondary mt-3">Test Justified Text</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Absolute Font Size</h5>
-                    <span class="badge bg-danger text-wrap">COG.ABS_FONT_SIZE</span>
-                </div>
+                <h5 class="card-title">Absolute Font Size</h5>
                 <p class="card-text">Font size defined in absolute units like pixels (px) inline on text blocks.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Verify text size cannot scale relative to user base-font settings.<br>
                     <strong>Key Issue:</strong> WCAG 1.4.4 (Resize Text)
                 </small>
-                <a href="absolute_font_size.php" class="btn btn-danger mt-3">Test Absolute Font</a>
+                <a href="absolute_font_size.php" class="btn btn-secondary mt-3">Test Absolute Font</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Wall of Text</h5>
-                    <span class="badge bg-danger text-wrap">COG.WALL_OF_TEXT</span>
-                </div>
+                <h5 class="card-title">Wall of Text</h5>
                 <p class="card-text">A paragraph of over 150 words with no visual breaks, paragraphs, or lists.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Read a very long paragraph without breaks; note reading comprehension fatigue.<br>
                     <strong>Key Issue:</strong> Cognitive overload, reading disabilities
                 </small>
-                <a href="wall_of_text.php" class="btn btn-danger mt-3">Test Wall of Text</a>
+                <a href="wall_of_text.php" class="btn btn-secondary mt-3">Test Wall of Text</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Complex Wording</h5>
-                    <span class="badge bg-danger text-wrap">COG.COMPLEX_WORDING</span>
-                </div>
+                <h5 class="card-title">Complex Wording</h5>
                 <p class="card-text">Sentences averaging more than 30 words, creating comprehension difficulty.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Read run-on sentences that lack proper punctuation breaks.<br>
                     <strong>Key Issue:</strong> Cognitive comprehension load
                 </small>
-                <a href="complex_wording.php" class="btn btn-danger mt-3">Test Complex Wording</a>
+                <a href="complex_wording.php" class="btn btn-secondary mt-3">Test Complex Wording</a>
             </div>
         </div>
     </div>
@@ -268,38 +246,33 @@ include '../includes/header.php';
 
 <div class="row mt-4">
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Viewport Zoom Restriction</h5>
-                    <span class="badge bg-danger text-wrap">COG.NO_ZOOM</span>
-                </div>
+                <h5 class="card-title">Viewport Zoom Restriction</h5>
                 <p class="card-text">Viewport meta tag configuration that locks scale level and disables zoom features.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Try pinch-zooming the page on a mobile device or screen emulator.<br>
                     <strong>Key Issue:</strong> WCAG 1.4.4 (Resize Text)
                 </small>
-                <a href="viewport_zoom.php" class="btn btn-danger mt-3">Test Zoom Lock</a>
+                <a href="viewport_zoom.php" class="btn btn-secondary mt-3">Test Zoom Lock</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-light border-danger">
+        <div class="card h-100">
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="card-title text-danger">Small Click Targets</h5>
-                    <span class="badge bg-danger text-wrap">COG.TARGET_SIZE</span>
-                </div>
+                <h5 class="card-title">Small Click Targets</h5>
                 <p class="card-text">Interactive targets (buttons, links) designed with dimensions under 24x24px.</p>
                 <hr>
                 <small class="text-muted d-block mb-2">
                     <strong>Observation:</strong> Try clicking the tiny target; note the lack of hit target area.<br>
                     <strong>Key Issue:</strong> WCAG 2.5.8 (Target Size - Minimum)
                 </small>
-                <a href="small_click_targets.php" class="btn btn-danger mt-3">Test Target Size</a>
+                <a href="small_click_targets.php" class="btn btn-secondary mt-3">Test Target Size</a>
             </div>
         </div>
+    </div>
 </div>
 
 <h2 class="mt-5">Sensory & Colour Perception</h2>
