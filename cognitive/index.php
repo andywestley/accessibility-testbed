@@ -300,6 +300,25 @@ include '../includes/header.php';
                 <a href="small_click_targets.php" class="btn btn-danger mt-3">Test Target Size</a>
             </div>
         </div>
+</div>
+
+<h2 class="mt-5">Sensory & Colour Perception</h2>
+<p>Demonstrations of visual accessibility issues, particularly how relying on colour alone presents obstacles for colour-blind users.</p>
+
+<div class="row mt-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Colour-Blindness Barriers</h5>
+                <p class="card-text">Interfaces that use colour as the only means of conveying information, states, or actions.</p>
+                <hr>
+                <small class="text-muted d-block mb-2">
+                    <strong>Observation:</strong> Use the interactive simulator to view indicators, validation, links, and charts under different colour-vision deficiencies.<br>
+                    <strong>Key Issue:</strong> WCAG 1.4.1 (Use of Color)
+                </small>
+                <a href="colour_blindness.php" class="btn btn-secondary mt-3">Test Colour-Blindness</a>
+            </div>
+        </div>
     </div>
 </div>
 
