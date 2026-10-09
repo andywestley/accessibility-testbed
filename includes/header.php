@@ -1,24 +1,22 @@
+<?php
+if (!isset($basePath)) {
+    $basePath = '';
+}
+if (!isset($pageTitle)) {
+    $pageTitle = 'Inaccessible - Accessibility Testbed';
+}
+
+if (file_exists(__DIR__ . '/config.php')) {
+    include __DIR__ . '/config.php';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-    // Include configuration for GTM ID if it exists
-    if (file_exists(__DIR__ . '/config.php')) {
-        include __DIR__ . '/config.php';
-    }
-    ?>
-    
     <?php if (!empty($gtmId)): ?>
     <script>
-        // Initialize the dataLayer
         window.dataLayer = window.dataLayer || [];
-
-        // Create the gtag function that pushes to the dataLayer
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        // Set consent defaults
+        function gtag() { dataLayer.push(arguments); }
         gtag('consent', 'default', {
             analytics_storage: localStorage.getItem('silktideCookieChoice_analytics') === 'true' ? 'granted' : 'denied',
             ad_storage: localStorage.getItem('silktideCookieChoice_marketing') === 'true' ? 'granted' : 'denied',
@@ -28,74 +26,140 @@
             security_storage: localStorage.getItem('silktideCookieChoice_necessary') === 'true' ? 'granted' : 'denied'
         });
     </script>
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','<?php echo $gtmId; ?>');</script>
-    <!-- End Google Tag Manager -->
     <?php endif; ?>
 
-    <title><?php echo isset($pageTitle) ? $pageTitle : 'Accessibility Testbed'; ?></title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= htmlspecialchars($pageTitle) ?> | Inaccessible Testbed</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        /* Keep any custom overrides if necessary, but prefer Bootstrap classes */
-        .red-text { color: red; }
-    </style>
+    <!-- Custom Theme Styles -->
+    <link rel="stylesheet" href="<?= $basePath ?>assets/css/custom.css">
+    
     <?php if (isset($extraStyles)) echo $extraStyles; ?>
 </head>
 <body>
     <?php if (!empty($gtmId)): ?>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtmId; ?>"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtmId; ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <?php endif; ?>
-    
-    <!-- Non-semantic navigation maintained -->
-    <?php $bp = isset($basePath) ? $basePath : ''; ?>
-    <div class="d-flex flex-wrap gap-2 p-3 mb-4 bg-light border-bottom shadow-sm align-items-center justify-content-center">
-        <div><a href="<?php echo $bp; ?>index.php" class="btn btn-primary">Home</a></div>
-        <div><a href="<?php echo $bp; ?>journeys/index.php" class="btn btn-success">Journeys</a></div>
-        <div><a href="<?php echo $bp; ?>cognitive/index.php" class="btn btn-info">Cognitive</a></div>
-        <div><a href="<?php echo $bp; ?>heuristics/index.php" class="btn btn-warning">Heuristics</a></div>
-        <div><a href="<?php echo $bp; ?>best_practices.php" class="btn btn-outline-secondary btn-sm">Best Practices</a></div>
-        <div><a href="<?php echo $bp; ?>images.php" class="btn btn-outline-secondary btn-sm">Images</a></div>
-        <div><a href="<?php echo $bp; ?>structure.php" class="btn btn-outline-secondary btn-sm">Structure</a></div>
-        <div><a href="<?php echo $bp; ?>tables.php" class="btn btn-outline-secondary btn-sm">Tables</a></div>
-        <div><a href="<?php echo $bp; ?>links.php" class="btn btn-outline-secondary btn-sm">Links</a></div>
-        <div><a href="<?php echo $bp; ?>media.php" class="btn btn-outline-secondary btn-sm">Media</a></div>
-        <div><a href="<?php echo $bp; ?>typography.php" class="btn btn-outline-secondary btn-sm">Typography</a></div>
-        <div><a href="<?php echo $bp; ?>forms_basic.php" class="btn btn-outline-secondary btn-sm">Basic Forms</a></div>
-        <div><a href="<?php echo $bp; ?>forms_advanced.php" class="btn btn-outline-secondary btn-sm">Advanced Forms</a></div>
-        <div><a href="<?php echo $bp; ?>keyboard_traps.php" class="btn btn-outline-secondary btn-sm">Keyboard Traps</a></div>
-        <div><a href="<?php echo $bp; ?>focus_order.php" class="btn btn-outline-secondary btn-sm">Focus Order</a></div>
-        <div><a href="<?php echo $bp; ?>interactive.php" class="btn btn-outline-secondary btn-sm">Interactive</a></div>
-        <div><a href="<?php echo $bp; ?>contrast.php" class="btn btn-outline-secondary btn-sm">Contrast</a></div>
-        <div><a href="<?php echo $bp; ?>zoom_responsive.php" class="btn btn-outline-secondary btn-sm">Zoom/Responsive</a></div>
-        <div><a href="<?php echo $bp; ?>flashing.php" class="btn btn-outline-secondary btn-sm">Flashing</a></div>
-        <div><a href="<?php echo $bp; ?>orientation.php" class="btn btn-outline-secondary btn-sm">Orientation</a></div>
-        <div><a href="<?php echo $bp; ?>aria_bad.php" class="btn btn-outline-secondary btn-sm">Bad ARIA</a></div>
-        <div><a href="<?php echo $bp; ?>parsing.php" class="btn btn-outline-secondary btn-sm">Parsing</a></div>
-        <div><a href="<?php echo $bp; ?>language.php" class="btn btn-outline-secondary btn-sm">Language</a></div>
-        <div><a href="<?php echo $bp; ?>iframes.php" class="btn btn-outline-secondary btn-sm">Iframes</a></div>
-        <!-- Testbed Family Suite Switcher -->
-        <div class="dropdown">
-            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="suiteDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-collection-fill me-1"></i> Testbed Suite
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="suiteDropdown">
-                <li class="dropdown-header text-uppercase small fw-bold text-white-50">Testbed Family Ecosystem</li>
-                <li><a class="dropdown-item active" href="https://inaccessible.andrewwestley.co.uk/"><i class="bi bi-universal-access text-primary me-2"></i>Accessibility Testbed (WCAG 2.2)</a></li>
-                <li><a class="dropdown-item" href="https://coga-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-person-fill-check text-info me-2"></i>COGA Cognitive Testbed</a></li>
-                <li><a class="dropdown-item" href="https://content-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text-fill text-warning me-2"></i>Content &amp; Readability Testbed</a></li>
-                <li><a class="dropdown-item" href="https://uxusability-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-speedometer2 text-danger me-2"></i>UX &amp; Heuristics Testbed</a></li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- Main Content Container -->
-    <div class="container my-5">
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-secondary-subtle sticky-top">
+            <div class="container-fluid px-lg-4">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="<?= $basePath ?>index.php">
+                    <span class="badge bg-primary px-2 py-1 fs-6"><i class="bi bi-universal-access"></i></span>
+                    <span class="fw-bold tracking-tight text-white">Inaccessible <span class="text-primary">Testbed</span></span>
+                    <span class="badge bg-secondary-subtle text-secondary navbar-brand-badge ms-1">WCAG 2.2 AAA</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="topNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) === 'index.php') ? 'active' : '' ?>" href="<?= $basePath ?>index.php">
+                                <i class="bi bi-grid-3x3-gap-fill me-1"></i> WCAG Matrix
+                            </a>
+                        </li>
+                        
+                        <!-- Principle 1: Perceivable -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="p1Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                1. Perceivable
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="p1Dropdown">
+                                <li><a class="dropdown-item" href="<?= $basePath ?>images.php">Images &amp; Non-Text (1.1.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>media.php">Media &amp; Captions (1.2.x)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>structure.php">Structure &amp; Landmarks (1.3.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>tables.php">Data Tables (1.3.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>orientation.php">Orientation (1.3.4)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>contrast.php">Color Contrast (1.4.3/1.4.11)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>zoom_responsive.php">Zoom &amp; Reflow (1.4.4/1.4.10)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>typography.php">Typography &amp; Spacing (1.4.5/1.4.12)</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Principle 2: Operable -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="p2Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                2. Operable
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="p2Dropdown">
+                                <li><a class="dropdown-item" href="<?= $basePath ?>interactive.php">Keyboard Access (2.1.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>keyboard_traps.php">Keyboard Traps (2.1.2)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>flashing.php">Flashing &amp; Seizures (2.3.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>focus_order.php">Focus Order &amp; Visible (2.4.3/2.4.7)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>links.php">Link Purpose (2.4.4/2.4.9)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>target_size.php">Target Size (2.5.8)</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Principle 3 & 4: Understandable & Robust -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="p34Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                3 &amp; 4. Understandable &amp; Robust
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="p34Dropdown">
+                                <li class="dropdown-header text-uppercase small text-info">Principle 3: Understandable</li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>language.php">Language of Page (3.1.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>forms_basic.php">Form Labels (3.3.2)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>forms_advanced.php">Error Identification (3.3.1)</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="dropdown-header text-uppercase small text-warning">Principle 4: Robust</li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>parsing.php">Parsing &amp; IDs (4.1.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>aria_bad.php">Bad ARIA Roles (4.1.2)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>iframes.php">Iframe Titles (4.1.2)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>best_practices.php">Axe Best Practices</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Audits & Journeys -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="journeysDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Journeys &amp; Audits
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="journeysDropdown">
+                                <li><a class="dropdown-item" href="<?= $basePath ?>journeys/index.php"><i class="bi bi-signpost-split text-success me-2"></i>User Journeys</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>cognitive/index.php"><i class="bi bi-brain text-info me-2"></i>Cognitive Audits</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>heuristics/index.php"><i class="bi bi-diagram-3 text-warning me-2"></i>Heuristics Suite</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Family Suite Switcher -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-info" href="#" id="suiteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-collection-fill me-1"></i> Testbed Suite
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="suiteDropdown">
+                                <li class="dropdown-header text-uppercase small fw-bold text-white-50">Testbed Family Ecosystem</li>
+                                <li><a class="dropdown-item active" href="https://inaccessible.andrewwestley.co.uk/"><i class="bi bi-universal-access text-primary me-2"></i>Accessibility Testbed (WCAG 2.2)</a></li>
+                                <li><a class="dropdown-item" href="https://coga-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-person-fill-check text-info me-2"></i>COGA Cognitive Testbed</a></li>
+                                <li><a class="dropdown-item" href="https://content-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text-fill text-warning me-2"></i>Content &amp; Readability Testbed</a></li>
+                                <li><a class="dropdown-item" href="https://uxusability-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-speedometer2 text-danger me-2"></i>UX &amp; Heuristics Testbed</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="<?= $basePath ?>images.php" class="btn btn-sm btn-outline-info">
+                            <i class="bi bi-play-circle-fill me-1"></i> Start WCAG Crawler
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid px-lg-4 my-4">
