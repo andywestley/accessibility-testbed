@@ -1,172 +1,62 @@
 <?php
-$pageTitle = 'Timing Adjustable, Pause & No Seizure Flashing';
+$pageTitle = 'Flashing & Seizure Hazards';
 $extraStyles = '<style>
-        
-
-        
-
-        .blink {
-            animation: blinker 0.5s linear infinite;
-            color: red;
-            font-weight: bold;
-        }
-
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        .moving-text {
-            position: relative;
-            animation: move 2s infinite alternate;
-        }
-
-        @keyframes move {
-            from {
-                left: 0;
-            }
-
-            to {
-                left: 100px;
-            }
-        }
-        
-        .parallax {
-            height: 200px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url("https://placehold.co/800x400/orange/white?text=Parallax+Animation");
-            margin-top: 20px;
-        }
-
-        /* 2.3.3 Animation from Interactions - Motion that cannot be disabled */
-        .mouse-follower {
-            width: 50px;
-            height: 50px;
-            background: blue;
-            position: absolute;
-            transition: all 0.1s;
-            pointer-events: none;
-            opacity: 0.5;
-            z-index: 9999;
-        }
-    </style>';
+    @keyframes strobeEffect {
+        0%, 49% { background-color: #ef4444; color: #ffffff; }
+        50%, 100% { background-color: #3b82f6; color: #ffffff; }
+    }
+    .strobe-box {
+        animation: strobeEffect 0.2s infinite;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+</style>';
 include 'includes/header.php';
 
 $currentCriterion = [
-    'rule' => 'WCAG 2.2.1 / 2.3.1',
-    'name' => 'Timing Adjustable, Pause & No Seizure Flashing',
+    'rule' => 'WCAG 2.3.1 / 2.2.2 (Level A)',
+    'name' => 'Three Flashes or Below Threshold (Seizure Hazards)',
     'level' => 'A',
-    'citation' => 'WCAG 2.2 SC 2.3.1: Web pages do not contain anything that flashes more than three times in any one second period.',
-    'trigger_summary' => 'High-frequency strobing CSS animations (> 3 Hz) and unpausable auto-updating tickers.'
+    'citation' => 'WCAG 2.2 SC 2.3.1: Web pages do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.',
+    'trigger_summary' => 'High-frequency strobing CSS animations (> 3 Hz) that pose photosensitive seizure risks, and unpausable auto-updating content.'
 ];
 include 'includes/diagnostic_header.php';
 ?>
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.2.2 Pause, Stop, Hide / 2.3.1 Three Flashes - Blinking Content</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <p class="blink">WARNING: This text is blinking properly fast!</p>
-    <div class="blink" style="background: yellow; color: black; padding: 10px;">
-        HUGE BLINKING BANNER
-    </div>
-    <span class="blink" style="border: 2px solid red;">Blinking Border</span>
+
+<!-- Diagnostic Description -->
+<div class="alert alert-danger d-flex align-items-start gap-3 shadow-sm mb-4">
+    <i class="bi bi-exclamation-octagon-fill fs-4 text-danger flex-shrink-0 mt-1"></i>
+    <div>
+        <h5 class="alert-heading fw-bold mb-1">Warning: Seizure Hazard Simulation</h5>
+        <p class="small mb-0 text-danger">
+            Content that flashes more than 3 times per second can trigger photosensitive epileptic seizures. (The interactive demonstration is controlled via an explicit button).
+        </p>
     </div>
 </div>
 
+<!-- Test 1: Rapid Flashing Strobe Animation -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.2.2 Pause, Stop, Hide - More Marquees</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">1. Rapid Strobing Animation (&gt; 3 Flashes/Sec)</h2>
+            <small class="text-muted">Violates WCAG 2.3.1 Level A Three Flashes threshold</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Seizure Violation
+        </span>
     </div>
     <div class="card-body">
-        <marquee scrollamount="20">Fast scrolling marquee</marquee>
-    <marquee direction="up">Vertical scrolling marquee</marquee>
+        <div class="test-sandbox-zone">
+            <div id="strobe-demo" class="p-3 border rounded bg-light text-center mb-3">
+                <span class="text-muted">Strobe animation is currently paused for safety.</span>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-danger" onclick="document.getElementById('strobe-demo').classList.toggle('strobe-box');">
+                <i class="bi bi-lightning-fill me-1"></i> Toggle Simulated Strobe
+            </button>
+        </div>
     </div>
 </div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.2.2 Pause, Stop, Hide - Marquee (Deprecated)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <marquee>This is a marquee tag. It scrolls automatically and cannot be paused.</marquee>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.2.2 Pause, Stop, Hide - Moving Content (No Pause)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <div class="moving-text">
-        I am moving back and forth and you can't stop me.
-    </div>
-
-    <p>Since there are no controls to pause, stop, or hide the moving content above, it fails the Pause, Stop, Hide
-        criterion.</p>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.3.3 Animation from Interactions (AAA) - Parallax</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <div class="parallax">
-        PARALLAX SCROLLING (Cannot be disabled)
-    </div>
-
-    <!-- Mouse follower script -->
-    <div id="follower" class="mouse-follower"></div>
-    <script>
-        document.addEventListener('mousemove', function(e) {
-            const follower = document.getElementById('follower');
-            follower.style.left = e.pageX + 'px';
-            follower.style.top = e.pageY + 'px';
-        });
-    </script>
-    
-    <hr>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">Timing Issues (AAA)</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <h3>2.2.3 No Timing & 2.2.4 Interruptions</h3>
-    <!-- Simulating a session timeout interrupt -->
-    <div style="border: 2px solid red; padding: 10px; background: #ffe6e6;">
-        <p><strong>SECURITY ALERT:</strong> Your session will expire in 10 seconds. We are interrupting your work to tell you this.</p>
-        <p>(Violation of 2.2.4: Interruptions can be postponed or suppressed, and 2.2.3: No timing is preferred)</p>
-    </div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">Flashing (AAA)</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <h3>2.3.2 Three Flashes (AAA)</h3>
-    <p>The standard (A) allows 3 flashes in a second. AAA prohibits <em>any</em> flashing > 3 times per second, even if below the general flash/red flash thresholds. This element blinks rapidly, violating AAA.</p>
-    <div class="blink" style="animation-duration: 0.2s;">
-        RAPID BLINKING (AAA VIOLATION)
-    </div>
-    </div>
-</div>
-
 
 <?php include 'includes/footer.php'; ?>

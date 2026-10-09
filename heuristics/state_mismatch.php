@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Broken semantics in custom widgets.<br>
         <strong>Observation:</strong> Toggle accordion. Inspect button. Does `aria-expanded` toggle true/false?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 4.1.2 (Name, Role, Value)</li>
             <li>ARIA Best Practices</li>
         </ul>

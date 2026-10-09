@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Barriers for users with memory impairments, brain injuries, or those who are easily distracted.<br>
         <strong>Observation:</strong> Complete the 3 steps. Notice that Step 3 requires information from Step 1, but Step 1 is no longer visible.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>COGA Best Practice (Reduce Memory Load)</li>
         </ul>
     </small>

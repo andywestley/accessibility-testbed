@@ -1,129 +1,70 @@
 <?php
-$pageTitle = 'Language of Page & Parts';include 'includes/header.php';
+$pageTitle = 'Language of Page & Parts';
+include 'includes/header.php';
 
 $currentCriterion = [
-    'rule' => 'WCAG 3.1.1 / 3.1.2',
-    'name' => 'Language of Page & Parts',
+    'rule' => 'WCAG 3.1.1 / 3.1.2 (Level A/AA)',
+    'name' => 'Language of Page & Language of Parts',
     'level' => 'A',
-    'citation' => 'WCAG 2.2 SC 3.1.1 & 3.1.2: The default human language of each Web page and passage can be programmatically determined via the lang attribute.',
-    'trigger_summary' => 'Missing or invalid <html> lang attribute, and untagged multi-lingual foreign language phrases.'
+    'citation' => 'WCAG 2.2 SC 3.1.1 Language of Page: The default human language of each Web page can be programmatically determined. SC 3.1.2 Language of Parts: The human language of each passage or phrase in the content can be programmatically determined.',
+    'trigger_summary' => 'Untagged foreign language quotes, incorrect lang subcodes, and untranslated passages without lang attribute switching.'
 ];
 include 'includes/diagnostic_header.php';
 ?>
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.1.1 Language of Page - Missing Lang Attribute</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <p>The <code>html</code> tag of this page has no <code>lang</code> attribute.</p>
+
+<!-- Diagnostic Description -->
+<div class="alert alert-info d-flex align-items-start gap-3 shadow-sm mb-4">
+    <i class="bi bi-info-circle-fill fs-4 text-info flex-shrink-0 mt-1"></i>
+    <div>
+        <h5 class="alert-heading fw-bold mb-1">Intentional Language Declaration Violations (WCAG 3.1.x)</h5>
+        <p class="small mb-0 text-secondary">
+            Screen reader synthesizers switch pronunciation engines based on <code>lang</code> tags. When foreign phrases are untagged, screen readers pronounce words with incorrect phonetics.
+        </p>
     </div>
 </div>
 
+<!-- Test 1: Untagged Foreign Language Quotation -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.1.1 Language of Page - Wrong Lang Code</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">1. Untagged Foreign Language Passage (WCAG 3.1.2 Level AA)</h2>
+            <small class="text-muted">French phrase rendered without <code>lang="fr"</code></small>
+        </div>
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i> WCAG 3.1.2 Failure
+        </span>
     </div>
     <div class="card-body">
-        <p lang="xx">This paragraph has an invalid language code 'xx'.</p>
+        <p class="small text-muted mb-3">
+            An English screen reader will pronounce this French quote using English phonemes:
+        </p>
+        <div class="test-sandbox-zone">
+            <p class="mb-0">
+                As the famous philosopher once remarked, <em>"C'est la vie et rien d'autre"</em>, we must accept the inevitable realities.
+            </p>
+            <small class="text-danger d-block mt-2">Missing <code>&lt;span lang="fr"&gt;</code> wrapper around foreign phrase.</small>
+        </div>
     </div>
 </div>
 
+<!-- Test 2: Invalid Language Subtag -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.1.2 Language of Parts - Language Parts Change Not Marked</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">2. Invalid / Non-Standard Language Subtags</h2>
+            <small class="text-muted">Using fake language codes like <code>lang="xyz"</code></small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Invalid Lang Tag
+        </span>
     </div>
     <div class="card-body">
-        <p>
-        The following text is in French but is not marked up as such:
-        Bonjour tout le monde. Je suis un paragraphe en français.
-    </p>
+        <div class="test-sandbox-zone">
+            <p lang="xyz" class="mb-0">
+                This paragraph specifies an invalid BCP 47 language code: <code>lang="xyz"</code>.
+            </p>
+        </div>
     </div>
 </div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.1.2 Language of Parts - Wrong Language Marked</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <p lang="es">This text is in English but marked as Spanish.</p>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.1.2 Language of Parts - More Unmarked Languages</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <p>
-        Dies ist ein deutscher Satz ohne Sprachauszeichnung. (German)
-    </p>
-    <p>
-        Este es un párrafo en español sin etiqueta de idioma. (Spanish)
-    </p>
-    <p>
-        Questo è un testo in italiano. (Italian)
-    </p>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.1.2 Language of Parts - More Mixed Content</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <p>
-        Welcome to our site. <span lang="fr">Bienvenue</span> users. <!-- Correct -->
-        But this part in <span lang="de">English</span> is wrong. <!-- Wrong lang code for content -->
-    </p>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">AAA Violations (Reading Level & Definitions)</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <h3>3.1.3 Unusual Words (No Definition)</h3>
-    <p>The <strong>interregnum</strong> period was characterized by significant <strong>obfuscation</strong> of the <strong>zeitgeist</strong>.</p>
-
-    <h3>3.1.4 Abbreviations (No Expansion)</h3>
-    <p>We strictly follow <abbr>WCAG</abbr> and <abbr>ARIA</abbr> guidelines, but we never explain what they mean.</p>
-    <p>Please refer to the SOP for more details on the KPI requirements.</p>
-
-    <h3>3.1.5 Reading Level (Advanced)</h3>
-    <p>
-        The ontological status of the transcendental ego cannot be deduced from a purely empirical analysis of the phenomenological reduction, 
-        necessitating a dialectical approach to the synthesis of the apriori manifolds of space and time.
-    </p>
-
-    <h3>3.1.6 Pronunciation (AAA)</h3>
-    <p>Certain words are ambiguous without pronunciation context, but no guide is provided.</p>
-    <p>
-        "I will <strong>resume</strong> my work on the <strong>resume</strong>."
-        <br>
-        (No semantic indication of how to pronounce 'resume' differently in these two contexts).
-    </p>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">Language of Parts (AA)</h2>
-        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Level AA Trigger</span>
-    </div>
-    <div class="card-body">
-        <h3>3.1.2 Language of Parts</h3>
-    <p>This paragraph contains multiple languages but lacks span tags to identify them.</p>
-    <p>He said "Bonjour" and then "Guten Tag" before saying "Hello". Screen readers will read this all with the default voice accent.</p>
-    </div>
-</div>
-
 
 <?php include 'includes/footer.php'; ?>

@@ -18,7 +18,7 @@ include '../includes/header.php';
                     <strong>Demonstrates:</strong> High-impact barriers to entry.<br>
                     <strong>Observation:</strong> Try to identify fields without using visual labels. Check tab order.<br>
                     <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
+                    <ul class="ps-3 mb-0">
                         <li>WCAG 1.4.3 (Contrast)</li>
                         <li>WCAG 3.3.2 (Labels)</li>
                         <li>WCAG 1.3.5 (Autocomplete)</li>
@@ -38,7 +38,7 @@ include '../includes/header.php';
                     <strong>Demonstrates:</strong> Cumulative frustration in long flows.<br>
                     <strong>Observation:</strong> Attempt to navigate using only keyboard. Note progress bar announcements.<br>
                     <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
+                    <ul class="ps-3 mb-0">
                         <li>WCAG 2.1.2 (Keyboard Trap)</li>
                         <li>WCAG 4.1.2 (Name, Role, Value)</li>
                         <li>WCAG 2.4.6 (Headings/Labels)</li>
@@ -58,7 +58,7 @@ include '../includes/header.php';
                     <strong>Demonstrates:</strong> Error handling failures.<br>
                     <strong>Observation:</strong> Submit empty form. Note if focus moves to errors or if errors are read out.<br>
                     <strong>Key Issues:</strong>
-                    <ul class="pl-3 mb-0">
+                    <ul class="ps-3 mb-0">
                         <li>WCAG 3.3.1 (Error Identification)</li>
                         <li>WCAG 3.3.3 (Error Suggestion)</li>
                         <li>WCAG 4.1.3 (Status Messages)</li>

@@ -14,7 +14,7 @@ include '../includes/header.php';
                 <strong>Demonstrates:</strong> High-impact barriers to entry.<br>
                 <strong>Observation:</strong> Try to identify fields without using visual labels. Check tab order.<br>
                 <strong>Key Issues:</strong>
-                <ul class="pl-3 mb-0">
+                <ul class="ps-3 mb-0">
                     <li>WCAG 1.4.3 (Contrast)</li>
                     <li>WCAG 3.3.2 (Labels)</li>
                     <li>WCAG 1.3.5 (Autocomplete)</li>

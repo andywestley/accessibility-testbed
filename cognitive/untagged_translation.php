@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>The Untagged Translation</h1>
+<h1>The Untagged Translation</h1>
     <p class="lead">Demonstrating a failure of WCAG 3.1.2 (Language of Parts) by switching languages without markup.</p>
 
     <div class="mt-4">
@@ -31,6 +30,4 @@ include '../includes/header.php';
             As a result, screen readers and translation engines will attempt to read the Spanish and French text using English pronunciation rules, resulting in incomprehensible gibberish for users relying on assistive technologies.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

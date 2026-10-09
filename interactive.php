@@ -1,193 +1,136 @@
 <?php
-$pageTitle = 'Keyboard Accessibility & Hover Content';
+$pageTitle = 'Keyboard Accessibility & Content on Hover';
 $extraStyles = '<style>
-        
-
-        
-
-        .fake-btn {
-            background: #ddd;
-            padding: 5px 10px;
-            border: 1px solid #999;
-            display: inline-block;
-            cursor: pointer;
-        }
-    </style>';
+    .fake-btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: #3b82f6;
+        color: white;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        user-select: none;
+    }
+    .hover-tooltip-trigger {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted #333;
+    }
+    .hover-tooltip-content {
+        display: none;
+        position: absolute;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1e293b;
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        z-index: 10;
+    }
+    .hover-tooltip-trigger:hover .hover-tooltip-content {
+        display: block;
+    }
+</style>';
 include 'includes/header.php';
 
 $currentCriterion = [
-    'rule' => 'WCAG 2.1.1 / 1.4.13',
-    'name' => 'Keyboard Accessibility & Hover Content',
+    'rule' => 'WCAG 2.1.1 / 1.4.13 (Level A/AA)',
+    'name' => 'Keyboard Accessibility & Content on Hover',
     'level' => 'A',
-    'citation' => 'WCAG 2.2 SC 2.1.1 & 1.4.13: All functionality is operable through a keyboard interface without requiring specific timings for individual keystrokes.',
-    'trigger_summary' => 'Mouse-only click handlers on divs/spans without tabindex or keydown events, and hover tooltips that disappear when mousing over.'
+    'citation' => 'WCAG 2.2 SC 2.1.1 Keyboard: All functionality of the content is operable through a keyboard interface without requiring specific timings. SC 1.4.13: Hover or focus content must be dismissible, hoverable, and persistent.',
+    'trigger_summary' => 'Click handlers on <div> or <span> without tabindex/keydown, hover tooltips that vanish when mouse moves over tooltip, and non-focusable custom controls.'
 ];
 include 'includes/diagnostic_header.php';
 ?>
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.1.1 Keyboard - Div Button (No Role, No Tabindex)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Not accessible by keyboard, screen reader ignores -->
-    <div class="fake-btn" onclick="alert('Clicked!')">Click Me via Mouse Only</div>
+
+<!-- Diagnostic Description -->
+<div class="alert alert-info d-flex align-items-start gap-3 shadow-sm mb-4">
+    <i class="bi bi-info-circle-fill fs-4 text-info flex-shrink-0 mt-1"></i>
+    <div>
+        <h5 class="alert-heading fw-bold mb-1">Intentional Keyboard &amp; Pointer Interaction Violations</h5>
+        <p class="small mb-0 text-secondary">
+            This test page demonstrates interactive elements that completely ignore keyboard navigation (mouse-only <code>onclick</code> on <code>&lt;div&gt;</code> without <code>tabindex</code> or key listeners) and un-hoverable tooltips.
+        </p>
     </div>
 </div>
 
+<!-- Test 1: Mouse-Only Div Button -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.1.1 Keyboard - Span Link</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Not reachable by keyboard -->
-    <span style="color: blue; text-decoration: underline; cursor: pointer;" onclick="alert('Link clicked')">
-        This is a span link
-    </span>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.1.1 Keyboard - Div Button (Role Button, No Keyboard Handler)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Screen reader knows it's a button, but Enter/Space won't work -->
-    <div role="button" tabindex="0" class="fake-btn" onclick="alert('Clicked!')">
-        Focusable but no Keyboard Event
-    </div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - Custom Checkbox (No State)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Visual checkbox, no aria-checked -->
-    <div role="checkbox" tabindex="0" onclick="this.innerHTML = this.innerHTML === '[x]' ? '[ ]' : '[x]'">
-        [ ] Check me
-    </div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.1.1 Keyboard - More Div Buttons</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <div class="fake-btn" onclick="console.log('click')">Div Button 1</div>
-    <div class="fake-btn" onclick="console.log('click')">Div Button 2</div>
-    <div class="fake-btn" onclick="console.log('click')">Div Button 3</div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.1.1 Keyboard - More Span Actions</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <span onclick="alert('span')">[Span Action 1]</span> |
-    <span onclick="alert('span')">[Span Action 2]</span> |
-    <span onclick="alert('span')">[Span Action 3]</span>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.4.13 Content on Hover/Focus - Mouseover Only Info</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <div onmouseover="document.getElementById('info').style.display='block'"
-        onmouseout="document.getElementById('info').style.display='none'">
-        Hover me (Keyboard users can't see info)
-    </div>
-    <div id="info" style="display:none; color: green;">Secret Info</div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.5.1 Pointer Gestures - Slider (Path-based)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <div style="border: 1px solid #ccc; padding: 20px; width: 300px;">
-        <p>Slide to Unlock (Path-based gesture with no alternative)</p>
-        <input type="range" min="0" max="100" value="0" id="slider" style="width: 100%;">
-        <p id="unlocked" style="display:none; color:green;">UNLOCKED!</p>
-        <script>
-            document.getElementById('slider').addEventListener('input', function(e) {
-                if (e.target.value == 100) {
-                    document.getElementById('unlocked').style.display = 'block';
-                }
-            });
-        </script>
-    </div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">2.5.2 Pointer Cancellation - Trigger on Down</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Triggers on mousedown, not click (up event) -->
-    <button onmousedown="alert('Violation: Triggered on Down-Event! Should be Up-Event.')">
-        Danger Button (Triggers on Mouse Down)
-    </button>
-
-    <hr>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">New WCAG 2.2 / AAA Interactive Issues</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <h3>2.1.3 Keyboard (No Exception) (AAA)</h3>
-    <p>This drawing canvas works only with a mouse. Even though "freehand drawing" might be considered an exception for 2.1.1, 2.1.3 removes that exception.</p>
-    <div style="width: 200px; height: 100px; border: 1px solid black; position: relative;" onmousemove="if(event.buttons===1) { this.innerHTML += '.'; }">
-        [ Draw Here (Mouse Only) ]
-    </div>
-
-    <h3>2.5.6 Concurrent Input Mechanisms (AAA)</h3>
-    <p>This field disables mouse interaction if it detects touch, or vice versa (simulated restriction).</p>
-    <button onclick="if(window.matchMedia('(pointer: coarse)').matches) { alert('Mouse blocked because you seem to be on a touch device'); } else { alert('Clicked'); }">
-        Restrictive Input Button
-    </button>
-
-    <h3>2.5.7 Dragging Movements (AA)</h3>
-    <p>A draggable item that <strong>requires</strong> dragging to move, with no single-pointer (tap/click) alternative.</p>
-    <div id="drag-container" style="padding: 10px; background: #eee;">
-        <div id="dragger" draggable="true" style="width: 50px; height: 50px; background: blue; color: white; cursor: move; display: flex; align-items: center; justify-content: center;">
-            Drag
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">1. Non-Focusable Mouse-Only &lt;div&gt; Button (WCAG 2.1.1)</h2>
+            <small class="text-muted"><code>&lt;div onclick="..."&gt;</code> without <code>tabindex="0"</code> or <code>role="button"</code></small>
         </div>
-        <div id="dropzone" style="margin-top: 10px; width: 100px; height: 100px; border: 2px dashed #999;">
-            Drop Here
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Keyboard Inaccessible
+        </span>
+    </div>
+    <div class="card-body">
+        <p class="small text-muted mb-3">
+            Try pressing <kbd>Tab</kbd> to reach this button. The keyboard cursor will completely bypass it:
+        </p>
+        <div class="test-sandbox-zone">
+            <!-- Non-keyboard accessible button -->
+            <div class="fake-btn" onclick="alert('Action triggered via Mouse click!')">
+                <i class="bi bi-mouse me-1"></i> Click Me (Mouse Only)
+            </div>
+            <small class="text-danger d-block mt-2">Cannot be focused via Tab key or triggered via Enter / Spacebar.</small>
         </div>
     </div>
-    <script>
-        const dragger = document.getElementById('dragger');
-        const dropzone = document.getElementById('dropzone');
-        dragger.addEventListener('dragstart', e => e.dataTransfer.setData('text', 'dragged'));
-        dropzone.addEventListener('dragover', e => e.preventDefault());
-        dropzone.addEventListener('drop', e => {
-            e.preventDefault();
-            dropzone.appendChild(dragger);
-        });
-    </script>
+</div>
+
+<!-- Test 2: Hover Tooltip Disappears on Mouseover -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">2. Content on Hover Not Hoverable (WCAG 1.4.13)</h2>
+            <small class="text-muted">Tooltip that vanishes if user attempts to move pointer over tooltip text</small>
+        </div>
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i> Hoverable Violation
+        </span>
+    </div>
+    <div class="card-body">
+        <p class="small text-muted mb-3">
+            Hover over the dotted text to reveal the tooltip, then try moving your pointer directly onto the tooltip box:
+        </p>
+        <div class="test-sandbox-zone">
+            <span class="hover-tooltip-trigger fw-bold text-primary">
+                Inspect Term Definition
+                <span class="hover-tooltip-content shadow">
+                    Tooltip explanation (Un-hoverable!)
+                </span>
+            </span>
+        </div>
     </div>
 </div>
 
+<!-- Test 3: Non-Standard Dropdown Without Keyboard Support -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">3. Custom Dropdown Lacking ARIA &amp; Arrow Key Navigation</h2>
+            <small class="text-muted">Plain list toggled via mouse clicks without <code>aria-expanded</code> or ArrowDown listeners</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Custom Widget Failure
+        </span>
+    </div>
+    <div class="card-body">
+        <div class="test-sandbox-zone">
+            <div class="dropdown">
+                <div class="fake-btn" onclick="document.getElementById('custom-menu').classList.toggle('d-none');">
+                    Toggle Menu (Mouse-Only)
+                </div>
+                <ul id="custom-menu" class="list-group d-none mt-2 shadow-sm" style="max-width: 250px;">
+                    <li class="list-group-item list-group-item-action" onclick="alert('Selected 1')">Option 1</li>
+                    <li class="list-group-item list-group-item-action" onclick="alert('Selected 2')">Option 2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include 'includes/footer.php'; ?>

@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Missing non-visual feedback.<br>
         <strong>Observation:</strong> Click "Add". Verify visual change. Check code for `aria-live` regions.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 4.1.3 (Status Messages)</li>
             <li>WCAG 3.3.1 (Error Identification)</li>
         </ul>

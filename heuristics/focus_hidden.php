@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> High-impact navigation barriers for keyboard users.<br>
         <strong>Observation:</strong> Try tabbing through the buttons below. Can you tell which one is currently selected?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.4.7 (Focus Visible)</li>
         </ul>
     </small>

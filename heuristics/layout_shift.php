@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Visual instability and reading disruption.<br>
         <strong>Observation:</strong> Click to load image. Watch text jump. Verify no placeholder height on container.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>Core Web Vitals (CLS)</li>
             <li>UX / Reading Continuity</li>
         </ul>

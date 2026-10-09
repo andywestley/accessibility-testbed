@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Blocked Copy-Paste (COG.BLOCKED_PASTE)</h1>
+<h1>Blocked Copy-Paste (COG.BLOCKED_PASTE)</h1>
     <p class="lead">Demonstrating text input fields that explicitly prevent pasting operations.</p>
 
     <div class="mt-4 border p-4 col-md-6">
@@ -20,6 +19,4 @@ include '../includes/header.php';
             Blocking copy-paste operations forces manual transcriptions. This is a significant barrier for users with cognitive or physical limitations, memory difficulties, or those who rely on password managers and assistive typing tools.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

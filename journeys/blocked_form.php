@@ -14,7 +14,7 @@ include '../includes/header.php';
                 <strong>Demonstrates:</strong> Error handling failures.<br>
                 <strong>Observation:</strong> Submit empty form. Note if focus moves to errors or if errors are read out.<br>
                 <strong>Key Issues:</strong>
-                <ul class="pl-3 mb-0">
+                <ul class="ps-3 mb-0">
                     <li>WCAG 3.3.1 (Error Identification)</li>
                     <li>WCAG 3.3.3 (Error Suggestion)</li>
                     <li>WCAG 4.1.3 (Status Messages)</li>

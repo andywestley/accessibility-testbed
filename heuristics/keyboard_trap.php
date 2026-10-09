@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> "Black hole" for keyboard users.<br>
         <strong>Observation:</strong> Tab into the scroll box. Attempt to Tab out to the next form field. Verify if stuck.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.1.2 (No Keyboard Trap)</li>
         </ul>
     </small>

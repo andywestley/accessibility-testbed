@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Disruption for screen magnifier users.<br>
         <strong>Observation:</strong> Hover over the "Help" icon. Does the tooltip obscure the text below it? Can you dismiss it without moving the mouse away?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 1.4.13 (Content on Hover or Focus)</li>
         </ul>
     </small>

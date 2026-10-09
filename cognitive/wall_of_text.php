@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Wall of Text (COG.WALL_OF_TEXT)</h1>
+<h1>Wall of Text (COG.WALL_OF_TEXT)</h1>
     <p class="lead">Demonstrating large blocks of unbroken text containing more than 150 words, which tires reading comprehension.</p>
 
     <div class="mt-4 border p-4">
@@ -21,6 +20,4 @@ include '../includes/header.php';
             For readers with cognitive impairments, ADHD, dyslexia, or learning difficulties, large walls of text without headings, bullets, list items, or paragraph breaks increase cognitive load and make tracking lines of text difficult. Breaking up content improves overall comprehension and scanning speed.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Barriers for colorblind users and those in high-contrast modes.<br>
         <strong>Observation:</strong> Look at the server status dashboard. Can you tell which systems are failing without relying on the color?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 1.4.1 (Use of Color)</li>
         </ul>
     </small>

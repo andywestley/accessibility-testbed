@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Barriers for users with motor impairments or those using alternative pointers.<br>
         <strong>Observation:</strong> To "Unlock" the submit button, you must draw a specific "S" shape inside the canvas below. There is no simple button or keyboard command to do this.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.5.1 (Pointer Gestures)</li>
         </ul>
     </small>

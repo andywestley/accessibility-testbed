@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Disorienting focus resets.<br>
         <strong>Observation:</strong> Click "Load More". Press Tab. Does focus resume at the new item or restart at the top?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.4.3 (Focus Order)</li>
             <li>Best Practice (Manage Focus)</li>
         </ul>

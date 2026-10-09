@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>The Corporate Salad</h1>
+<h1>The Corporate Salad</h1>
     <p class="lead">Demonstrating unexpanded abbreviations (WCAG 3.1.4) and violations of COGA Clear Language best practices.</p>
 
     <div class="mt-4">
@@ -29,6 +28,4 @@ include '../includes/header.php';
             Additionally, the passage uses needlessly complex and long business jargon ("facilitate" instead of "help", "utilize" instead of "use", "ascertain" instead of "find out") which creates unnecessary cognitive load for the reader.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

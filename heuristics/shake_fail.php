@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Exclusion of users with limited mobility or mounted devices.<br>
         <strong>Observation:</strong> The "Reset Form" functionality is linked to the device's accelerometer. Unless you "shake" your device (simulated here with a button for testing, but imagine it missing), there is no way to clear the form.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.5.4 (Motion Actuation)</li>
         </ul>
     </small>

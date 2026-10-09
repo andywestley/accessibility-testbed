@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Small Click Targets (COG.TARGET_SIZE)</h1>
+<h1>Small Click Targets (COG.TARGET_SIZE)</h1>
     <p class="lead">Demonstrating interactive click targets that are smaller than the accessible minimum size (24x24px).</p>
 
     <div class="mt-4 border p-4">
@@ -20,6 +19,4 @@ include '../includes/header.php';
             Interactive targets like buttons, links, or inputs must be at least 24x24px (preferably 44x44px or larger) to ensure they can be easily activated by users with motor control difficulties, hand tremors, or those using mobile touch screens.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

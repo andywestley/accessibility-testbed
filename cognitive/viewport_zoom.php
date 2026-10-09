@@ -5,8 +5,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Viewport Zoom Restriction (COG.NO_ZOOM)</h1>
+<h1>Viewport Zoom Restriction (COG.NO_ZOOM)</h1>
     <p class="lead">Demonstrating viewport scaling lock settings that prevent users from zooming in.</p>
 
     <div class="mt-4 alert alert-warning">
@@ -19,6 +18,4 @@ include '../includes/header.php';
             Users with low vision or cognitive disabilities often need to zoom in on page content to read it. Restricting zoom capabilities violates <strong>WCAG 1.4.4 (Resize Text)</strong> and prevents assistive scaling tools from functioning properly.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

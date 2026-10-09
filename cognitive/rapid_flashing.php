@@ -21,8 +21,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Rapid Flashing Content (COG.RAPID_FLASHING)</h1>
+<h1>Rapid Flashing Content (COG.RAPID_FLASHING)</h1>
     <p class="lead">Demonstrating content animating faster than 3Hz (0.33s per cycle), which poses a risk of seizures.</p>
 
     <div class="mt-4 border p-4">
@@ -36,6 +35,4 @@ include '../includes/header.php';
             Elements that flash, strobe, or blink faster than 3 times per second (less than or equal to 0.33s per cycle) can cause seizures in individuals with photosensitive epilepsy, and cause severe distraction and sensory overload for users with ADHD or cognitive/neurological conditions.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

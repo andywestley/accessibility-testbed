@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Absolute Font Size (COG.ABS_FONT_SIZE)</h1>
+<h1>Absolute Font Size (COG.ABS_FONT_SIZE)</h1>
     <p class="lead">Demonstrating font sizes defined in absolute units like pixels (px), which prevents user text resizing preferences.</p>
 
     <div class="mt-4 border p-4">
@@ -19,6 +18,4 @@ include '../includes/header.php';
             Defining font size with absolute units (such as pixels or points) prevents browsers from scaling text dynamically based on the user's custom browser/system zoom settings. Using relative units like <code>em</code> or <code>rem</code> respects user text-size preferences.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

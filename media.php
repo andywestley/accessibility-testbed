@@ -1,145 +1,96 @@
 <?php
-$pageTitle = 'Time-based Media & Audio/Video';include 'includes/header.php';
+$pageTitle = 'Time-based Media & Audio/Video';
+include 'includes/header.php';
 
 $currentCriterion = [
-    'rule' => 'WCAG 1.2.1-1.2.5',
-    'name' => 'Time-based Media & Audio/Video',
+    'rule' => 'WCAG 1.2.1 / 1.2.2 / 1.2.3 / 1.2.5 (Level A/AA)',
+    'name' => 'Time-based Media (Audio & Video Alternatives)',
     'level' => 'A',
-    'citation' => 'WCAG 2.2 SC 1.2.1-1.2.5: Captions and alternative text/audio descriptions must be provided for pre-recorded time-based media.',
-    'trigger_summary' => 'Autoplaying media without controls, missing synchronized video caption tracks, and missing audio descriptions.'
+    'citation' => 'WCAG 2.2 SC 1.2.1-1.2.5: Prerecorded audio-only and video-only media must have text transcripts; prerecorded synchronized video must provide synchronized captions and audio descriptions.',
+    'trigger_summary' => 'Video elements lacking <track kind="captions">, audio files without text transcripts, un-pausable auto-playing media, and missing audio descriptions.'
 ];
 include 'includes/diagnostic_header.php';
 ?>
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.2.2 Captions (Prerecorded) - Video Missing Captions</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Video element without track -->
-    <video controls width="250">
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-        Sorry, your browser doesn't support embedded videos.
-    </video>
+
+<!-- Diagnostic Description -->
+<div class="alert alert-info d-flex align-items-start gap-3 shadow-sm mb-4">
+    <i class="bi bi-info-circle-fill fs-4 text-info flex-shrink-0 mt-1"></i>
+    <div>
+        <h5 class="alert-heading fw-bold mb-1">Intentional Media Accessibility Violations (WCAG 1.2.x)</h5>
+        <p class="small mb-0 text-secondary">
+            This test page isolates time-based media failures: HTML5 video lacking closed captions (WebVTT), audio clips without text transcripts, and media elements with missing fallback content.
+        </p>
     </div>
 </div>
 
+<!-- Test 1: Video Missing Captions Track -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.4.2 Audio Control - Audio Autoplay</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Autoplay enabled, no controls initially (mockup of bad practice) -->
-    <!-- Commented out to not actually annoy the developer while testing, but code presence is enough for validatin tools -->
-    <!-- <audio autoplay src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio> -->
-    <p>Imagine an audio file playing automatically here.</p>
-    <audio controls>
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
-    </audio>
-    <p>(The above audio is fine, but we are simulating the 'Autoplay' violation by inspecting the code logic if we were
-        checking attributes).</p>
-
-    <!-- Actual autoplay for tool detection -->
-    <audio autoplay muted>
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
-    </audio>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.1.1 Non-text Content - Image of Video</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- User can't play this -->
-    <img src="https://placehold.co/300x200?text=Play+Video" alt="Video player" />
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.2.2 Captions (Prerecorded) - More Videos Missing Captions</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <video controls width="250">
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
-    </video>
-    <video controls width="250" muted>
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-    </video>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.2.1 Audio-only/Video-only (Prerecorded) - More Audio</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <audio controls>
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
-    </audio>
-
-    <hr>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">Missing Alternatives (Level A/AA/AAA)</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <div class="row">
-        <div class="col-md-6">
-            <h3>1.2.4 Captions (Live) & 1.2.9 Audio-only (Live)</h3>
-            <div style="border: 1px solid #ccc; padding: 20px; text-align: center; background: #000; color: #fff;">
-                <p>[ LIVE STREAM PLACEHOLDER ]</p>
-                <p>Status: <strong>ON AIR</strong></p>
-                <p><em>(Simulated Live Event - No Captions Available)</em></p>
-            </div>
-            <p><strong>Violations:</strong> 
-                <br>1.2.4: No real-time captions provided.
-                <br>1.2.9: No live transcript for audio-only content.
-            </p>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">1. Video Element Missing Captions Track (WCAG 1.2.2 Level A)</h2>
+            <small class="text-muted"><code>&lt;video&gt;</code> without <code>&lt;track kind="captions"&gt;</code></small>
         </div>
-        
-        <div class="col-md-6">
-            <h3>Prerecorded Video Issues</h3>
-            <video controls width="100%">
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Missing Captions
+        </span>
+    </div>
+    <div class="card-body">
+        <p class="small text-muted mb-3">
+            Deaf or hard-of-hearing users cannot access spoken dialogue in the video:
+        </p>
+        <div class="test-sandbox-zone">
+            <!-- Missing track element for captions -->
+            <video controls width="360" class="rounded border shadow-sm">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
             </video>
-            <p><strong>Violations associated with this video:</strong></p>
-            <ul>
-                <li><strong>1.2.3 & 1.2.5 Audio Description:</strong> Visual details (color, movement) are not described in a separate audio track.</li>
-                <li><strong>1.2.6 Sign Language (AAA):</strong> No sign language interpretation designated.</li>
-                <li><strong>1.2.7 Extended Audio Description (AAA):</strong> Video does not pause to allow for extensive description.</li>
-                <li><strong>1.2.8 Media Alternative (AAA):</strong> No full text transcript provided below.</li>
-            </ul>
         </div>
     </div>
-
-    <hr>
-    </div>
 </div>
 
+<!-- Test 2: Audio Element Missing Text Transcript -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">Audio Quality (Level AAA)</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">2. Audio Recording Missing Text Transcript (WCAG 1.2.1 Level A)</h2>
+            <small class="text-muted">Audio-only content presented without adjacent text equivalent or transcript link</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Missing Transcript
+        </span>
     </div>
     <div class="card-body">
-        <h3>1.4.7 Low or No Background Audio</h3>
-    <p>This audio clip contains speech with loud background music (simulated), making it hard to hear for users with hard of hearing, with no option to turn off the background.</p>
-    <audio controls>
-        <!-- Using same file but labeling it as the violation for demonstration -->
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
-    </audio>
+        <p class="small text-muted mb-3">
+            Audio playback without text transcript:
+        </p>
+        <div class="test-sandbox-zone">
+            <audio controls class="w-100 mb-2" style="max-width: 400px;">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+                Your browser does not support audio element.
+            </audio>
+            <small class="text-muted d-block">No transcript is provided for this audio stream.</small>
+        </div>
     </div>
 </div>
 
+<!-- Test 3: Video Missing Audio Description (AA) -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">3. Synchronized Video Missing Audio Description (WCAG 1.2.5 Level AA)</h2>
+            <small class="text-muted">Visual actions occurring without accompanying descriptive audio narrative</small>
+        </div>
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i> Audio Description Missing
+        </span>
+    </div>
+    <div class="card-body">
+        <div class="test-sandbox-zone">
+            <video controls width="360" class="rounded border shadow-sm">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
 
 <?php include 'includes/footer.php'; ?>

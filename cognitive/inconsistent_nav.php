@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Confusion for users who rely on muscle memory and predictable patterns.<br>
         <strong>Observation:</strong> Follow the "Next" buttons through the three steps. Do the buttons stay in the same place?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 3.2.3 (Consistent Navigation)</li>
             <li>WCAG 3.2.4 (Consistent Identification)</li>
         </ul>

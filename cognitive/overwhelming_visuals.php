@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Barriers for people with ADHD, autism, or those who find motion distracting or nauseating.<br>
         <strong>Observation:</strong> Try to read the content and fill out the form while the background and sidebar elements are moving constantly.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.2.2 (Pause, Stop, Hide)</li>
         </ul>
     </small>

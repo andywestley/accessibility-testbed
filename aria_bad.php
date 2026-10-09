@@ -1,127 +1,71 @@
 <?php
-$pageTitle = 'Name, Role, Value & ARIA Misuse';include 'includes/header.php';
+$pageTitle = 'Name, Role, Value & ARIA Misuse';
+include 'includes/header.php';
 
 $currentCriterion = [
-    'rule' => 'WCAG 4.1.2',
-    'name' => 'Name, Role, Value & ARIA Misuse',
+    'rule' => 'WCAG 4.1.2 (Level A)',
+    'name' => 'Name, Role, Value (ARIA Misuse & State Mismatch)',
     'level' => 'A',
-    'citation' => 'WCAG 2.2 SC 4.1.2: For all user interface components, the name and role can be programmatically determined and states/values can be set.',
-    'trigger_summary' => 'Invalid or conflicting ARIA roles (e.g. role="button" on a div without keyboard support), missing required ARIA attributes.'
+    'citation' => 'WCAG 2.2 SC 4.1.2: For all user interface components, the name and role can be programmatically determined; states, properties, and values can be set programmatically; and notification of changes to these items is available to user agents.',
+    'trigger_summary' => 'aria-hidden="true" applied to focusable interactive elements, invalid ARIA roles, and mismatched ARIA toggle states.'
 ];
 include 'includes/diagnostic_header.php';
 ?>
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - ARIA Hidden on Focusable Element</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <p>The button below is hidden from screen readers but focusable by keyboard.</p>
-    <button aria-hidden="true">You can tab to me but I am silent</button>
+
+<!-- Diagnostic Description -->
+<div class="alert alert-info d-flex align-items-start gap-3 shadow-sm mb-4">
+    <i class="bi bi-info-circle-fill fs-4 text-info flex-shrink-0 mt-1"></i>
+    <div>
+        <h5 class="alert-heading fw-bold mb-1">Intentional ARIA Misuse Violations (WCAG 4.1.2)</h5>
+        <p class="small mb-0 text-secondary">
+            Applying invalid ARIA roles or hiding focusable elements with <code>aria-hidden="true"</code> causes severe accessibility tree corruption.
+        </p>
     </div>
 </div>
 
+<!-- Test 1: aria-hidden on Focusable Elements -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - Presentation Role on Semantic Container</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">1. aria-hidden="true" on Focusable Button</h2>
+            <small class="text-muted">Element receives keyboard focus but is hidden from screen readers</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Critical ARIA Bug
+        </span>
     </div>
     <div class="card-body">
-        <p>The list below has role presentation, removing list semantics.</p>
-    <ul role="presentation">
-        <li>Item 1</li>
-        <li>Item 2</li>
-    </ul>
+        <p class="small text-muted mb-3">
+            Press <kbd>Tab</kbd> to focus this button. Screen readers will go completely silent because the parent or button has <code>aria-hidden="true"</code>:
+        </p>
+        <div class="test-sandbox-zone">
+            <!-- Focusable element with aria-hidden -->
+            <button type="button" class="btn btn-warning btn-sm" aria-hidden="true">
+                <i class="bi bi-eye-slash-fill me-1"></i> Focusable but aria-hidden="true"
+            </button>
+            <small class="text-danger d-block mt-2">Violates Axe-Core rule <code>aria-hidden-focus</code>.</small>
+        </div>
     </div>
 </div>
 
+<!-- Test 2: Invalid ARIA Role -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - Invalid Role</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">2. Non-Existent / Invalid ARIA Roles</h2>
+            <small class="text-muted"><code>role="superbutton"</code> or <code>role="content"</code></small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Invalid Role
+        </span>
     </div>
     <div class="card-body">
-        <div role="foo">This role does not exist.</div>
+        <div class="test-sandbox-zone">
+            <div role="superbutton" class="p-2 border rounded bg-light mb-2">
+                This div uses an invalid custom role: <code>role="superbutton"</code>.
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - Conflicting Attributes</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <div role="checkbox" aria-checked="true" aria-disabled="true">
-        I am a disabled checkbox.
-    </div>
-    <!-- Progress bar with min > max -->
-    <div role="progressbar" aria-valuenow="50" aria-valuemin="100" aria-valuemax="0">
-        Broken progress bar
-    </div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">ARIA Best Practice - Redundant ARIA</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <button role="button">I am a button with role=button</button>
-    <div role="heading" aria-level="2">I am a div with role heading</div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - More ARIA Hidden Focusables</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <a href="#" aria-hidden="true">Hidden Link 1</a><br>
-    <a href="#" aria-hidden="true">Hidden Link 2</a><br>
-    <input type="text" aria-hidden="true" value="Hidden Input" />
-    <button aria-hidden="true" onclick="alert('hidden')">Hidden Button</button>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - More Invalid Roles</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <div role="note">Role note is valid but often misused</div>
-    <div role="container">Invalid role 'container'</div>
-    <div role="text">Role 'text' is not standard</div>
-    <div role="imag">Misspelled role 'image' (imag)</div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">4.1.2 Name, Role, Value - More Conflicting Attributes</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <button aria-disabled="true">Active Button labeled disabled</button>
-    <div role="radio" aria-checked="mixed">Radio can't be mixed</div>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">Status Messages (4.1.3)</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Content updates dynamically but screen readers are not notified -->
-    <div style="border: 1px solid #ccc; padding: 10px;">
-        <button onclick="document.getElementById('results').innerHTML = 'Results found: 5 items.'">Search</button>
-        <div id="results" style="margin-top: 10px; font-weight: bold;"></div>
-    </div>
-    </div>
-</div>
-
 
 <?php include 'includes/footer.php'; ?>

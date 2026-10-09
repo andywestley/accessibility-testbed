@@ -14,7 +14,7 @@ include '../includes/header.php';
                 <strong>Demonstrates:</strong> Cumulative frustration in long flows.<br>
                 <strong>Observation:</strong> Attempt to navigate using only keyboard. Note progress bar announcements.<br>
                 <strong>Key Issues:</strong>
-                <ul class="pl-3 mb-0">
+                <ul class="ps-3 mb-0">
                     <li>WCAG 2.1.2 (Keyboard Trap)</li>
                     <li>WCAG 4.1.2 (Name, Role, Value)</li>
                     <li>WCAG 2.4.6 (Headings/Labels)</li>

@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Barriers for users with cognitive impairments or those who are less technically inclined.<br>
         <strong>Observation:</strong> Try to submit the form without filling it out properly. Can you understand what went wrong from the error message?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 3.3.3 (Error Suggestion)</li>
         </ul>
     </small>

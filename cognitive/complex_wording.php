@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Complex Wording (COG.COMPLEX_WORDING)</h1>
+<h1>Complex Wording (COG.COMPLEX_WORDING)</h1>
     <p class="lead">Demonstrating sentences that average more than 30 words, increasing the reading comprehension difficulty.</p>
 
     <div class="mt-4 border p-4">
@@ -21,6 +20,4 @@ include '../includes/header.php';
             Long, complex sentences with numerous clauses increase cognitive load and make comprehension difficult for users with cognitive or learning disabilities. Sentences should be kept concise (under 25-30 words) to ensure maximum accessibility.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

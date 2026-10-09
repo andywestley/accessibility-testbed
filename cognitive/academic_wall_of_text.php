@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>The Academic Wall of Text</h1>
+<h1>The Academic Wall of Text</h1>
     <p class="lead">Demonstrating extreme reading level violations (WCAG 3.1.5) and unusual words (WCAG 3.1.3).</p>
 
     <div class="mt-4">
@@ -30,6 +29,4 @@ include '../includes/header.php';
             For users with cognitive or learning disabilities, or those whose primary language is not the language of the text, this creates an insurmountable barrier to comprehension.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> High-impact barriers for users who need more time to process information or enter data.<br>
         <strong>Observation:</strong> Start filling out the form. A 15-second timer is running in the background. You will be "logged out" suddenly.<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 2.2.1 (Timing Adjustable)</li>
         </ul>
     </small>

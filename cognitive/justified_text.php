@@ -4,8 +4,7 @@ $basePath = '../';
 include '../includes/header.php';
 ?>
 
-<div class="container mt-5">
-    <h1>Justified Text Alignment (COG.JUSTIFIED_TEXT)</h1>
+<h1>Justified Text Alignment (COG.JUSTIFIED_TEXT)</h1>
     <p class="lead">Demonstrating text justified to both margins, which creates uneven word spacing ("rivers of white").</p>
 
     <div class="mt-4 border p-4">
@@ -21,6 +20,4 @@ include '../includes/header.php';
             For users with dyslexia or other reading/cognitive impairments, fully justified text creates uneven gaps between words, leading to vertical tracks of white space that disrupt reading flow. Content should be left-aligned (or right-aligned for right-to-left languages) to maintain consistent word spacing.
         </p>
     </div>
-</div>
-
 <?php include '../includes/footer.php'; ?>

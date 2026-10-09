@@ -1,192 +1,170 @@
 <?php
 $pageTitle = 'Error Identification & Suggestions';
 $extraStyles = '<style>
-        
-
-        
-
-        .required {
-            color: red;
-        }
-
-        .error {
-            color: red;
-            display: none;
-        }
-    </style>';
+    .required-star { color: #ef4444; font-weight: bold; }
+    .unlinked-error { color: #ef4444; font-size: 0.875rem; margin-top: 0.25rem; }
+</style>';
 include 'includes/header.php';
 
 $currentCriterion = [
-    'rule' => 'WCAG 3.3.1 / 3.3.3',
-    'name' => 'Error Identification & Suggestions',
+    'rule' => 'WCAG 3.3.1 / 3.3.3 / 3.3.4 (Level A/AA/AAA)',
+    'name' => 'Error Identification, Suggestions & Prevention',
     'level' => 'A',
-    'citation' => 'WCAG 2.2 SC 3.3.1 & 3.3.3: If an input error is automatically detected, the item is identified and the error is described to the user in text.',
-    'trigger_summary' => 'Color-only validation errors, cryptic error codes, and missing aria-invalid/aria-describedby links.'
+    'citation' => 'WCAG 2.2 SC 3.3.1 Error Identification: If an input error is detected, the item that is in error is identified and the error is described to the user in text. SC 3.3.4 Error Prevention: Reversible submissions or confirmations must be provided for irreversible actions.',
+    'trigger_summary' => 'Color-only required indicators, disconnected error messages without aria-describedby, missing autocomplete tokens, immediate destructive submissions without confirmation, and cognitive authentication tests.'
 ];
 include 'includes/diagnostic_header.php';
 ?>
-<form>
 
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.4.1 Use of Color / 1.3.1 - Color Only Required</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <!-- Required indicated only by red color asterisk -->
-        <label for="username">Username <span class="required">*</span></label>
-        <input type="text" id="username" />
-        <br><br>
+<!-- Diagnostic Description -->
+<div class="alert alert-info d-flex align-items-start gap-3 shadow-sm mb-4">
+    <i class="bi bi-info-circle-fill fs-4 text-info flex-shrink-0 mt-1"></i>
+    <div>
+        <h5 class="alert-heading fw-bold mb-1">Intentional Error Handling &amp; Form Logic Violations</h5>
+        <p class="small mb-0 text-secondary">
+            This test page demonstrates common form validation and accessibility failures: error messages that are not programmatically connected to their fields, color-only required indicators, and irreversible actions lacking confirmation friction.
+        </p>
     </div>
 </div>
 
+<!-- Test 1: Color-Only Required Fields -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.3.1 Error Identification / 1.3.1 - Error Message Not Connected</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">1. Required Fields Indicated Solely by Red Asterisk (WCAG 1.4.1 / 3.3.2)</h2>
+            <small class="text-muted">Lacks <code>required</code> or <code>aria-required="true"</code> attributes</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Required Indication Failure
+        </span>
     </div>
     <div class="card-body">
-        <!-- Error message is visible but not programmatically associated -->
-        <label for="password">Password</label>
-        <input type="password" id="password" aria-invalid="true" />
-        <div id="pw-error" class="error" style="display:block;">Password must be 8 chars.</div>
-        <br><br>
+        <div class="test-sandbox-zone">
+            <form onsubmit="return false;">
+                <div class="mb-3" style="max-width: 350px;">
+                    <label for="username" class="form-label fw-medium">Username <span class="required-star">*</span></label>
+                    <input type="text" id="username" class="form-control" />
+                    <small class="text-muted">Screen reader does not announce this field as mandatory.</small>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
+<!-- Test 2: Error Message Not Programmatically Connected -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.3.5 Identify Input Purpose - Missing Autocomplete</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">2. Disconnected Error Message (WCAG 3.3.1 / 1.3.1)</h2>
+            <small class="text-muted">Error text rendered visually without <code>aria-describedby</code> link</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Disconnected Error
+        </span>
     </div>
     <div class="card-body">
-        <!-- Standard fields without autocomplete attributes -->
-        <label for="street">Street Address</label>
-        <input type="text" id="street" />
-        <br>
-        <label for="city">City</label>
-        <input type="text" id="city" />
-        <br><br>
-
-        <img src="https://placehold.co/150x50?text=CAPTCHA" alt="Type the characters in the image" />
-        <input type="text" aria-label="Captcha response" />
+        <div class="test-sandbox-zone">
+            <form onsubmit="return false;">
+                <div class="mb-3" style="max-width: 350px;">
+                    <label for="password" class="form-label fw-medium">Password</label>
+                    <input type="password" id="password" class="form-control is-invalid" aria-invalid="true" />
+                    <div id="pw-error" class="unlinked-error"><i class="bi bi-x-circle me-1"></i> Password must be at least 8 characters.</div>
+                    <small class="text-muted d-block mt-1">Screen readers focus the input but never read the error text because there is no <code>aria-describedby="pw-error"</code>.</small>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
+<!-- Test 3: Missing Autocomplete on Standard Inputs -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">1.4.1 Use of Color - More Color Only Required</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">3. Missing Autocomplete Tokens (WCAG 1.3.5)</h2>
+            <small class="text-muted">Standard address fields lacking <code>autocomplete="street-address"</code> etc.</small>
+        </div>
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-triangle-fill me-1"></i> Autocomplete Missing
+        </span>
     </div>
     <div class="card-body">
-        <label for="f1">Field 1 <span class="required">*</span></label>
-        <input type="text" id="f1" /><br>
-        <label for="f2">Field 2 <span class="required">*</span></label>
-        <input type="text" id="f2" /><br>
-        <label for="f3">Field 3 <span class="required">*</span></label>
-        <input type="text" id="f3" /><br>
+        <div class="test-sandbox-zone">
+            <form onsubmit="return false;">
+                <div class="row g-3" style="max-width: 500px;">
+                    <div class="col-12">
+                        <label for="street" class="form-label fw-medium">Street Address</label>
+                        <input type="text" id="street" class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label for="city" class="form-label fw-medium">City</label>
+                        <input type="text" id="city" class="form-control" />
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
+<!-- Test 4: Immediate Destructive Submission Without Confirmation -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.3.1 Error Identification - More Disconnected Errors</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">4. Immediate Destructive Action Without Confirmation (WCAG 3.3.4)</h2>
+            <small class="text-muted">Permanent data deletion triggered instantly without 2-step confirmation friction</small>
+        </div>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+            <i class="bi bi-exclamation-octagon-fill me-1"></i> Error Prevention Failure
+        </span>
     </div>
     <div class="card-body">
-        <label for="email2">Email</label>
-        <input type="email" id="email2" aria-invalid="true" />
-        <div class="error" style="display:block;">Invalid email format.</div>
-        <br>
-        <label for="zip2">Zip Code</label>
-        <input type="text" id="zip2" aria-invalid="true" />
-        <div class="error" style="display:block;">Zip code must be 5 digits.</div>
-
-    </form>
+        <div class="test-sandbox-zone">
+            <form onsubmit="alert('Data Deleted Immediately! (No confirmation dialog)'); return false;">
+                <p class="small text-muted mb-2">Clicking this button submits and deletes records immediately without any modal or undo gate:</p>
+                <button type="submit" class="btn btn-danger btn-sm">
+                    <i class="bi bi-trash-fill me-1"></i> Delete All User Account Data
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 
+<!-- Test 5: Redundant Data Entry & Cognitive Auth (AAA) -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.3.4 Error Prevention (Legal, Financial, Data) - Immediate Submit</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+        <div>
+            <h2 class="h5 mb-0 fw-bold text-dark">5. Redundant Data Entry (3.3.7) &amp; Cognitive Auth (3.3.8 / 3.3.9)</h2>
+            <small class="text-muted">No 'same as shipping' auto-fill and complex math captcha tests</small>
+        </div>
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1">
+            <i class="bi bi-info-circle-fill me-1"></i> Level AAA Form Violations
+        </span>
     </div>
     <div class="card-body">
-        <form action="#" method="POST">
-        <p>Clicking this button submits immediately with no confirmation.</p>
-        <button type="submit" onclick="alert('Submitted! No confusion for you.')">Delete All Data</button>
-    </form>
+        <div class="test-sandbox-zone">
+            <h6 class="fw-bold text-secondary">3.3.7 Redundant Entry (AA):</h6>
+            <div class="row g-2 mb-3" style="max-width: 500px;">
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold">Shipping Address:</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="123 High St">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold">Billing Address (No Copy Checkbox):</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Must retype manually">
+                </div>
+            </div>
+
+            <h6 class="fw-bold text-secondary">3.3.8 / 3.3.9 Cognitive Authentication Tests (AAA):</h6>
+            <div class="p-3 border rounded bg-white" style="max-width: 450px;">
+                <label class="form-label small fw-bold">Math CAPTCHA:</label>
+                <p class="small text-muted mb-2">What is the square root of 144 plus 15?</p>
+                <div class="input-group input-group-sm mb-2">
+                    <input type="text" class="form-control" aria-label="Math answer">
+                    <button class="btn btn-outline-secondary" type="button">Verify</button>
+                </div>
+                <small class="text-danger d-block">Cognitive calculation tests create barriers for users with cognitive or memory disabilities.</small>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.3.7 Redundant Entry - No Copy Feature</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <form>
-        <h3>Shipping Address</h3>
-        <input type="text" placeholder="Street Address">
-        
-        <h3>Billing Address</h3>
-        <p>(No check box to say 'Same as shipping'. You must type it again.)</p>
-        <input type="text" placeholder="Street Address">
-    </form>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">3.3.8 Accessible Authentication - Cognitive Test</h2>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
-    </div>
-    <div class="card-body">
-        <form>
-        <label>Solve this to log in:</label>
-        <p>What is the square root of 144 plus 15?</p>
-        <input type="text" aria-label="Math problem">
-        <button>Login</button>
-    </form>
-
-    <hr>
-    </div>
-</div>
-
-<div class="test-section-card">
-    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <h2 class="h5 mb-0 fw-bold text-dark">New WCAG 2.2 / AAA Form Issues</h2>
-        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
-    </div>
-    <div class="card-body">
-        <h3>2.2.5 Re-authenticating (AAA)</h3>
-    <p>If your session expires while filling this form, all data is lost and you must start over. (No data preservation).</p>
-
-    <h3>2.2.6 Timeouts (AAA)</h3>
-    <p>This sensitive transaction form has a timeout but does not warn the user how long they have or allow extension.</p>
-
-    <h3>3.2.5 Change on Request (AAA)</h3>
-    <!-- Simulating unexpected context change -->
-    <label for="magic-switch">Magic Switch (Triggers Page Reload immediately)</label>
-    <input type="checkbox" id="magic-switch" onchange="alert('PAGE RELOADED! (Violation: Change of context on setting value)');">
-
-    <h3>3.3.5 Help (AAA)</h3>
-    <p>Complex form fields below have no context-sensitive help (no '?' icon or description text).</p>
-    <label>Actuarial Calculation Factor V:</label> <input type="text">
-
-    <h3>3.3.6 Error Prevention (All) (AAA)</h3>
-    <p>Deleting non-sensitive data (e.g. "Recently Viewed" list) happens immediately without confirmation. (AA only requires it for legal/financial/data data, AAA requires it for all).</p>
-    <button onclick="alert('History Cleared!')">Clear History (Immediate)</button>
-
-    <h3>3.3.9 Accessible Authentication (No Exception) (AAA)</h3>
-    <p>Unlike AA, AAA does not allow <em>any</em> cognitive function test (like recognizing objects) unless an alternative method exists. Even "select the cat" object recognition is a fail here.</p>
-    <div style="border:1px solid #ccc; padding:10px;">
-        <p>Security Check: Select the picture of the cat.</p>
-        <button>[Dog]</button> <button>[Cat]</button> <button>[Bird]</button>
-    </div>
-    </div>
-</div>
-
 
 <?php include 'includes/footer.php'; ?>

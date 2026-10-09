@@ -12,7 +12,7 @@ include '../includes/header.php';
         <strong>Demonstrates:</strong> Barriers for people with learning disabilities, non-native speakers, or those with reading difficulties.<br>
         <strong>Observation:</strong> Read the Terms of Service. Is the language clear and concise, or does it require a high level of literacy to parse?<br>
         <strong>Key Issues:</strong>
-        <ul class="pl-3 mb-0">
+        <ul class="ps-3 mb-0">
             <li>WCAG 3.1.5 (Reading Level)</li>
         </ul>
     </small>
