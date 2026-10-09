@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Focus Order';
+$pageTitle = 'Focus Order & Visible Focus Indicator';
 $extraStyles = '<style>
         
 
@@ -23,13 +23,23 @@ $extraStyles = '<style>
         }
     </style>';
 include 'includes/header.php';
+
+$currentCriterion = [
+    'rule' => 'WCAG 2.4.3 / 2.4.7',
+    'name' => 'Focus Order & Visible Focus Indicator',
+    'level' => 'A',
+    'citation' => 'WCAG 2.2 SC 2.4.3 & 2.4.7: If a Web page can be navigated sequentially, focusable components receive focus in an order that preserves meaning.',
+    'trigger_summary' => 'Positive tabindex attributes disrupting natural tab order, and CSS outline:none stripping visible focus rings.'
+];
+include 'includes/diagnostic_header.php';
 ?>
-
-
-    <h1>Focus Order Issues</h1>
-
-    <h2>2.4.3 Focus Order - Positive Tabindex</h2>
-    <!-- Tabindex > 0 disrupts natural flow -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">2.4.3 Focus Order - Positive Tabindex</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <!-- Tabindex > 0 disrupts natural flow -->
     <a href="#" tabindex="4">Link 4 (Last)</a><br>
     <a href="#" tabindex="1">Link 1 (First)</a><br>
     <a href="#" tabindex="3">Link 3 (Third)</a><br>
@@ -43,33 +53,61 @@ include 'includes/header.php';
     <button tabindex="6">Order 6</button>
     <button tabindex="8">Order 8</button>
     <button tabindex="7">Order 7</button>
+    </div>
+</div>
 
-    <h2>1.3.2 Meaningful Sequence - More Flex Visual Order</h2>
-    <div class="flex-container" style="flex-direction: row-reverse;">
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.2 Meaningful Sequence - More Flex Visual Order</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <div class="flex-container" style="flex-direction: row-reverse;">
         <button>Item A (Visual Last, DOM First)</button>
         <button>Item B (Visual Middle, DOM Second)</button>
         <button>Item C (Visual First, DOM Third)</button>
     </div>
+    </div>
+</div>
 
-    <h2>1.3.2 Meaningful Sequence - Visual Order vs DOM Order (Flexbox)</h2>
-    <div class="flex-container">
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.2 Meaningful Sequence - Visual Order vs DOM Order (Flexbox)</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <div class="flex-container">
         <!-- Visual order: Item 2, Item 3, Item 1 -->
         <!-- DOM Focus order: Item 1, Item 2, Item 3 -->
         <button class="order-1">Item 1 (DOM first, Visual last)</button>
         <button class="order-2">Item 2 (DOM second, Visual first)</button>
         <button class="order-3">Item 3 (DOM third, Visual second)</button>
     </div>
+    </div>
+</div>
 
-    <h2>2.4.7 Focus Visible - No Focus Indicator</h2>
-    <style>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">2.4.7 Focus Visible - No Focus Indicator</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <style>
         .no-focus:focus {
             outline: none;
         }
     </style>
     <button class="no-focus">Button with outline: none</button>
+    </div>
+</div>
 
-    <h2>2.4.11 Focus Not Obscured (Minimum) - Sticky Banner</h2>
-    <p>Scroll down. The sticky banner below will cover focused elements at the bottom of the viewport.</p>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">2.4.11 Focus Not Obscured (Minimum) - Sticky Banner</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <p>Scroll down. The sticky banner below will cover focused elements at the bottom of the viewport.</p>
     <a href="#">Link 1 (Might be covered)</a><br>
     <a href="#">Link 2 (Might be covered)</a><br>
     <a href="#">Link 3 (Might be covered)</a><br>
@@ -81,10 +119,16 @@ include 'includes/header.php';
     </div>
 
     <br><br><br><br>
+    </div>
+</div>
 
-    <h2>Focus Appearance (AAA)</h2>
-
-    <h3>2.4.12 Focus Not Obscured (Enhanced) (AAA)</h3>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">Focus Appearance (AAA)</h2>
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
+    </div>
+    <div class="card-body">
+        <h3>2.4.12 Focus Not Obscured (Enhanced) (AAA)</h3>
     <p>While AA allows partial obscurement, AAA requires the focused item to be <strong>fully</strong> visible. The sticky banner above fails both if it covers the whole link, but even partial coverage is a fail here.</p>
 
     <h3>2.4.13 Focus Appearance (AAA)</h3>
@@ -97,5 +141,8 @@ include 'includes/header.php';
     </style>
     <button class="bad-focus-aaa">Weak Focus Indicator (AAA Fail)</button>
     <p>The button above has a 1px dotted gray outline. This fails AAA which usually requires a more solid, thicker area of contrast.</p>
+    </div>
+</div>
+
 
 <?php include 'includes/footer.php'; ?>

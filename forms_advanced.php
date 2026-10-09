@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Advanced Forms';
+$pageTitle = 'Error Identification & Suggestions';
 $extraStyles = '<style>
         
 
@@ -15,26 +15,52 @@ $extraStyles = '<style>
         }
     </style>';
 include 'includes/header.php';
+
+$currentCriterion = [
+    'rule' => 'WCAG 3.3.1 / 3.3.3',
+    'name' => 'Error Identification & Suggestions',
+    'level' => 'A',
+    'citation' => 'WCAG 2.2 SC 3.3.1 & 3.3.3: If an input error is automatically detected, the item is identified and the error is described to the user in text.',
+    'trigger_summary' => 'Color-only validation errors, cryptic error codes, and missing aria-invalid/aria-describedby links.'
+];
+include 'includes/diagnostic_header.php';
 ?>
+<form>
 
 
-    <h1>Advanced Form Issues</h1>
-
-    <form>
-        <h2>1.4.1 Use of Color / 1.3.1 - Color Only Required</h2>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.4.1 Use of Color / 1.3.1 - Color Only Required</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
         <!-- Required indicated only by red color asterisk -->
         <label for="username">Username <span class="required">*</span></label>
         <input type="text" id="username" />
         <br><br>
+    </div>
+</div>
 
-        <h2>3.3.1 Error Identification / 1.3.1 - Error Message Not Connected</h2>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">3.3.1 Error Identification / 1.3.1 - Error Message Not Connected</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
         <!-- Error message is visible but not programmatically associated -->
         <label for="password">Password</label>
         <input type="password" id="password" aria-invalid="true" />
         <div id="pw-error" class="error" style="display:block;">Password must be 8 chars.</div>
         <br><br>
+    </div>
+</div>
 
-        <h2>1.3.5 Identify Input Purpose - Missing Autocomplete</h2>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.5 Identify Input Purpose - Missing Autocomplete</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
         <!-- Standard fields without autocomplete attributes -->
         <label for="street">Street Address</label>
         <input type="text" id="street" />
@@ -45,16 +71,30 @@ include 'includes/header.php';
 
         <img src="https://placehold.co/150x50?text=CAPTCHA" alt="Type the characters in the image" />
         <input type="text" aria-label="Captcha response" />
+    </div>
+</div>
 
-        <h2>1.4.1 Use of Color - More Color Only Required</h2>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.4.1 Use of Color - More Color Only Required</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
         <label for="f1">Field 1 <span class="required">*</span></label>
         <input type="text" id="f1" /><br>
         <label for="f2">Field 2 <span class="required">*</span></label>
         <input type="text" id="f2" /><br>
         <label for="f3">Field 3 <span class="required">*</span></label>
         <input type="text" id="f3" /><br>
+    </div>
+</div>
 
-        <h2>3.3.1 Error Identification - More Disconnected Errors</h2>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">3.3.1 Error Identification - More Disconnected Errors</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
         <label for="email2">Email</label>
         <input type="email" id="email2" aria-invalid="true" />
         <div class="error" style="display:block;">Invalid email format.</div>
@@ -64,15 +104,29 @@ include 'includes/header.php';
         <div class="error" style="display:block;">Zip code must be 5 digits.</div>
 
     </form>
+    </div>
+</div>
 
-    <h2>3.3.4 Error Prevention (Legal, Financial, Data) - Immediate Submit</h2>
-    <form action="#" method="POST">
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">3.3.4 Error Prevention (Legal, Financial, Data) - Immediate Submit</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <form action="#" method="POST">
         <p>Clicking this button submits immediately with no confirmation.</p>
         <button type="submit" onclick="alert('Submitted! No confusion for you.')">Delete All Data</button>
     </form>
+    </div>
+</div>
 
-    <h2>3.3.7 Redundant Entry - No Copy Feature</h2>
-    <form>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">3.3.7 Redundant Entry - No Copy Feature</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <form>
         <h3>Shipping Address</h3>
         <input type="text" placeholder="Street Address">
         
@@ -80,9 +134,16 @@ include 'includes/header.php';
         <p>(No check box to say 'Same as shipping'. You must type it again.)</p>
         <input type="text" placeholder="Street Address">
     </form>
+    </div>
+</div>
 
-    <h2>3.3.8 Accessible Authentication - Cognitive Test</h2>
-    <form>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">3.3.8 Accessible Authentication - Cognitive Test</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <form>
         <label>Solve this to log in:</label>
         <p>What is the square root of 144 plus 15?</p>
         <input type="text" aria-label="Math problem">
@@ -90,9 +151,16 @@ include 'includes/header.php';
     </form>
 
     <hr>
-    <h2>New WCAG 2.2 / AAA Form Issues</h2>
+    </div>
+</div>
 
-    <h3>2.2.5 Re-authenticating (AAA)</h3>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">New WCAG 2.2 / AAA Form Issues</h2>
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
+    </div>
+    <div class="card-body">
+        <h3>2.2.5 Re-authenticating (AAA)</h3>
     <p>If your session expires while filling this form, all data is lost and you must start over. (No data preservation).</p>
 
     <h3>2.2.6 Timeouts (AAA)</h3>
@@ -117,5 +185,8 @@ include 'includes/header.php';
         <p>Security Check: Select the picture of the cat.</p>
         <button>[Dog]</button> <button>[Cat]</button> <button>[Bird]</button>
     </div>
+    </div>
+</div>
+
 
 <?php include 'includes/footer.php'; ?>

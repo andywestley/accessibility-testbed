@@ -1,38 +1,25 @@
-    </div> <!-- End Container Fluid -->
+    </main>
 
-    <footer class="mt-auto bg-dark text-light border-top border-secondary-subtle py-4">
-      <div class="container-fluid px-lg-4">
-        <div class="row align-items-center justify-content-between g-3">
-          <div class="col-md-6 text-center text-md-start">
-            <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start">
-              <span class="badge bg-primary"><i class="bi bi-universal-access"></i></span>
-              <span class="fw-bold">Inaccessible - Accessibility Testbed</span>
-              <span class="text-white-50 small">| WCAG 2.2 AAA &amp; Section 508</span>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-4 bg-dark text-white-50 border-top border-secondary">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 small">&copy; <?php echo date('Y'); ?> <strong>Accessibility Benchmark Testbed</strong>. Built with PHP, HTML5 &amp; Bootstrap 5.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-inline-flex gap-3 small">
+                        <a href="<?php echo isset($basePath) ? $basePath : ''; ?>index.php" class="text-white-50 text-decoration-none hover-white">WCAG Matrix</a>
+                        <a href="<?php echo isset($basePath) ? $basePath : ''; ?>journeys/index.php" class="text-white-50 text-decoration-none hover-white">User Journeys</a>
+                        <a href="<?php echo isset($basePath) ? $basePath : ''; ?>cookie_policy.php" class="text-white-50 text-decoration-none hover-white">Cookie Policy</a>
+                    </div>
+                </div>
             </div>
-            <p class="small text-white-50 mb-0 mt-1">
-              Engineered intentionally with accessibility violations for automated tooling benchmarking and developer education.
-            </p>
-          </div>
-
-          <div class="col-md-6 text-center text-md-end">
-            <div class="d-flex align-items-center justify-content-center justify-content-md-end gap-3 small">
-              <a href="<?= isset($basePath) ? $basePath : '' ?>index.php" class="text-white-50 text-decoration-none hover-white">
-                <i class="bi bi-grid-fill me-1"></i> Criteria Matrix
-              </a>
-              <span class="text-white-50">&bull;</span>
-              <a href="<?= isset($basePath) ? $basePath : '' ?>images.php" class="text-info text-decoration-none">
-                <i class="bi bi-arrow-repeat me-1"></i> Crawler Route
-              </a>
-              <span class="text-white-50">&bull;</span>
-              <span class="badge bg-secondary">PHP 8.2+ / Plesk VPS</span>
-            </div>
-          </div>
         </div>
-      </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= isset($basePath) ? $basePath : '' ?>assets/js/main.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo isset($basePath) ? $basePath : ''; ?>assets/js/main.js"></script>
 </body>
 </html>

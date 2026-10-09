@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Structure';
+$pageTitle = 'Info & Relationships (Headings & Landmarks)';
 $extraStyles = '<style>
         
 
@@ -14,13 +14,26 @@ $extraStyles = '<style>
         }
     </style>';
 include 'includes/header.php';
+
+$currentCriterion = [
+    'rule' => 'WCAG 1.3.1',
+    'name' => 'Info & Relationships (Headings & Landmarks)',
+    'level' => 'A',
+    'citation' => 'WCAG 2.2 SC 1.3.1: Information, structure, and relationships conveyed through presentation can be programmatically determined.',
+    'trigger_summary' => 'Skipped heading levels, fake headings using divs, misused blockquotes/lists, and missing structural landmarks.'
+];
+include 'includes/diagnostic_header.php';
 ?>
+<!-- H1 missing -->
 
 
-    <!-- H1 missing -->
-
-    <h2>1.3.1 Info and Relationships - Skipped Headings</h2>
-    <p>Starting with H2, then skipping to H4.</p>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - Skipped Headings</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <p>Starting with H2, then skipping to H4.</p>
 
     <h4>Subsection (H4)</h4>
     <p>Content here.</p>
@@ -28,14 +41,28 @@ include 'includes/header.php';
     <!-- Visual heading not semantic -->
     <div class="fake-heading">Visual Heading (Not H tag)</div>
     <p>The text above looks like a heading but is a div.</p>
+    </div>
+</div>
 
-    <h2>1.3.1 Info and Relationships - Misused Blockquote</h2>
-    <blockquote>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - Misused Blockquote</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <blockquote>
         This is not a quote, just indented text for visual style.
     </blockquote>
+    </div>
+</div>
 
-    <h2>1.3.1 Info and Relationships - Misused Definition List</h2>
-    <dl>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - Misused Definition List</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <dl>
         <dt>Term 1</dt>
         <dd>Definition 1</dd>
         <!-- Missing DD -->
@@ -44,16 +71,30 @@ include 'includes/header.php';
         <!-- Missing DT -->
         <dd>Definition for nothing</dd>
     </dl>
+    </div>
+</div>
 
-    <h2>1.3.1 Info and Relationships - Ordered List Visual Only</h2>
-    <p>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - Ordered List Visual Only</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <p>
         1. Item one<br>
         2. Item two<br>
         3. Item three
     </p>
+    </div>
+</div>
 
-    <h2>1.3.1 Info and Relationships - More Skipped Headings</h2>
-    <h5>Skipping H3 and H4</h5>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - More Skipped Headings</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <h5>Skipping H3 and H4</h5>
     <p>Content under H5.</p>
     <h6>Skipping even more</h6>
     <p>Content under H6.</p>
@@ -72,9 +113,16 @@ include 'includes/header.php';
             </div>
         </div>
     </div>
+    </div>
+</div>
 
-    <h2>1.3.1 Info and Relationships - Misused List Elements</h2>
-    <!-- LI outside UL/OL -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.3.1 Info and Relationships - Misused List Elements</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <!-- LI outside UL/OL -->
     <li>Orphan item 1</li>
     <li>Orphan item 2</li>
 
@@ -90,9 +138,16 @@ include 'includes/header.php';
     <p>Content for bad heading.</p>
 
     <hr>
-    <h2>Identification & Navigation Issues (Level AA/AAA)</h2>
+    </div>
+</div>
 
-    <h3>1.3.6 Identify Purpose (AAA)</h3>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">Identification & Navigation Issues (Level AA/AAA)</h2>
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
+    </div>
+    <div class="card-body">
+        <h3>1.3.6 Identify Purpose (AAA)</h3>
     <p>The following icons use ambiguous characters/layout without semantic identification (landmarks or specific ARIA roles), making it hard for tools to determine their purpose (e.g., personalization tools).</p>
     <div style="border:1px solid #ccc; padding:10px;">
         <span style="font-size:24px;">🏠</span> <!-- Home icon, no label/role -->
@@ -125,6 +180,8 @@ include 'includes/header.php';
     <p>Using different icons/labels for the same function across the site.</p>
     <!-- On index.php, we might use "Search", here we uses "Find" or a different icon for the same theoretical feature -->
     <button>Find Page</button> (VS "Search" elsewhere)
+    </div>
+</div>
 
 
 <?php include 'includes/footer.php'; ?>

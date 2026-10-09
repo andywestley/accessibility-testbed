@@ -1,21 +1,36 @@
 <?php
-$pageTitle = 'Media';
+$pageTitle = 'Time-based Media & Audio/Video';include 'includes/header.php';
 
-include 'includes/header.php';
+$currentCriterion = [
+    'rule' => 'WCAG 1.2.1-1.2.5',
+    'name' => 'Time-based Media & Audio/Video',
+    'level' => 'A',
+    'citation' => 'WCAG 2.2 SC 1.2.1-1.2.5: Captions and alternative text/audio descriptions must be provided for pre-recorded time-based media.',
+    'trigger_summary' => 'Autoplaying media without controls, missing synchronized video caption tracks, and missing audio descriptions.'
+];
+include 'includes/diagnostic_header.php';
 ?>
-
-
-    <h1>Media Issues</h1>
-
-    <h2>1.2.2 Captions (Prerecorded) - Video Missing Captions</h2>
-    <!-- Video element without track -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.2.2 Captions (Prerecorded) - Video Missing Captions</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <!-- Video element without track -->
     <video controls width="250">
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
         Sorry, your browser doesn't support embedded videos.
     </video>
+    </div>
+</div>
 
-    <h2>1.4.2 Audio Control - Audio Autoplay</h2>
-    <!-- Autoplay enabled, no controls initially (mockup of bad practice) -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.4.2 Audio Control - Audio Autoplay</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <!-- Autoplay enabled, no controls initially (mockup of bad practice) -->
     <!-- Commented out to not actually annoy the developer while testing, but code presence is enough for validatin tools -->
     <!-- <audio autoplay src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio> -->
     <p>Imagine an audio file playing automatically here.</p>
@@ -29,28 +44,56 @@ include 'includes/header.php';
     <audio autoplay muted>
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
     </audio>
+    </div>
+</div>
 
-    <h2>1.1.1 Non-text Content - Image of Video</h2>
-    <!-- User can't play this -->
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.1.1 Non-text Content - Image of Video</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <!-- User can't play this -->
     <img src="https://placehold.co/300x200?text=Play+Video" alt="Video player" />
+    </div>
+</div>
 
-    <h2>1.2.2 Captions (Prerecorded) - More Videos Missing Captions</h2>
-    <video controls width="250">
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.2.2 Captions (Prerecorded) - More Videos Missing Captions</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <video controls width="250">
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
     </video>
     <video controls width="250" muted>
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
     </video>
+    </div>
+</div>
 
-    <h2>1.2.1 Audio-only/Video-only (Prerecorded) - More Audio</h2>
-    <audio controls>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">1.2.1 Audio-only/Video-only (Prerecorded) - More Audio</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <audio controls>
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
     </audio>
 
     <hr>
-    <h2>Missing Alternatives (Level A/AA/AAA)</h2>
-    
-    <div class="row">
+    </div>
+</div>
+
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">Missing Alternatives (Level A/AA/AAA)</h2>
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
+    </div>
+    <div class="card-body">
+        <div class="row">
         <div class="col-md-6">
             <h3>1.2.4 Captions (Live) & 1.2.9 Audio-only (Live)</h3>
             <div style="border: 1px solid #ccc; padding: 20px; text-align: center; background: #000; color: #fff;">
@@ -80,12 +123,23 @@ include 'includes/header.php';
     </div>
 
     <hr>
-    <h2>Audio Quality (Level AAA)</h2>
-    <h3>1.4.7 Low or No Background Audio</h3>
+    </div>
+</div>
+
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">Audio Quality (Level AAA)</h2>
+        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-2 py-1"><i class="bi bi-info-circle-fill me-1"></i> Level AAA Trigger</span>
+    </div>
+    <div class="card-body">
+        <h3>1.4.7 Low or No Background Audio</h3>
     <p>This audio clip contains speech with loud background music (simulated), making it hard to hear for users with hard of hearing, with no option to turn off the background.</p>
     <audio controls>
         <!-- Using same file but labeling it as the violation for demonstration -->
         <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mp3">
     </audio>
+    </div>
+</div>
+
 
 <?php include 'includes/footer.php'; ?>

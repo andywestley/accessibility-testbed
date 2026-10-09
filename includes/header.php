@@ -1,18 +1,16 @@
-<?php
-if (!isset($basePath)) {
-    $basePath = '';
-}
-if (!isset($pageTitle)) {
-    $pageTitle = 'Inaccessible - Accessibility Testbed';
-}
-
-if (file_exists(__DIR__ . '/config.php')) {
-    include __DIR__ . '/config.php';
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    $basePath = isset($basePath) ? $basePath : '';
+    if (file_exists(__DIR__ . '/config.php')) {
+        include __DIR__ . '/config.php';
+    }
+    if (file_exists(__DIR__ . '/data.php')) {
+        include_once __DIR__ . '/data.php';
+    }
+    ?>
+    
     <?php if (!empty($gtmId)): ?>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -26,50 +24,56 @@ if (file_exists(__DIR__ . '/config.php')) {
             security_storage: localStorage.getItem('silktideCookieChoice_necessary') === 'true' ? 'granted' : 'denied'
         });
     </script>
+    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','<?php echo $gtmId; ?>');</script>
+    <!-- End Google Tag Manager -->
     <?php endif; ?>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($pageTitle) ?> | Inaccessible Testbed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo isset($pageTitle) ? $pageTitle . ' | Accessibility Testbed' : 'Accessibility Testbed (WCAG 2.2 Suite)'; ?></title>
     
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Custom Theme Styles -->
-    <link rel="stylesheet" href="<?= $basePath ?>assets/css/custom.css">
+    
+    <!-- Custom Design Tokens & Testbed Styles -->
+    <link href="<?= $basePath ?>assets/css/custom.css" rel="stylesheet">
     
     <?php if (isset($extraStyles)) echo $extraStyles; ?>
 </head>
 <body>
     <?php if (!empty($gtmId)): ?>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtmId; ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtmId; ?>"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
 
-    <header>
-        <nav class="navbar navbar-expand-xl navbar-dark bg-dark border-bottom border-secondary-subtle sticky-top">
-            <div class="container-fluid px-lg-4">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="<?= $basePath ?>index.php">
-                    <span class="badge bg-primary px-2 py-1 fs-6"><i class="bi bi-universal-access"></i></span>
-                    <span class="fw-bold tracking-tight text-white">Inaccessible <span class="text-primary">Testbed</span></span>
-                    <span class="badge bg-secondary-subtle text-secondary navbar-brand-badge ms-1">WCAG 2.2 AAA</span>
+    <!-- Skip Link for Accessibility -->
+    <a class="visually-hidden-focusable btn btn-primary position-absolute m-2" href="#main-content" style="z-index: 9999;">Skip to main content</a>
+
+    <!-- Unified Header & Testbed Suite Navigation -->
+    <header class="border-bottom bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark py-2" aria-label="Main Navigation">
+            <div class="container-fluid px-3 px-lg-4">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="<?= $basePath ?>index.php">
+                    <span class="badge bg-primary fs-6 p-2"><i class="bi bi-universal-access"></i></span>
+                    <span class="fs-5">Accessibility <span class="text-info fw-normal">Testbed</span></span>
                 </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#testbedNavbar" aria-controls="testbedNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
-                <div class="collapse navbar-collapse" id="topNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <div class="collapse navbar-collapse" id="testbedNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-xl-0 align-items-xl-center">
                         <li class="nav-item">
-                            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) === 'index.php') ? 'active' : '' ?>" href="<?= $basePath ?>index.php">
+                            <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == 'index.php' && empty($basePath)) ? 'active fw-semibold' : '' ?>" href="<?= $basePath ?>index.php">
                                 <i class="bi bi-grid-3x3-gap-fill me-1"></i> WCAG Matrix
                             </a>
                         </li>
@@ -100,6 +104,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                                 <li><a class="dropdown-item" href="<?= $basePath ?>interactive.php">Keyboard Access (2.1.1)</a></li>
                                 <li><a class="dropdown-item" href="<?= $basePath ?>keyboard_traps.php">Keyboard Traps (2.1.2)</a></li>
                                 <li><a class="dropdown-item" href="<?= $basePath ?>flashing.php">Flashing &amp; Seizures (2.3.1)</a></li>
+                                <li><a class="dropdown-item" href="<?= $basePath ?>navigation.php"><i class="bi bi-layout-text-window-reverse text-warning me-1"></i> Bypass Blocks &amp; Nav (2.4.1)</a></li>
                                 <li><a class="dropdown-item" href="<?= $basePath ?>focus_order.php">Focus Order &amp; Visible (2.4.3/2.4.7)</a></li>
                                 <li><a class="dropdown-item" href="<?= $basePath ?>links.php">Link Purpose (2.4.4/2.4.9)</a></li>
                                 <li><a class="dropdown-item" href="<?= $basePath ?>target_size.php">Target Size (2.5.8)</a></li>
@@ -162,4 +167,4 @@ if (file_exists(__DIR__ . '/config.php')) {
         </nav>
     </header>
 
-    <div class="container-fluid px-lg-4 my-4">
+    <main id="main-content" class="<?= (isset($fluidContainer) && $fluidContainer) ? 'container-fluid px-lg-4 my-4' : 'container my-4' ?>">

@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Inaccessible - WCAG 2.2 Benchmark Testbed';
 $basePath = '';
+$fluidContainer = true;
 
 require_once __DIR__ . '/includes/data.php';
 require_once __DIR__ . '/includes/header.php';
@@ -8,7 +9,7 @@ require_once __DIR__ . '/includes/header.php';
 $totalCriteria = count($testPages);
 ?>
 
-<main class="py-2">
+<div class="py-2">
   <div class="container-fluid px-0">
     <!-- Hero Banner -->
     <div class="p-4 p-md-5 mb-4 rounded-3 bg-dark text-white border border-secondary border-opacity-25 shadow-sm">
@@ -36,13 +37,13 @@ $totalCriteria = count($testPages);
           <div class="row g-3">
             <div class="col-6">
               <div class="p-3 bg-secondary bg-opacity-25 rounded-3 border border-secondary border-opacity-50 text-center">
-                <div class="display-6 fw-bold text-white">87</div>
+                <div class="display-6 fw-bold text-white">88</div>
                 <div class="text-white-50 small text-uppercase">Total Criteria</div>
               </div>
             </div>
             <div class="col-6">
               <div class="p-3 bg-danger bg-opacity-25 rounded-3 border border-danger border-opacity-50 text-center">
-                <div class="display-6 fw-bold text-danger">31</div>
+                <div class="display-6 fw-bold text-danger">32</div>
                 <div class="text-white-50 small text-uppercase">Level A (Critical)</div>
               </div>
             </div>
@@ -161,6 +162,6 @@ $totalCriteria = count($testPages);
       </div>
     </div>
   </div>
-</main>
+</div>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

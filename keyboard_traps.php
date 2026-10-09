@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Keyboard Traps';
+$pageTitle = 'Keyboard Traps & Character Shortcuts';
 $extraStyles = '<style>
         
 
@@ -11,12 +11,17 @@ $extraStyles = '<style>
         }
     </style>';
 include 'includes/header.php';
+
+$currentCriterion = [
+    'rule' => 'WCAG 2.1.2 / 2.1.4',
+    'name' => 'Keyboard Traps & Character Shortcuts',
+    'level' => 'A',
+    'citation' => 'WCAG 2.2 SC 2.1.2: If keyboard focus can be moved to a component, focus can also be moved away using only a keyboard interface.',
+    'trigger_summary' => 'Trapped focus in custom dialog widgets and single-key shortcuts that cannot be turned off or remapped.'
+];
+include 'includes/diagnostic_header.php';
 ?>
-
-
-    <h1>Keyboard Traps</h1>
-
-    <p>Try to tab through the input below. You will get stuck.</p>
+<p>Try to tab through the input below. You will get stuck.</p>
 
     <div id="trap">
         <label for="trapped-input">Trapped Input:</label>
@@ -54,8 +59,14 @@ include 'includes/header.php';
         });
     </script>
 
-    <h2>2.1.2 No Keyboard Trap - More Traps</h2>
-    <div style="border: 2px solid blue; padding: 20px;">
+
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">2.1.2 No Keyboard Trap - More Traps</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <div style="border: 2px solid blue; padding: 20px;">
         <label>Trap 2 (Blocks Tab & Esc): <input type="text" id="trap-2" /></label>
     </div>
 
@@ -64,5 +75,8 @@ include 'includes/header.php';
                 placeholder="I will steal focus back" /></label>
     </div>
     </script>
+    </div>
+</div>
+
 
 <?php include 'includes/footer.php'; ?>

@@ -1,10 +1,15 @@
 <?php
-$pageTitle = 'Target Size (Minimum) - WCAG 2.5.8';
-include 'includes/header.php';
+$pageTitle = 'Target Size (Minimum 24x24px)';include 'includes/header.php';
+
+$currentCriterion = [
+    'rule' => 'WCAG 2.5.8',
+    'name' => 'Target Size (Minimum 24x24px)',
+    'level' => 'AA',
+    'citation' => 'WCAG 2.2 SC 2.5.8: The size of the target for pointer inputs is at least 24 by 24 CSS pixels, except where spacing or inline context allows.',
+    'trigger_summary' => 'Tiny interactive links and icons (e.g., 12x12px or 16x16px) with insufficient spacing to adjacent targets.'
+];
+include 'includes/diagnostic_header.php';
 ?>
-
-<h1>Target Size (Minimum) - WCAG 2.5.8</h1>
-
 <p>
     Success Criterion <strong>2.5.8 Target Size (Minimum) (Level AA)</strong> requires that the target size for pointer inputs is at least 24 by 24 CSS pixels, except where:
 </p>
@@ -18,9 +23,14 @@ include 'includes/header.php';
 
 <hr>
 
-<h2>Violations</h2>
 
-<h3>2.5.8 Target Size (Minimum) - Undersized Buttons without Spacing</h3>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">Violations</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <h3>2.5.8 Target Size (Minimum) - Undersized Buttons without Spacing</h3>
 <p>These icon buttons are smaller than 24x24px and are placed too close together. Users with tremors or imprecise pointing devices may accidentally activate the wrong one.</p>
 
 <div class="mb-4">
@@ -56,10 +66,16 @@ include 'includes/header.php';
 </div>
 
 <hr>
+    </div>
+</div>
 
-<h2>Passes / Best Practices</h2>
-
-<h3>1. Sufficient Spacing for Small Targets</h3>
+<div class="test-section-card">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <h2 class="h5 mb-0 fw-bold text-dark">Passes / Best Practices</h2>
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1"><i class="bi bi-exclamation-octagon-fill me-1"></i> Intentional Failure Trigger</span>
+    </div>
+    <div class="card-body">
+        <h3>1. Sufficient Spacing for Small Targets</h3>
 <p>Even if the visible target is small (e.g., 16px icon), we can use padding or margin to ensure the effective touch target or the keep-out zone prevents accidental activation.</p>
 
 <div class="mb-4">
@@ -76,5 +92,8 @@ include 'includes/header.php';
 <div class="mb-4">
     <button class="btn btn-primary">Standard Button</button>
 </div>
+    </div>
+</div>
+
 
 <?php include 'includes/footer.php'; ?>
