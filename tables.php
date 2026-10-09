@@ -12,35 +12,25 @@ $currentCriterion = [
 include 'includes/diagnostic_header.php';
 ?>
 
-<!-- Diagnostic Description -->
-<div class="alert alert-info d-flex align-items-start gap-3 shadow-sm mb-4">
-    <i class="bi bi-info-circle-fill fs-4 text-info flex-shrink-0 mt-1"></i>
-    <div>
-        <h5 class="alert-heading fw-bold mb-1">Intentional Table Accessibility Violations (WCAG 1.3.1)</h5>
-        <p class="small mb-0 text-secondary">
-            This test page isolates intentional table markup failures: data tables lacking semantic <code>&lt;th&gt;</code> headers, complex tables without <code>scope</code> attributes, and legacy layout tables. Screen readers cannot properly announce column/row associations for these structures.
-        </p>
-    </div>
-</div>
-
 <!-- Test 1: Data Table Missing <th> Headers -->
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div>
-            <h2 class="h5 mb-0 fw-bold text-dark">1. Data Table Missing &lt;th&gt; Header Cells</h2>
-            <small class="text-muted">Uses bolded &lt;td&gt;&lt;b&gt; cells instead of semantic &lt;th&gt; elements</small>
+            <h2 class="card-title-main">1. Data Table Missing &lt;th&gt; Header Cells</h2>
+            <p class="card-subtitle-text">Uses bolded <code>&lt;td&gt;&lt;b&gt;</code> cells instead of semantic <code>&lt;th&gt;</code> elements</p>
         </div>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2.5 py-1.5 fw-semibold">
             <i class="bi bi-exclamation-octagon-fill me-1"></i> WCAG 1.3.1 Failure
         </span>
     </div>
     <div class="card-body">
-        <p class="small text-muted mb-3">
+        <p class="small text-secondary mb-3">
             Screen readers will treat the first row as regular data rather than announcing them as column headers for subsequent rows:
         </p>
         <div class="test-sandbox-zone">
+            <div class="test-sandbox-label"><i class="bi bi-code-slash"></i> Intentional Failure Sandbox:</div>
             <!-- No TH, just bold TD -->
-            <table class="table table-bordered mb-0" border="1">
+            <table class="table table-bordered w-100" border="1">
                 <tbody>
                     <tr class="table-light">
                         <td><b>Name</b></td>
@@ -67,20 +57,21 @@ include 'includes/diagnostic_header.php';
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div>
-            <h2 class="h5 mb-0 fw-bold text-dark">2. Complex Multi-Tier Table Missing Scope Attributes</h2>
-            <small class="text-muted">&lt;th&gt; elements present across multiple levels but missing <code>scope="col"</code> / <code>scope="row"</code></small>
+            <h2 class="card-title-main">2. Complex Multi-Tier Table Missing Scope Attributes</h2>
+            <p class="card-subtitle-text"><code>&lt;th&gt;</code> elements present across multiple levels but missing <code>scope="col"</code> / <code>scope="row"</code></p>
         </div>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2.5 py-1.5 fw-semibold">
             <i class="bi bi-exclamation-octagon-fill me-1"></i> WCAG 1.3.1 Failure
         </span>
     </div>
     <div class="card-body">
-        <p class="small text-muted mb-3">
+        <p class="small text-secondary mb-3">
             Without explicit <code>scope</code> or <code>id</code>/<code>headers</code> associations, assistive tech cannot resolve whether headers apply to columns or groups:
         </p>
         <div class="test-sandbox-zone">
+            <div class="test-sandbox-label"><i class="bi bi-code-slash"></i> Intentional Failure Sandbox:</div>
             <!-- TH elements present but missing scope attribute for ambiguous relationships -->
-            <table class="table table-bordered mb-0" border="1">
+            <table class="table table-bordered w-100" border="1">
                 <thead>
                     <tr class="table-secondary">
                         <th></th>
@@ -113,19 +104,20 @@ include 'includes/diagnostic_header.php';
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div>
-            <h2 class="h5 mb-0 fw-bold text-dark">3. Data Table with Missing Header Row Entirely</h2>
-            <small class="text-muted">Product data rendered with raw data cells and no table header row</small>
+            <h2 class="card-title-main">3. Data Table with Missing Header Row Entirely</h2>
+            <p class="card-subtitle-text">Product data rendered with raw data cells and no table header row</p>
         </div>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2.5 py-1.5 fw-semibold">
             <i class="bi bi-exclamation-octagon-fill me-1"></i> WCAG 1.3.1 Failure
         </span>
     </div>
     <div class="card-body">
-        <p class="small text-muted mb-3">
+        <p class="small text-secondary mb-3">
             Data values have no programmatic column or row labels:
         </p>
         <div class="test-sandbox-zone">
-            <table class="table table-bordered mb-0" border="1">
+            <div class="test-sandbox-label"><i class="bi bi-code-slash"></i> Intentional Failure Sandbox:</div>
+            <table class="table table-bordered w-100" border="1">
                 <tbody>
                     <tr>
                         <td>Product A</td>
@@ -144,34 +136,35 @@ include 'includes/diagnostic_header.php';
 </div>
 
 <!-- Test 4: Layout Table Used for Page Columns -->
-<div class="test-section-card">
+<div class="test-section-card card-aa">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div>
-            <h2 class="h5 mb-0 fw-bold text-dark">4. Layout Table for Multi-Column Content</h2>
-            <small class="text-muted">Table used for visual side-by-side positioning</small>
+            <h2 class="card-title-main">4. Layout Table for Multi-Column Content</h2>
+            <p class="card-subtitle-text">Table used for visual side-by-side positioning without presentation role</p>
         </div>
-        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2 py-1">
+        <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 px-2.5 py-1.5 fw-semibold">
             <i class="bi bi-exclamation-triangle-fill me-1"></i> Layout Table Pattern
         </span>
     </div>
     <div class="card-body">
-        <p class="small text-muted mb-3">
+        <p class="small text-secondary mb-3">
             Using table markup for layout purposes interferes with screen reader reading order and responsive mobile reflow:
         </p>
         <div class="test-sandbox-zone">
+            <div class="test-sandbox-label"><i class="bi bi-code-slash"></i> Intentional Failure Sandbox:</div>
             <!-- Table related elements used for layout purposes -->
-            <table border="0" cellpadding="10" cellspacing="0" role="presentation" class="w-100 bg-light rounded">
+            <table border="0" cellpadding="12" cellspacing="0" role="presentation" class="w-100 bg-white border rounded">
                 <tr>
-                    <td style="width: 35%; vertical-align: top; border-right: 1px solid #dee2e6;">
-                        <h6 class="fw-bold mb-2">Simulated Sidebar Nav</h6>
+                    <td style="width: 35%; vertical-align: top; border-right: 1px solid #e2e8f0;">
+                        <h6 class="fw-bold mb-2 text-dark">Simulated Sidebar Nav</h6>
                         <ul class="list-unstyled mb-0 small">
-                            <li><a href="#" class="text-decoration-none">&bull; Dashboard Link</a></li>
-                            <li><a href="#" class="text-decoration-none">&bull; Settings Link</a></li>
+                            <li class="mb-1"><a href="#" class="text-decoration-none text-primary">&bull; Dashboard Link</a></li>
+                            <li><a href="#" class="text-decoration-none text-primary">&bull; Settings Link</a></li>
                         </ul>
                     </td>
-                    <td style="width: 65%; vertical-align: top; padding-left: 1rem;">
-                        <h6 class="fw-bold mb-2">Simulated Main Content</h6>
-                        <p class="small mb-0 text-muted">This content is laid out using a multi-cell table structure rather than CSS Flexbox/Grid.</p>
+                    <td style="width: 65%; vertical-align: top; padding-left: 1.5rem;">
+                        <h6 class="fw-bold mb-2 text-dark">Simulated Main Content</h6>
+                        <p class="small mb-0 text-secondary">This content is laid out using a multi-cell table structure rather than CSS Flexbox/Grid.</p>
                     </td>
                 </tr>
             </table>
@@ -183,22 +176,23 @@ include 'includes/diagnostic_header.php';
 <div class="test-section-card">
     <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <div>
-            <h2 class="h5 mb-0 fw-bold text-dark">5. Nested Tables for Layout Alignment</h2>
-            <small class="text-muted">Table nested inside table cell without semantic data structure</small>
+            <h2 class="card-title-main">5. Nested Tables for Layout Alignment</h2>
+            <p class="card-subtitle-text">Table nested inside table cell without semantic data structure</p>
         </div>
-        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2 py-1">
+        <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-2.5 py-1.5 fw-semibold">
             <i class="bi bi-exclamation-octagon-fill me-1"></i> Nested Table Violation
         </span>
     </div>
     <div class="card-body">
-        <p class="small text-muted mb-3">
+        <p class="small text-secondary mb-3">
             Deeply nested layout tables create confusing screen reader announcements and severe reflow issues:
         </p>
         <div class="test-sandbox-zone">
-            <table class="table table-bordered mb-0">
+            <div class="test-sandbox-label"><i class="bi bi-code-slash"></i> Intentional Failure Sandbox:</div>
+            <table class="table table-bordered w-100">
                 <tr>
-                    <td class="p-3 bg-light">
-                        <span class="fw-bold d-block mb-2 text-secondary">Outer Table Cell</span>
+                    <td class="p-3 bg-white">
+                        <span class="fw-bold d-block mb-2 text-secondary small text-uppercase">Outer Table Container</span>
                         <table class="table table-sm table-warning mb-0 border">
                             <tr>
                                 <td class="p-2"><strong>Nested Item 1:</strong> Content inside nested child table</td>
