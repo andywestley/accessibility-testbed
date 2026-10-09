@@ -40,6 +40,7 @@
     <title><?php echo isset($pageTitle) ? $pageTitle : 'Accessibility Testbed'; ?></title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         /* Keep any custom overrides if necessary, but prefer Bootstrap classes */
         .red-text { color: red; }
@@ -81,6 +82,19 @@
         <div><a href="<?php echo $bp; ?>parsing.php" class="btn btn-outline-secondary btn-sm">Parsing</a></div>
         <div><a href="<?php echo $bp; ?>language.php" class="btn btn-outline-secondary btn-sm">Language</a></div>
         <div><a href="<?php echo $bp; ?>iframes.php" class="btn btn-outline-secondary btn-sm">Iframes</a></div>
+        <!-- Testbed Family Suite Switcher -->
+        <div class="dropdown">
+            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="suiteDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-collection-fill me-1"></i> Testbed Suite
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark shadow" aria-labelledby="suiteDropdown">
+                <li class="dropdown-header text-uppercase small fw-bold text-white-50">Testbed Family Ecosystem</li>
+                <li><a class="dropdown-item active" href="https://inaccessible.andrewwestley.co.uk/"><i class="bi bi-universal-access text-primary me-2"></i>Accessibility Testbed (WCAG 2.2)</a></li>
+                <li><a class="dropdown-item" href="https://coga-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-person-fill-check text-info me-2"></i>COGA Cognitive Testbed</a></li>
+                <li><a class="dropdown-item" href="https://content-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text-fill text-warning me-2"></i>Content &amp; Readability Testbed</a></li>
+                <li><a class="dropdown-item" href="https://uxusability-testbed.andrewwestley.co.uk/" target="_blank" rel="noopener"><i class="bi bi-speedometer2 text-danger me-2"></i>UX &amp; Heuristics Testbed</a></li>
+            </ul>
+        </div>
     </div>
 
     <!-- Main Content Container -->
