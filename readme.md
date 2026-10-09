@@ -1,3 +1,6 @@
+> [!NOTE]
+> **This standalone repository is archived and now actively maintained as part of the unified [audit-testbeds](https://github.com/andywestley/audit-testbeds) monorepo.**
+
 # Accessibility Testbed
 
 This microsite is designed to provide a comprehensive environment for testing accessibility tools and learning about WCAG violations. Each page focuses on specific categories of accessibility barriers.
